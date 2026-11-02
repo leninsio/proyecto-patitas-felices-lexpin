@@ -1,0 +1,22 @@
+{
+  "name": "patitas-felices-uiux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static UI/UX prototype for the Patitas Felices veterinary clinic",
+  "scripts": {
+    "serve": "pnpm dlx serve site -l 4321",
+    "test": "playwright test",
+    "test:contrast": "node tests/contrast.mjs",
+    "capture": "node tests/capture.mjs",
+    "docs": "node tests/build-docs.mjs",
+    "pdf": "node tests/build-pdf.mjs",
+    "icons": "node tests/build-icons.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.56.0",
+    "lucide-static": "1.65.0",
+    "marked": "^18.1.2",
+    "simple-icons": "16.36.0"
+  }
+}

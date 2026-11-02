@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decisiones de diseño — Patitas Felices</title>
+  <meta name="description" content="Justificación, sistema visual y checklist de cumplimiento del enunciado (S7, S10–S12).">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <script src="../assets/js/layout.js"></script>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-doc-page="decisiones">
+  <main id="main" tabindex="-1">
+    <section class="page-header page-header--compact doc-hero">
+      <div class="container page-header__inner">
+        <nav class="doc-breadcrumb" aria-label="Ruta de documentación"><a href="index.html">Documentación</a> / <span aria-current="page">Decisiones de diseño</span></nav>
+        <p class="eyebrow">Documentación del proyecto</p>
+        <h1>Decisiones de diseño</h1>
+        <p class="lead">Justificación, sistema visual y checklist de cumplimiento del enunciado (S7, S10–S12).</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Decisiones de diseño">
+      <div class="container doc-layout">
+        <aside class="doc-sidebar">
+          <nav class="doc-toc doc-toc--desktop" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-como-se-tomaron-las-decisiones">1. Cómo se tomaron las decisiones</a></li>
+<li><a class="" href="#2-decisiones-por-persona">2. Decisiones por persona</a></li>
+<li><a class="doc-toc__sub" href="#2-1-camila-reserva-rapida-precio-claro-y-movil">2.1. Camila — reserva rápida, precio claro y móvil</a></li>
+<li><a class="doc-toc__sub" href="#2-2-rafael-telefono-letras-legibles-y-cero-laberintos">2.2. Rafael — teléfono, letras legibles y cero laberintos</a></li>
+<li><a class="doc-toc__sub" href="#2-3-familia-rojas-confianza-precio-y-logistica-compartida">2.3. Familia Rojas — confianza, precio y logística compartida</a></li>
+<li><a class="" href="#3-sistema-visual-y-guia-de-estilos">3. Sistema visual y guía de estilos</a></li>
+<li><a class="doc-toc__sub" href="#3-1-paleta">3.1. Paleta</a></li>
+<li><a class="doc-toc__sub" href="#3-2-tipografia">3.2. Tipografía</a></li>
+<li><a class="doc-toc__sub" href="#3-3-logo-e-iconografia">3.3. Logo e iconografía</a></li>
+<li><a class="doc-toc__sub" href="#3-4-espaciado-radios-y-elevacion">3.4. Espaciado, radios y elevación</a></li>
+<li><a class="doc-toc__sub" href="#3-5-estados-de-los-componentes">3.5. Estados de los componentes</a></li>
+<li><a class="doc-toc__sub" href="#3-6-modo-oscuro">3.6. Modo oscuro</a></li>
+<li><a class="doc-toc__sub" href="#3-7-microinteracciones">3.7. Microinteracciones</a></li>
+<li><a class="doc-toc__sub" href="#3-8-fotografia">3.8. Fotografía</a></li>
+<li><a class="" href="#4-decisiones-transversales">4. Decisiones transversales</a></li>
+<li><a class="doc-toc__sub" href="#4-1-mobile-first">4.1. Mobile-first</a></li>
+<li><a class="doc-toc__sub" href="#4-2-emergencias-siempre-a-mano">4.2. Emergencias siempre a mano</a></li>
+<li><a class="doc-toc__sub" href="#4-3-accesibilidad">4.3. Accesibilidad</a></li>
+<li><a class="doc-toc__sub" href="#4-4-consistencia">4.4. Consistencia</a></li>
+<li><a class="doc-toc__sub" href="#4-5-flujo-de-reserva">4.5. Flujo de reserva</a></li>
+<li><a class="doc-toc__sub" href="#4-6-extras-opcionales">4.6. Extras opcionales</a></li>
+<li><a class="doc-toc__sub" href="#4-7-contenido-y-moneda">4.7. Contenido y moneda</a></li>
+<li><a class="" href="#5-cumplimiento-del-enunciado">5. Cumplimiento del enunciado</a></li>
+<li><a class="doc-toc__sub" href="#5-1-investigacion-y-arquitectura">5.1. Investigación y arquitectura</a></li>
+<li><a class="doc-toc__sub" href="#5-2-prototipo-y-pantallas">5.2. Prototipo y pantallas</a></li>
+<li><a class="doc-toc__sub" href="#5-3-criterios-de-calidad-verificables">5.3. Criterios de calidad verificables</a></li>
+<li><a class="" href="#6-limites-y-siguientes-pasos">6. Límites y siguientes pasos</a></li></ul></nav>
+        </aside>
+        <div>
+          <details class="doc-toc-mobile">
+            <summary>En esta página</summary>
+            <nav class="doc-toc" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-como-se-tomaron-las-decisiones">1. Cómo se tomaron las decisiones</a></li>
+<li><a class="" href="#2-decisiones-por-persona">2. Decisiones por persona</a></li>
+<li><a class="doc-toc__sub" href="#2-1-camila-reserva-rapida-precio-claro-y-movil">2.1. Camila — reserva rápida, precio claro y móvil</a></li>
+<li><a class="doc-toc__sub" href="#2-2-rafael-telefono-letras-legibles-y-cero-laberintos">2.2. Rafael — teléfono, letras legibles y cero laberintos</a></li>
+<li><a class="doc-toc__sub" href="#2-3-familia-rojas-confianza-precio-y-logistica-compartida">2.3. Familia Rojas — confianza, precio y logística compartida</a></li>
+<li><a class="" href="#3-sistema-visual-y-guia-de-estilos">3. Sistema visual y guía de estilos</a></li>
+<li><a class="doc-toc__sub" href="#3-1-paleta">3.1. Paleta</a></li>
+<li><a class="doc-toc__sub" href="#3-2-tipografia">3.2. Tipografía</a></li>
+<li><a class="doc-toc__sub" href="#3-3-logo-e-iconografia">3.3. Logo e iconografía</a></li>
+<li><a class="doc-toc__sub" href="#3-4-espaciado-radios-y-elevacion">3.4. Espaciado, radios y elevación</a></li>
+<li><a class="doc-toc__sub" href="#3-5-estados-de-los-componentes">3.5. Estados de los componentes</a></li>
+<li><a class="doc-toc__sub" href="#3-6-modo-oscuro">3.6. Modo oscuro</a></li>
+<li><a class="doc-toc__sub" href="#3-7-microinteracciones">3.7. Microinteracciones</a></li>
+<li><a class="doc-toc__sub" href="#3-8-fotografia">3.8. Fotografía</a></li>
+<li><a class="" href="#4-decisiones-transversales">4. Decisiones transversales</a></li>
+<li><a class="doc-toc__sub" href="#4-1-mobile-first">4.1. Mobile-first</a></li>
+<li><a class="doc-toc__sub" href="#4-2-emergencias-siempre-a-mano">4.2. Emergencias siempre a mano</a></li>
+<li><a class="doc-toc__sub" href="#4-3-accesibilidad">4.3. Accesibilidad</a></li>
+<li><a class="doc-toc__sub" href="#4-4-consistencia">4.4. Consistencia</a></li>
+<li><a class="doc-toc__sub" href="#4-5-flujo-de-reserva">4.5. Flujo de reserva</a></li>
+<li><a class="doc-toc__sub" href="#4-6-extras-opcionales">4.6. Extras opcionales</a></li>
+<li><a class="doc-toc__sub" href="#4-7-contenido-y-moneda">4.7. Contenido y moneda</a></li>
+<li><a class="" href="#5-cumplimiento-del-enunciado">5. Cumplimiento del enunciado</a></li>
+<li><a class="doc-toc__sub" href="#5-1-investigacion-y-arquitectura">5.1. Investigación y arquitectura</a></li>
+<li><a class="doc-toc__sub" href="#5-2-prototipo-y-pantallas">5.2. Prototipo y pantallas</a></li>
+<li><a class="doc-toc__sub" href="#5-3-criterios-de-calidad-verificables">5.3. Criterios de calidad verificables</a></li>
+<li><a class="" href="#6-limites-y-siguientes-pasos">6. Límites y siguientes pasos</a></li></ul></nav>
+          </details>
+          <article class="doc-content">
+<p><strong>Proyecto:</strong> sitio web de la clínica veterinaria Patitas Felices (Caracas, Venezuela)<br><strong>Autor:</strong> Lenin Alvarado<br><strong>Fecha:</strong> 2026-10-30<br><strong>Documentos relacionados:</strong> <a href="investigacion.html"><code>01-investigacion.md</code></a> (personas, journey y competencia), <a href="arquitectura.html"><code>02-arquitectura.md</code></a> (card sorting, sitemap y user flow).<br><strong>Prototipo:</strong> <code>site/</code> (HTML, CSS y JavaScript sin framework ni paso de compilación).</p>
+<blockquote>
+<p><strong>Regla de lectura.</strong> Cada decisión de este documento se puede comprobar en el prototipo o en una prueba automatizada. Las capturas de las pantallas están en <code>docs/assets/pantallas/</code> y se regeneran con <code>node tests/capture.mjs</code>.</p>
+</blockquote>
+<hr>
+<h2 id="1-como-se-tomaron-las-decisiones">1. Cómo se tomaron las decisiones</h2>
+<p>El proyecto partió de tres proto-personas con necesidades deliberadamente opuestas (Camila, Rafael y la familia Rojas), un journey map con la emoción como eje y un análisis de tres sitios reales. Las decisiones no se justifican por gusto: cada una responde a un dolor observado, a un requisito del brief o a una restricción de accesibilidad.</p>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Fuente</th>
+<th>Qué aportó</th>
+<th>Dónde se ve</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Personas (S1)</td>
+<td>Extremos de edad, habilidad digital y contexto familiar</td>
+<td>Menú de 6 opciones, reserva corta, teléfono visible, precios</td>
+</tr>
+<tr>
+<td>Journey map (S2)</td>
+<td>El pico de estrés está en el agendamiento y la calma llega con la confirmación</td>
+<td>Flujo de 3 pasos, borrador, confirmación compartible</td>
+</tr>
+<tr>
+<td>Competencia (S3)</td>
+<td>Nadie mostraba precios ni disponibilidad real; la urgencia estaba escondida</td>
+<td>Precio referencial + nota BCV, calendario, dock de emergencia</td>
+</tr>
+<tr>
+<td>Brief (S4–S12)</td>
+<td>Alcance, pantallas obligatorias y criterios de entrega</td>
+<td>Checklist de la sección 5</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="2-decisiones-por-persona">2. Decisiones por persona</h2>
+<h3 id="2-1-camila-reserva-rapida-precio-claro-y-movil">2.1. Camila — reserva rápida, precio claro y móvil</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Insight de la persona</th>
+<th>Decisión de diseño</th>
+<th>Dónde se implementa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Agenda desde el celular en una pausa corta.</td>
+<td>Flujo lineal de 3 pasos y 5 pantallas, con una sola columna en móvil y botones de 48 px.</td>
+<td><code>site/agendar.html</code>, <code>agendar-paso-2.html</code>, <code>agendar-paso-3.html</code>; CSS mobile-first en <code>base.css</code></td>
+</tr>
+<tr>
+<td>Quiere saber si es urgente antes de reservar.</td>
+<td>Pregunta “¿Es una emergencia?” como primera decisión del paso 1; si responde sí, se detiene el formulario y se ofrecen llamada y WhatsApp.</td>
+<td><code>site/agendar.html</code> + <code>booking.js</code> (<code>initStep1</code>)</td>
+</tr>
+<tr>
+<td>Teme que el precio cambie.</td>
+<td>Precio “Desde $” en cada tarjeta y nota “o su equivalente en Bs a tasa BCV del día” en servicios, detalle, resumen y confirmación.</td>
+<td><code>servicios.html</code>, <code>servicio.html</code>, <code>booking.js</code></td>
+</tr>
+<tr>
+<td>Quiere disponibilidad real, no un “te contactamos”.</td>
+<td>Calendario con días disponibles, horarios de 30 minutos y estados disponible/seleccionado/no disponible.</td>
+<td><code>agendar-paso-2.html</code> + <code>booking.js</code></td>
+</tr>
+<tr>
+<td>Puede abandonar a mitad.</td>
+<td>Modal de salida, borrador en <code>sessionStorage</code> por 24 h y banner “Continuar donde lo dejaste”.</td>
+<td><code>booking.js</code> (<code>setupExitGuard</code>, <code>readDraft</code>)</td>
+</tr>
+<tr>
+<td>Quiere compartir la cita.</td>
+<td>Confirmación con código, resumen, WhatsApp y archivo <code>.ics</code>.</td>
+<td><code>cita-confirmada.html</code> + <code>booking.js</code></td>
+</tr>
+</tbody></table></div>
+<h3 id="2-2-rafael-telefono-letras-legibles-y-cero-laberintos">2.2. Rafael — teléfono, letras legibles y cero laberintos</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Insight de la persona</th>
+<th>Decisión de diseño</th>
+<th>Dónde se implementa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prefiere llamar y usa un teléfono fijo.</td>
+<td>El teléfono de la clínica está en el header, el footer y la confirmación; la validación acepta móviles <code>04XX</code> y fijos <code>02XX</code>.</td>
+<td><code>site/assets/js/layout.js</code>, <code>booking.js</code> (<code>PHONE_RE</code>), <code>tests/booking.spec.js</code></td>
+</tr>
+<tr>
+<td>Necesita la emergencia sin buscar.</td>
+<td>Botón fijo de emergencias en todas las páginas, con <code>tel:</code> y WhatsApp; además aparece en el header, el footer y la página de contacto.</td>
+<td><code>layout.js</code> (<code>dockMarkup</code>), <code>components.css</code> (<code>.emergency-dock</code>)</td>
+</tr>
+<tr>
+<td>Tiene baja alfabetización digital.</td>
+<td>Navegación de 6 opciones sin submenús, etiquetas visibles, foco claro y objetivos táctiles de 48 px.</td>
+<td><code>layout.js</code> (<code>NAV_ITEMS</code>), <code>base.css</code>, <code>components.css</code></td>
+</tr>
+<tr>
+<td>Usa lentes y aumenta el tamaño de letra.</td>
+<td>Texto base de 16 px, escala fluida con <code>clamp()</code> y jerarquía con Nunito 400–800.</td>
+<td><code>tokens.css</code>, <code>base.css</code></td>
+</tr>
+<tr>
+<td>No quiere crear cuentas.</td>
+<td>La reserva no pide contraseña ni registro; solo los datos mínimos del dueño.</td>
+<td><code>agendar-paso-3.html</code></td>
+</tr>
+</tbody></table></div>
+<h3 id="2-3-familia-rojas-confianza-precio-y-logistica-compartida">2.3. Familia Rojas — confianza, precio y logística compartida</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Insight de la persona</th>
+<th>Decisión de diseño</th>
+<th>Dónde se implementa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Compara antes de pagar.</td>
+<td>Inicio con prueba social (8 años, +4.000 mascotas, 24/7, 4 especialistas), equipo y testimonios.</td>
+<td><code>index.html</code>, <code>equipo.html</code></td>
+</tr>
+<tr>
+<td>Necesita precios y duración.</td>
+<td>Cada servicio muestra duración y precio referencial; el detalle explica qué incluye y cómo prepararse.</td>
+<td><code>servicios.html</code>, <code>servicio.html</code></td>
+</tr>
+<tr>
+<td>Agenda alrededor del colegio.</td>
+<td>Calendario con sábados de 8:00 a 14:00 y domingos solo emergencias; horarios de 30 min.</td>
+<td><code>booking.js</code> (<code>getSlotsForDate</code>), <code>contacto.html</code></td>
+</tr>
+<tr>
+<td>Comparte la decisión con su pareja.</td>
+<td>Confirmación con resumen completo y enlace de WhatsApp con el texto de la cita.</td>
+<td><code>cita-confirmada.html</code></td>
+</tr>
+<tr>
+<td>Quiere el historial de vacunas.</td>
+<td>“Mis mascotas” con perfiles, vacunas, próximas dosis y recordatorios.</td>
+<td><code>mis-mascotas.html</code></td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="3-sistema-visual-y-guia-de-estilos">3. Sistema visual y guía de estilos</h2>
+<p>La guía viva está en <strong><code>site/guia-de-estilos.html</code></strong> y los valores en <code>site/assets/css/tokens.css</code>. Este resumen explica el porqué.</p>
+<h3 id="3-1-paleta">3.1. Paleta</h3>
+<ul>
+<li><strong>Verde azulado (<code>--color-primary</code> #0E6B5F):</strong> confianza y cuidado. Es el color de las acciones principales, los enlaces y el foco.</li>
+<li><strong>Ámbar (<code>--color-accent</code> #B45309):</strong> calidez y energía; se usa en acentos y badges, nunca en texto largo.</li>
+<li><strong>Rojo (<code>--color-emergency</code> #B42318):</strong> reservado exclusivamente para emergencias y errores. No se usa como decoración.</li>
+<li><strong>Neutros con inclinación verde:</strong> el fondo claro es #F6FAF8 y el texto #0E211E; evitan el blanco/negro puros y reducen la fatiga.</li>
+<li><strong>Modo oscuro:</strong> invierte las superficies a #08110F/#101D1A y sube el verde a #2DD4BF para mantener el contraste. La preferencia se guarda en <code>localStorage</code> (<code>pf-theme</code>) y respeta <code>prefers-color-scheme</code> cuando no hay elección explícita.</li>
+</ul>
+<p><strong>Evidencia WCAG AA:</strong> <code>node tests/contrast.mjs</code> audita <strong>74 pares de tokens en dos temas = 148 comprobaciones</strong>. Todos pasan (4.5:1 para texto, 3:1 para texto grande, bordes y foco). La tabla visible está en la guía de estilos.</p>
+<h3 id="3-2-tipografia">3.2. Tipografía</h3>
+<p><strong>Nunito</strong> (SIL OFL 1.1, autoalojada) tiene formas redondeadas y una altura de x generosa: se siente cercana sin perder legibilidad. Pesos 400, 600, 700 y 800; cuerpo mínimo de 16 px y medida máxima de 68 caracteres. La monoespaciada del sistema se reserva para códigos y tokens.</p>
+<h3 id="3-3-logo-e-iconografia">3.3. Logo e iconografía</h3>
+<p>El logo es una huella <strong>Lucide <code>paw-print</code></strong> dentro de una placa verde azulado; funciona igual en claro y oscuro. En el footer se usa solo la huella y el wordmark, sin la placa, para aligerar el bloque sobre fondo oscuro. El set completo es <strong>Lucide v1.65.0 (ISC)</strong>, de 24 × 24 px y trazo 2, más el glifo de WhatsApp de <strong>Simple Icons v16.36.0 (CC0)</strong>. El sprite se genera con <code>tests/build-icons.mjs</code>, se sirve inline desde <code>layout.js</code> y no depende de un CDN. Todos los iconos decorativos usan <code>aria-hidden=&quot;true&quot;</code> y <code>focusable=&quot;false&quot;</code>.</p>
+<h3 id="3-4-espaciado-radios-y-elevacion">3.4. Espaciado, radios y elevación</h3>
+<p>Base de 4 px (<code>--space-1</code> a <code>--space-12</code>), radios de 8–24 px para tarjetas y píldoras para botones. La elevación es discreta: dos niveles de sombra y bordes de 1–2 px para separar superficies sin depender solo del color.</p>
+<h3 id="3-5-estados-de-los-componentes">3.5. Estados de los componentes</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Reposo</th>
+<th>Hover</th>
+<th>Activo</th>
+<th>Deshabilitado</th>
+<th>Error / seleccionado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Botón primario</td>
+<td>Verde 0E6B5F</td>
+<td>Verde 0A544A</td>
+<td>Verde 08463E + 1 px de press</td>
+<td>Gris de deshabilitado, sin sombra</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Botón secundario</td>
+<td>Superficie + borde fuerte</td>
+<td>Verde suave</td>
+<td>Superficie apagada</td>
+<td>Gris</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Campo de texto</td>
+<td>Borde fuerte</td>
+<td>Borde primario</td>
+<td>—</td>
+<td>—</td>
+<td>Borde rojo + mensaje + <code>aria-invalid</code></td>
+</tr>
+<tr>
+<td>Tarjeta de servicio (radio)</td>
+<td>Superficie</td>
+<td>Borde primario</td>
+<td>—</td>
+<td>—</td>
+<td>Fondo verde suave + check</td>
+</tr>
+<tr>
+<td>Día del calendario</td>
+<td>Superficie</td>
+<td>Borde primario</td>
+<td>—</td>
+<td>Rayado y gris</td>
+<td>Verde lleno con <code>aria-pressed</code></td>
+</tr>
+<tr>
+<td>Horario</td>
+<td>Superficie + borde</td>
+<td>Verde suave</td>
+<td>—</td>
+<td>Tachado y gris</td>
+<td>Verde lleno con <code>aria-pressed</code></td>
+</tr>
+<tr>
+<td>Enlace</td>
+<td>Verde</td>
+<td>Verde oscuro</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody></table></div>
+<p>Los estados no dependen solo del color: hay borde, icono, texto o <code>aria-*</code>. El foco visible es un contorno de 3 px con offset.</p>
+<p><strong>Hover de enlaces y botones:</strong> el hover genérico de enlaces se limita a <code>a:not(.btn):hover</code>; cada variante de <code>.btn</code> define su color de texto en hover/activo/foco. La prueba <code>tests/button-contrast.spec.js</code> recorre todos los botones visibles de las 33 páginas en claro y oscuro y exige 4.5:1 (3:1 solo para texto grande).</p>
+<h3 id="3-6-modo-oscuro">3.6. Modo oscuro</h3>
+<p>No es una inversión automática: se declaran tokens semánticos para <code>[data-theme=&quot;dark&quot;]</code> y para <code>prefers-color-scheme: dark</code>, y una prueba verifica que ambos bloques no diverjan. El toggle cambia el icono luna/sol, actualiza <code>aria-label</code> y guarda la preferencia.</p>
+<h3 id="3-7-microinteracciones">3.7. Microinteracciones</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Interacción</th>
+<th>Efecto</th>
+<th>Implementación</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pulsar un botón</td>
+<td>Hundimiento de 1 px y escala 0.985</td>
+<td><code>.btn:active</code> en <code>components.css</code></td>
+</tr>
+<tr>
+<td>Cambiar de paso</td>
+<td>Entrada suave de 8 px con desvanecido</td>
+<td><code>.booking-layout &gt; *</code> en <code>pages.css</code></td>
+</tr>
+<tr>
+<td>Elegir día u horario</td>
+<td>Pop de 6 % durante 180 ms</td>
+<td><code>@keyframes pf-pop</code></td>
+</tr>
+<tr>
+<td>Confirmar la cita</td>
+<td>Check con rebote y anillo que se disipa</td>
+<td><code>.confirmation-icon</code> + <code>@keyframes pf-check-ring</code></td>
+</tr>
+<tr>
+<td>Cargar una página</td>
+<td>Pulso suave del botón “Llamar”, una sola vez</td>
+<td><code>@keyframes pf-dock-pulse</code>, <code>iteration-count: 1</code></td>
+</tr>
+<tr>
+<td>Cambiar de tema</td>
+<td>Giro de 180° del icono</td>
+<td><code>.theme-toggle .icon</code></td>
+</tr>
+</tbody></table></div>
+<p><strong>Reduced motion:</strong> <code>base.css</code> desactiva animaciones y transiciones con <code>prefers-reduced-motion: reduce</code>. La prueba <code>tests/motion.spec.js</code> confirma que, con esa preferencia, ningún elemento tiene animaciones en ejecución.</p>
+<h3 id="3-8-fotografia">3.8. Fotografía</h3>
+<p>La ilustración del hero y los iconos de servicio se sustituyeron por <strong>fotografía real autohospedada</strong> (WebP, 1600 px el hero y 800 px las tarjetas, todas por debajo de 200 KB). Las fotos vienen de Pexels, con licencia que permite uso gratuito y comercial. Se usan para el hero, las cinco tarjetas y detalles de servicio, los perfiles de Miga y Bruno y las tarjetas del equipo. Las personas del equipo son <strong>modelos de stock</strong>, no personal real, y se identifican como “fotos de prueba”. Autor, fuente y licencia de cada archivo están en <code>docs/creditos.md</code>, que es la fuente canónica.</p>
+<p><strong>Accesibilidad:</strong> todas las fotos tienen <code>alt</code> descriptivo en español, <code>width</code> y <code>height</code> para reservar espacio, y <code>loading=&quot;lazy&quot;</code> salvo el hero. Las fotos del equipo se muestran en escala de grises para mantener una serie visual coherente.</p>
+<hr>
+<h2 id="4-decisiones-transversales">4. Decisiones transversales</h2>
+<h3 id="4-1-mobile-first">4.1. Mobile-first</h3>
+<ul>
+<li>Todo el CSS parte de una columna y solo añade columnas en <code>min-width: 40rem</code>, <code>48rem</code>, <code>60rem</code> y <code>64rem</code>.</li>
+<li>Objetivo táctil mínimo de 48 px en botones, enlaces de navegación, días y horarios.</li>
+<li>Tipografía fluida con <code>clamp()</code>; sin texto por debajo de 12 px y cuerpo de 16 px.</li>
+<li>El dock de emergencia reserva espacio con <code>--emergency-dock-space</code> para no tapar contenido.</li>
+<li>Verificación: <code>tests/smoke.spec.js</code> recorre 33 páginas a 390 y 1440 px y falla si hay desbordamiento horizontal, errores de consola o falta el dock.</li>
+</ul>
+<h3 id="4-2-emergencias-siempre-a-mano">4.2. Emergencias siempre a mano</h3>
+<p>La emergencia es global, no una página: el dock fijo aparece en todas las pantallas con “Llamar” (<code>tel:</code>) y “WhatsApp” (<code>wa.me</code>). También está en el header, el footer, la página de contacto y la confirmación. En el paso 1 del agendamiento, la pregunta de emergencia interrumpe el formulario. El bloque de emergencia se rediseñó como una superficie roja suave con borde, icono en badge y acciones agrupadas a la derecha en escritorio; el footer usa un botón rojo/blanco con el número alineado. El dock usa el rojo reservado y su texto cumple AA.</p>
+<h3 id="4-3-accesibilidad">4.3. Accesibilidad</h3>
+<ul>
+<li><strong>Contraste:</strong> 148 comprobaciones AA en claro y oscuro (<code>tests/contrast.mjs</code>).</li>
+<li><strong>Auditoría automatizada:</strong> <code>tests/axe.spec.js</code> ejecuta axe-core en 33 páginas × 2 temas = <strong>66 pruebas</strong>, sin violaciones serias ni críticas.</li>
+<li><strong>Teclado y foco:</strong> enlace “Saltar al contenido”, foco visible de 3 px, <code>dialog</code> nativo para el modal de salida, retorno de foco al abrir/cerrar, <code>aria-pressed</code> en calendario y horarios.</li>
+<li><strong>Formularios:</strong> etiquetas asociadas, <code>aria-invalid</code>, <code>aria-describedby</code>, contenedores con <code>role=&quot;alert&quot;</code>/<code>aria-live</code>, errores que no dependen solo del color y foco en el primer campo inválido.</li>
+<li><strong>Semántica:</strong> un solo <code>h1</code> por página, jerarquía de encabezados, regiones con <code>aria-label</code>, tablas con <code>caption</code> y <code>th scope</code>, iconos decorativos ocultos.</li>
+<li><strong>Movimiento:</strong> respeto estricto de <code>prefers-reduced-motion</code>.</li>
+<li><strong>Contenido:</strong> textos en español venezolano neutral, instrucciones claras y ejemplos en los mensajes de error.</li>
+</ul>
+<h3 id="4-4-consistencia">4.4. Consistencia</h3>
+<p>Un solo sistema de tokens, un solo header/footer inyectado por <code>layout.js</code> y una sola guía de estilos. Las 10 pantallas obligatorias, “Mis mascotas”, la guía y los 11 wireframes comparten la misma retícula, tipografía, botones y estados.</p>
+<h3 id="4-5-flujo-de-reserva">4.5. Flujo de reserva</h3>
+<ul>
+<li><strong>3 pasos y 5 pantallas:</strong> el paso 1 agrupa servicio + mascota; el paso 3 agrupa datos del dueño + confirmación, tal como pide el brief. El camino ideal tiene 4 clics de avance.</li>
+<li><strong>Borrador:</strong> <code>pf-booking-draft</code> en <code>sessionStorage</code>, caducidad de 24 h, sin envío al servidor.</li>
+<li><strong>Conflicto de horario:</strong> el horario de demo se ocupa al confirmar; se vuelve al paso 2 con tres alternativas cercanas y los datos intactos.</li>
+<li><strong>Validación:</strong> teléfono móvil <code>04XX-XXXXXXX</code> o fijo <code>02XX-XXXXXXX</code> (11 dígitos), correo estándar y edad estructurada en <strong>número + unidad</strong> (meses o años). Los borradores antiguos con edad en texto libre se migran al cargar; los errores aparecen inline y bloquean el avance.</li>
+<li><strong>Modal de salida:</strong> diálogo nativo centrado en escritorio y hoja inferior en móvil; el reset global ya no rompe el <code>margin: auto</code> del diálogo.</li>
+<li><strong>Campos:</strong> <code>.field</code> y <code>.form-grid</code> usan <code>align-content/align-items: start</code>, así un error en un campo no estira el campo hermano.</li>
+<li><strong>Confirmación:</strong> código <code>PF-AAAM-XXXX</code>, resumen, WhatsApp y <code>.ics</code>.</li>
+<li><strong>Objetivo de tiempo:</strong> ≤ 2 minutos; el diseño estima ≈ 100 s (no es una medición con usuarios).</li>
+</ul>
+<h3 id="4-6-extras-opcionales">4.6. Extras opcionales</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Extra</th>
+<th>Estado</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Modo oscuro</td>
+<td>Implementado</td>
+<td><code>tokens.css</code>, toggle global, prueba axe en ambos temas</td>
+</tr>
+<tr>
+<td>Microinteracciones</td>
+<td>Implementado y con reduced motion</td>
+<td><code>components.css</code>, <code>pages.css</code>, <code>tests/motion.spec.js</code></td>
+</tr>
+<tr>
+<td>Carrusel de equipo</td>
+<td>Implementado, sin autoplay, con teclado, swipe y puntos</td>
+<td><code>equipo.html</code>, <code>index.html</code>, <code>carousel.js</code>, <code>tests/carousel.spec.js</code></td>
+</tr>
+<tr>
+<td>“Mis mascotas” con historial de vacunas</td>
+<td>Implementado con foto, próxima dosis y CTA de refuerzo</td>
+<td><code>mis-mascotas.html</code></td>
+</tr>
+<tr>
+<td>Prueba de usabilidad</td>
+<td><strong>No realizada</strong> (no formaba parte del alcance elegido)</td>
+<td>—</td>
+</tr>
+</tbody></table></div>
+<h3 id="4-7-contenido-y-moneda">4.7. Contenido y moneda</h3>
+<p>La clínica, la dirección, los teléfonos, los precios, el equipo y los testimonios son ficticios y plausibles para Caracas. Los precios se muestran en USD con la nota “o su equivalente en Bs a tasa BCV del día”. El teléfono de la clínica es +58 212 555 1234 y el de emergencias/WhatsApp +58 412 555 0198.</p>
+<hr>
+<h2 id="5-cumplimiento-del-enunciado">5. Cumplimiento del enunciado</h2>
+<h3 id="5-1-investigacion-y-arquitectura">5.1. Investigación y arquitectura</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Requisito del brief</th>
+<th>Evidencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S1 · Lista de al menos 4 tipos de cliente, con por qué visitarían el sitio</td>
+<td><code>docs/01-investigacion.md</code> §1 (5 tipos)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S1 · Elegir 2–3 tipos distintos y justificar</td>
+<td><code>docs/01-investigacion.md</code> §1.1</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S1 · Datos básicos, mascota, frase, perfil tecnológico, deseos (≥3), frustraciones (≥3), miedos, motivaciones, escenario</td>
+<td><code>docs/01-investigacion.md</code> §2.1–2.3</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S1 · Al menos 2 supuestos justificados por persona</td>
+<td><code>docs/01-investigacion.md</code> §2.1–2.3 (2 por persona)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S1 · 2–3 decisiones de diseño por persona</td>
+<td><code>docs/01-investigacion.md</code> §2.1–2.3 (3 por persona)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S2 · Escenario textual, una persona, columnas Detección → Post-cita</td>
+<td><code>docs/01-investigacion.md</code> §3.1</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S2 · Filas Acciones, Pensamientos, Emociones, Contactos, Dolores, Oportunidades</td>
+<td><code>docs/01-investigacion.md</code> §3.1</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S2 · Curva o iconos de emoción</td>
+<td><code>docs/assets/journey-emociones.svg</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S3 · 2–3 sitios reales, al menos uno de Venezuela</td>
+<td><code>docs/01-investigacion.md</code> §4.2 (Los Chorros y DogtorVet, VE; Vets4Pets, UK)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S3 · Tabla con los criterios del brief, URL y fecha</td>
+<td><code>docs/01-investigacion.md</code> §4.2–4.3 (2026-10-29)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S3 · Capturas de escritorio y móvil</td>
+<td><code>docs/assets/competencia/*-1440.png</code> y <code>*-390.png</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S3 · Conclusión de 5–8 líneas: adoptar, evitar, diferenciarse</td>
+<td><code>docs/01-investigacion.md</code> §4.4 (6 líneas)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S4 · Card sorting por persona</td>
+<td><code>docs/02-arquitectura.md</code> §1.2–1.5</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S4 · Árbol Nivel 0 / Nivel 1 / Nivel 2 y elementos globales aparte</td>
+<td><code>docs/02-arquitectura.md</code> §2.2–2.3 + <code>docs/assets/sitemap.svg</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S4 · Menú ≤ 6 opciones y ninguna página importante a más de 3 clics</td>
+<td><code>docs/02-arquitectura.md</code> §2.1 y §2.4 (6 opciones; ≤ 3 clics)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S4 · Justificación de 3–4 líneas</td>
+<td><code>docs/02-arquitectura.md</code> §2.5</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S5 · Símbolos estándar (óvalo, rectángulo, rombo, flechas)</td>
+<td><code>docs/assets/user-flow.svg</code> y bloque Mermaid en §3.2</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S5 · Al menos 2 puntos de entrada</td>
+<td><code>docs/02-arquitectura.md</code> §3.1 (Google, Instagram, detalle)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S5 · Camino ideal completo</td>
+<td><code>docs/02-arquitectura.md</code> §3.3</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S5 · Alternativas: emergencia, horario ocupado, campos inválidos, volver, abandono</td>
+<td><code>docs/02-arquitectura.md</code> §3.4 + user flow</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S5 · Conteo de clics/pantallas y meta &lt; 2 min</td>
+<td><code>docs/02-arquitectura.md</code> §3.5 (4 clics, 5 pantallas, ≈100 s)</td>
+<td>Cumplido</td>
+</tr>
+</tbody></table></div>
+<h3 id="5-2-prototipo-y-pantallas">5.2. Prototipo y pantallas</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Requisito del brief</th>
+<th>Evidencia</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S6 · Todos los wireframes requeridos en gris, sin imágenes finales</td>
+<td><code>site/wireframes/01-inicio.html</code> … <code>11-mis-mascotas.html</code> + índice</td>
+<td>Cumplido (11)</td>
+</tr>
+<tr>
+<td>S7 · Paleta, tipografía, botones, campos, iconografía y logo</td>
+<td><code>site/guia-de-estilos.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S7 · Pantallas finales a 1440 y 390 px</td>
+<td><code>docs/assets/pantallas/*-1440.png</code> y <code>*-390.png</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S7 · Fotografía real con licencia y autoría</td>
+<td><code>site/assets/img/photos/*.webp</code> + tabla en <code>docs/creditos.md</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S8 · Flujo de agendar recorrible con clics</td>
+<td><code>site/agendar.html</code> → <code>cita-confirmada.html</code>; <code>tests/booking.spec.js</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.1 · Inicio con hero + CTA, servicios, testimonios y contacto</td>
+<td><code>site/index.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.2 · Servicios (consulta, vacunación, cirugía, peluquería, emergencias) con precios</td>
+<td><code>site/servicios.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.3 · Detalle de servicio</td>
+<td><code>site/servicio.html?s=consulta</code> (5 slugs)</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.4 · Nuestro equipo y especialidades</td>
+<td><code>site/equipo.html</code> y carrusel en <code>index.html</code>; fotos de prueba con autoría en <code>docs/creditos.md</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.5 · Agendar paso 1: servicio + mascota (tipo, nombre, edad)</td>
+<td><code>site/agendar.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.6 · Agendar paso 2: fecha y hora con disponibilidad</td>
+<td><code>site/agendar-paso-2.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.7 · Agendar paso 3: datos del dueño + confirmación</td>
+<td><code>site/agendar-paso-3.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.8 · Cita confirmada con resumen, WhatsApp y calendario</td>
+<td><code>site/cita-confirmada.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.9 · Contacto y ubicación: mapa, horarios y emergencias</td>
+<td><code>site/contacto.html</code> con cabecera y acciones rápidas, mapa, contacto, horario con “hoy” y bloque de emergencia</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S9.10 · Página 404 con estilo de marca</td>
+<td><code>site/404.html</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S10 · Mobile-first</td>
+<td>CSS base + pruebas a 390/1440</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S10 · Contraste WCAG AA</td>
+<td><code>tests/contrast.mjs</code> (148/148) + <code>tests/axe.spec.js</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S10 · Emergencias visibles en todo momento</td>
+<td>Dock global en las 33 páginas</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S10 · Estados hover, activo, deshabilitado y error</td>
+<td><code>site/guia-de-estilos.html</code> §botones/formularios; CSS</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S10 · Consistencia visual</td>
+<td>Tokens, layout compartido y guía; footer, emergencia, tarjetas de mascota, carrusel y contacto usan los mismos componentes</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S11 · “Mis mascotas” con historial de vacunas</td>
+<td><code>site/mis-mascotas.html</code> con foto, próxima dosis destacada y CTA de refuerzo</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S11 · Modo oscuro</td>
+<td>Toggle global + tokens + axe en oscuro</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S11 · Microinteracciones con reduced motion</td>
+<td><code>components.css</code>, <code>pages.css</code>, <code>tests/motion.spec.js</code></td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S12 · Enlace al diseño (sitio, guía, wireframes)</td>
+<td><code>README.md</code>; <code>&lt;URL_VERCEL&gt;/documentacion/pantallas.html</code>; <code>&lt;URL_VERCEL&gt;/guia-de-estilos.html</code>; <code>&lt;URL_VERCEL&gt;/wireframes/index.html</code></td>
+<td>Cumplido en el repositorio; el enlace se publica en T9</td>
+</tr>
+<tr>
+<td>S12 · Enlace al prototipo</td>
+<td><code>README.md</code>, <code>docs/informe.pdf</code> y <code>&lt;URL_VERCEL&gt;</code></td>
+<td>Cumplido en el repositorio; el enlace se publica en T9</td>
+</tr>
+<tr>
+<td>S12 · Documentación navegable dentro del sitio (investigación, arquitectura, decisiones, pantallas, PDF)</td>
+<td><code>site/documentacion/index.html</code> y las cuatro páginas generadas</td>
+<td>Cumplido</td>
+</tr>
+<tr>
+<td>S12 · PDF ≤ 8 páginas con investigación, sitemap, user flow y justificación</td>
+<td><code>docs/informe.pdf</code> y <code>site/documentacion/informe.pdf</code> (8 páginas)</td>
+<td>Cumplido</td>
+</tr>
+</tbody></table></div>
+<h3 id="5-3-criterios-de-calidad-verificables">5.3. Criterios de calidad verificables</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Comando / evidencia</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Contraste AA en claro y oscuro</td>
+<td><code>node tests/contrast.mjs</code></td>
+<td>74 pares × 2 temas = 148/148</td>
+</tr>
+<tr>
+<td>axe-core sin violaciones serias/críticas</td>
+<td><code>pnpm exec playwright test tests/axe.spec.js</code></td>
+<td>66/66</td>
+</tr>
+<tr>
+<td>Hover de botones con etiqueta legible</td>
+<td><code>pnpm exec playwright test tests/button-contrast.spec.js</code></td>
+<td>33 páginas × 2 temas</td>
+</tr>
+<tr>
+<td>Suite completa (estructura, flujo, axe, movimiento)</td>
+<td><code>pnpm exec playwright test</code></td>
+<td>197/197</td>
+</tr>
+<tr>
+<td>Sin desbordamiento horizontal a 390/1440</td>
+<td><code>tests/smoke.spec.js</code></td>
+<td>33 páginas × 2 anchos</td>
+</tr>
+<tr>
+<td>Capturas de entrega</td>
+<td><code>node tests/capture.mjs</code></td>
+<td>32 PNG en <code>docs/assets/pantallas/</code></td>
+</tr>
+<tr>
+<td>PDF dentro del límite</td>
+<td><code>docs/informe.pdf</code> y <code>site/documentacion/informe.pdf</code></td>
+<td>8 páginas A4, texto seleccionable</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="6-limites-y-siguientes-pasos">6. Límites y siguientes pasos</h2>
+<ul>
+<li><strong>No hubo prueba de usabilidad con personas reales:</strong> no formaba parte de los extras elegidos. Las decisiones son hipótesis de diseño sustentadas en el análisis y deben validarse con al menos 5 usuarios.</li>
+<li><strong>Los datos son ficticios y el prototipo no tiene backend:</strong> el borrador y la cita viven en <code>sessionStorage</code>. En producción faltaría disponibilidad real, correo/WhatsApp transaccional y protección de datos.</li>
+<li><strong>La publicación en Vercel queda pendiente de confirmación del usuario (T9).</strong> El <code>README.md</code> y el PDF usan marcadores <code>&lt;URL_VERCEL&gt;</code> que se reemplazan al publicar.</li>
+<li><strong>Mantenimiento:</strong> al cambiar un token hay que actualizar <code>tests/contrast.mjs</code> y la tabla de la guía; al cambiar una pantalla, regenerar capturas con <code>node tests/capture.mjs</code> y el PDF con el script de <code>docs/informe.html</code>.</li>
+</ul>
+
+          </article>
+          <nav class="doc-pager" aria-label="Documentos relacionados"><a class="btn btn--secondary" href="arquitectura.html">← Arquitectura de información</a><a class="btn btn--primary" href="pantallas.html">Archivo de diseño →</a></nav>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

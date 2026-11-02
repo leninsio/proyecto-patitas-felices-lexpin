@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de estilos — Patitas Felices</title>
+  <meta name="description" content="Guía de estilos de Patitas Felices: paleta accesible, tipografía, iconografía, logo y estados de los componentes en modo claro y oscuro.">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/carousel.js" defer></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/style-guide.css">
+</head>
+<body>
+  <main id="main" tabindex="-1">
+    <section class="sg-hero">
+      <div class="container sg-hero__inner">
+        <p class="eyebrow">Sistema de diseño · Versión 1.0</p>
+        <h1>Guía de estilos de Patitas Felices</h1>
+        <p class="lead">La base visual del sitio: una paleta con contraste WCAG AA, tipografía Nunito, iconografía propia y componentes con todos sus estados. El modo claro y el oscuro comparten la misma estructura y las mismas reglas de accesibilidad.</p>
+        <div class="btn-row">
+          <a class="btn btn--inverse" href="#color">
+            Explorar la paleta
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+          </a>
+          <a class="btn btn--inverse" href="#accesibilidad">Revisar accesibilidad</a>
+        </div>
+        <p class="sg-hero__meta">Usa el botón de tema del encabezado para alternar entre claro y oscuro. La preferencia se guarda en este navegador.</p>
+      </div>
+    </section>
+
+    <nav class="sg-toc" aria-label="Contenido de la guía">
+      <div class="container">
+        <ul class="sg-toc__list">
+          <li><a class="sg-toc__link" href="#marca">Marca</a></li>
+          <li><a class="sg-toc__link" href="#color">Color</a></li>
+          <li><a class="sg-toc__link" href="#temas">Temas</a></li>
+          <li><a class="sg-toc__link" href="#tipografia">Tipografía</a></li>
+          <li><a class="sg-toc__link" href="#espaciado">Espaciado</a></li>
+          <li><a class="sg-toc__link" href="#iconos">Iconos</a></li>
+          <li><a class="sg-toc__link" href="#botones">Botones</a></li>
+          <li><a class="sg-toc__link" href="#formularios">Formularios</a></li>
+          <li><a class="sg-toc__link" href="#componentes">Componentes</a></li>
+          <li><a class="sg-toc__link" href="#accesibilidad">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="sg-section" id="marca">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">01 · Identidad</p>
+          <h2>Logo y favicon</h2>
+          <p>La marca usa una huella simple dentro de una placa verde azulado. La placa mantiene el contraste sobre fondos claros y oscuros, así que no necesita una versión alternativa por tema.</p>
+        </header>
+        <div class="sg-logo-grid">
+          <div class="sg-logo-preview" data-theme="light" style="background-color: var(--color-bg)">
+            <img src="assets/img/logo.svg" alt="Patitas Felices" width="256" height="56">
+          </div>
+          <div class="sg-logo-preview" data-theme="dark" style="background-color: var(--color-bg)">
+            <img src="assets/img/logo.svg" alt="Patitas Felices" width="256" height="56">
+          </div>
+        </div>
+        <div class="cluster" style="margin-block-start: var(--space-5)">
+          <img src="assets/img/favicon.svg" alt="Favicon de Patitas Felices" width="64" height="64">
+          <div class="stack" style="--stack-gap: var(--space-1)">
+            <p><strong>Archivos:</strong></p>
+            <p class="sg-code">site/assets/img/logo.svg · 256 × 56 px</p>
+            <p class="sg-code">site/assets/img/favicon.svg · 64 × 64 px</p>
+          </div>
+        </div>
+        <div class="sg-note" style="margin-block-start: var(--space-5)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-paw"></use></svg>
+          <p>Altura recomendada en el encabezado: 40 px. No deformar, no rotar y no aplicar sombras ni degradados sobre la placa. El texto del logo no se repite como imagen dentro de la página.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="color">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">02 · Color</p>
+          <h2>Paleta y contraste</h2>
+          <p>El verde azulado transmite confianza y cuidado; el ámbar aporta calidez y el rojo queda reservado para emergencias y errores. Los neutros tienen una ligera inclinación verde para integrarse con la marca.</p>
+        </header>
+
+        <div class="sg-theme-grid">
+          <article class="sg-theme" data-theme="light" aria-labelledby="palette-light-title">
+            <h3 class="sg-theme__label" id="palette-light-title">Tema claro</h3>
+            <div class="sg-swatch-grid">
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-bg)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-bg</span><span class="sg-swatch__hex">#F6FAF8</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-surface)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-surface</span><span class="sg-swatch__hex">#FFFFFF</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-surface-muted)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-surface-muted</span><span class="sg-swatch__hex">#EAF2EF</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-text)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-text</span><span class="sg-swatch__hex">#0E211E</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-text-muted)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-text-muted</span><span class="sg-swatch__hex">#4C625C</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary</span><span class="sg-swatch__hex">#0E6B5F</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary-ink)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary-ink</span><span class="sg-swatch__hex">#0E6B5F</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary-soft)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary-soft</span><span class="sg-swatch__hex">#D9F2EC</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-accent)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-accent</span><span class="sg-swatch__hex">#B45309</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-emergency)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-emergency</span><span class="sg-swatch__hex">#B42318</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-success)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-success</span><span class="sg-swatch__hex">#0B6B3A</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-warning)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-warning</span><span class="sg-swatch__hex">#8A5300</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-error)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-error</span><span class="sg-swatch__hex">#B42318</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-border-strong)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-border-strong</span><span class="sg-swatch__hex">#6D837D</span></div></div>
+            </div>
+          </article>
+
+          <article class="sg-theme" data-theme="dark" aria-labelledby="palette-dark-title">
+            <h3 class="sg-theme__label" id="palette-dark-title">Tema oscuro</h3>
+            <div class="sg-swatch-grid">
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-bg)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-bg</span><span class="sg-swatch__hex">#08110F</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-surface)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-surface</span><span class="sg-swatch__hex">#101D1A</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-surface-muted)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-surface-muted</span><span class="sg-swatch__hex">#172723</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-text)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-text</span><span class="sg-swatch__hex">#EAF4F0</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-text-muted)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-text-muted</span><span class="sg-swatch__hex">#AEC4BD</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary</span><span class="sg-swatch__hex">#2DD4BF</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary-ink)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary-ink</span><span class="sg-swatch__hex">#7CF2DD</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-primary-soft)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-primary-soft</span><span class="sg-swatch__hex">#103B35</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-accent)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-accent</span><span class="sg-swatch__hex">#C2410C</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-emergency)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-emergency</span><span class="sg-swatch__hex">#C81E1E</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-success)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-success</span><span class="sg-swatch__hex">#34D399</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-warning)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-warning</span><span class="sg-swatch__hex">#FBBF24</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-error)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-error</span><span class="sg-swatch__hex">#F97066</span></div></div>
+              <div class="sg-swatch"><div class="sg-swatch__chip" style="background-color: var(--color-border-strong)"></div><div class="sg-swatch__body"><span class="sg-swatch__name">--color-border-strong</span><span class="sg-swatch__hex">#7F9992</span></div></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="sg-note" style="margin-block-start: var(--space-6)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+          <p><strong>Regla de uso:</strong> el texto principal y los enlaces usan <span class="sg-code">--color-text</span> y <span class="sg-code">--color-primary-ink</span>. El rojo de emergencia nunca se usa como decoración. Las superficies suaves (<span class="sg-code">*-soft</span>) solo llevan texto oscuro o claro ya verificado.</p>
+        </div>
+
+        <h3 style="margin-block: var(--space-8) var(--space-3)">Ratios de contraste medidos</h3>
+        <p class="text-muted" style="margin-block-end: var(--space-3)">Valores calculados sobre los hexadecimales de <span class="sg-code">tokens.css</span>. Todos superan el mínimo WCAG AA.</p>
+        <!-- Ratios computed from tokens.css by tests/contrast.mjs; update both together. -->
+        <div class="sg-ratio-wrap" tabindex="0" role="region" aria-label="Ratios de contraste medidos">
+          <table class="sg-ratio-table">
+            <caption>Contraste por combinación de tokens</caption>
+            <thead>
+              <tr>
+                <th scope="col">Combinación</th>
+                <th scope="col">Mínimo</th>
+                <th scope="col">Claro</th>
+                <th scope="col">Oscuro</th>
+                <th scope="col">Resultado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Texto principal / fondo</td><td>4.5:1</td><td class="sg-ratio">15.90</td><td class="sg-ratio">17.04</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Texto secundario / fondo</td><td>4.5:1</td><td class="sg-ratio">6.22</td><td class="sg-ratio">10.42</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Enlace / superficie</td><td>4.5:1</td><td class="sg-ratio">6.39</td><td class="sg-ratio">12.87</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Botón primario</td><td>4.5:1</td><td class="sg-ratio">6.39</td><td class="sg-ratio">9.09</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Botón primario en hover</td><td>4.5:1</td><td class="sg-ratio">8.82</td><td class="sg-ratio">11.44</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Relleno de acento</td><td>4.5:1</td><td class="sg-ratio">5.02</td><td class="sg-ratio">5.18</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Botón de emergencia</td><td>4.5:1</td><td class="sg-ratio">6.57</td><td class="sg-ratio">5.74</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Alerta de éxito</td><td>4.5:1</td><td class="sg-ratio">7.21</td><td class="sg-ratio">9.77</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Alerta de aviso</td><td>4.5:1</td><td class="sg-ratio">7.97</td><td class="sg-ratio">10.26</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Alerta de error</td><td>4.5:1</td><td class="sg-ratio">7.15</td><td class="sg-ratio">9.86</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Alerta informativa</td><td>4.5:1</td><td class="sg-ratio">7.97</td><td class="sg-ratio">10.11</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Encabezado</td><td>4.5:1</td><td class="sg-ratio">16.73</td><td class="sg-ratio">16.16</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Pie de página</td><td>4.5:1</td><td class="sg-ratio">14.45</td><td class="sg-ratio">16.81</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Pie de página secundario</td><td>4.5:1</td><td class="sg-ratio">9.35</td><td class="sg-ratio">10.04</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Día no disponible</td><td>4.5:1</td><td class="sg-ratio">5.05</td><td class="sg-ratio">6.64</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Borde de campo</td><td>3:1</td><td class="sg-ratio">4.04</td><td class="sg-ratio">5.67</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Anillo de foco</td><td>3:1</td><td class="sg-ratio">6.39</td><td class="sg-ratio">11.71</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Control deshabilitado</td><td>3:1</td><td class="sg-ratio">4.69</td><td class="sg-ratio">5.58</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+              <tr><td>Texto sobre hero</td><td>4.5:1</td><td class="sg-ratio">12.11</td><td class="sg-ratio">13.20</td><td><span class="sg-pass"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>AA</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sg-footer-note">La auditoría completa cubre 74 pares en ambos temas (148 comprobaciones). Se ejecuta con <span class="sg-code">node tests/contrast.mjs</span> y falla con código de salida distinto de cero si algún par baja del mínimo.</p>
+      </div>
+    </section>
+
+    <section class="sg-section" id="temas">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">03 · Temas</p>
+          <h2>Los mismos componentes en claro y oscuro</h2>
+          <p>La estructura, el espaciado y las jerarquías no cambian entre temas. Solo cambian los valores de color, y cada combinación se verifica por separado. El resto de la guía sigue el tema activo del encabezado; aquí se muestran ambos a la vez.</p>
+        </header>
+
+        <div class="sg-theme-grid">
+          <article class="sg-theme" data-theme="light" aria-labelledby="theme-light-title">
+            <h3 class="sg-theme__label" id="theme-light-title">Tema claro</h3>
+            <div class="card">
+              <div class="card__body">
+                <span class="badge badge--success">Disponible</span>
+                <h4 class="card__title">Consulta general</h4>
+                <p class="card__text">Evaluación completa y plan de cuidado para tu mascota.</p>
+                <div class="field">
+                  <label class="field__label" for="theme-light-name">Nombre de la mascota</label>
+                  <input class="input" id="theme-light-name" type="text" placeholder="Ej. Luna">
+                </div>
+                <div class="btn-row">
+                  <button class="btn btn--primary" type="button">Agendar cita</button>
+                  <button class="btn btn--secondary" type="button">Ver detalle</button>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert--warning" role="note" style="margin-block-start: var(--space-3)">
+              <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+              <div class="alert__content">
+                <p class="alert__title">Horario por confirmar</p>
+                <p class="alert__text">Selecciona otra hora para continuar.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="sg-theme" data-theme="dark" aria-labelledby="theme-dark-title">
+            <h3 class="sg-theme__label" id="theme-dark-title">Tema oscuro</h3>
+            <div class="card">
+              <div class="card__body">
+                <span class="badge badge--success">Disponible</span>
+                <h4 class="card__title">Consulta general</h4>
+                <p class="card__text">Evaluación completa y plan de cuidado para tu mascota.</p>
+                <div class="field">
+                  <label class="field__label" for="theme-dark-name">Nombre de la mascota</label>
+                  <input class="input" id="theme-dark-name" type="text" placeholder="Ej. Luna">
+                </div>
+                <div class="btn-row">
+                  <button class="btn btn--primary" type="button">Agendar cita</button>
+                  <button class="btn btn--secondary" type="button">Ver detalle</button>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert--warning" role="note" style="margin-block-start: var(--space-3)">
+              <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+              <div class="alert__content">
+                <p class="alert__title">Horario por confirmar</p>
+                <p class="alert__text">Selecciona otra hora para continuar.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="sg-note" style="margin-block-start: var(--space-6)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+          <p>El modo oscuro no invierte los colores: redefine tokens semánticos para conservar el contraste, la jerarquía y el significado de cada color.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="tipografia">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">04 · Tipografía</p>
+          <h2>Nunito, cercana y legible</h2>
+          <p>Una sola familia con cuatro pesos. La base es de 16 px y la escala usa <span class="sg-code">rem</span> para respetar el tamaño de fuente del navegador. Los títulos llevan <span class="sg-code">text-wrap: balance</span> y los párrafos <span class="sg-code">pretty</span>.</p>
+        </header>
+
+        <div class="sg-panel">
+          <p class="sg-panel__meta">Familia · Nunito, autoalojada</p>
+          <p style="font-size: var(--text-3xl); font-weight: var(--weight-extrabold); margin-block: var(--space-2)">Nunito</p>
+          <p class="text-muted">Pesos disponibles: 400, 600, 700 y 800. Respaldo: Segoe UI, system-ui, sans-serif. La fuente se carga una sola vez desde <span class="sg-code">tokens.css</span> y se sirve desde <span class="sg-code">assets/fonts/</span>.</p>
+          <div class="cluster" style="margin-block-start: var(--space-4)">
+            <span class="sg-weight-regular">Regular 400</span>
+            <span class="sg-weight-semibold">Semibold 600</span>
+            <span class="sg-weight-bold">Bold 700</span>
+            <span class="sg-weight-extrabold">Extrabold 800</span>
+          </div>
+        </div>
+
+        <div style="margin-block-start: var(--space-6)">
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-display</span><span>clamp 40–60 px</span><span>800 / 1.15</span></div>
+            <p class="sg-type-row__sample sg-text-display">Cuidamos a quien más quieres.</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-5xl</span><span>48 px</span><span>800 / 1.15</span></div>
+            <p class="sg-type-row__sample sg-text-5xl">Un título principal</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-4xl</span><span>36 px</span><span>800 / 1.15</span></div>
+            <p class="sg-type-row__sample sg-text-4xl">Título de sección</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-3xl</span><span>30 px</span><span>800 / 1.15</span></div>
+            <p class="sg-type-row__sample sg-text-3xl">Título de bloque</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-2xl</span><span>24 px</span><span>800 / 1.35</span></div>
+            <p class="sg-type-row__sample sg-text-2xl">Nombre de tarjeta o servicio</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-xl</span><span>20 px</span><span>700 / 1.35</span></div>
+            <p class="sg-type-row__sample sg-text-xl">Subtítulo de apoyo</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-lg</span><span>18 px</span><span>400 / 1.35</span></div>
+            <p class="sg-type-row__sample sg-text-lg">Párrafo introductorio o lead: explica el beneficio principal sin competir con el título.</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-base</span><span>16 px</span><span>400 / 1.6</span></div>
+            <p class="sg-type-row__sample sg-text-base">Texto de cuerpo. Es el tamaño mínimo para lectura continua en el sitio; nunca se reduce por debajo de 16 px en párrafos y campos de formulario.</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-sm</span><span>14 px</span><span>400 / 1.35</span></div>
+            <p class="sg-type-row__sample sg-text-sm">Texto auxiliar, ayudas de campo, metadatos y notas legales.</p>
+          </div>
+          <div class="sg-type-row">
+            <div class="sg-type-row__meta"><span>--text-xs</span><span>12 px</span><span>700 / 1.2</span></div>
+            <p class="sg-type-row__sample sg-text-xs">ETIQUETAS EN MAYÚSCULAS Y CONTADORES</p>
+          </div>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr; margin-block-start: var(--space-7); --grid-gap: var(--space-5)">
+          <div class="sg-panel">
+            <p class="eyebrow">Muestra editorial</p>
+            <h3 style="margin-block: var(--space-2)">Párrafo, enlace y énfasis</h3>
+            <p class="lead">La jerarquía se apoya en tamaño, peso y espacio, no en mayúsculas ni colores adicionales.</p>
+            <p style="margin-block-start: var(--space-3)">Cada visita empieza con una conversación. Revisamos <strong>signos vitales, peso y hábitos</strong> para entender qué necesita tu mascota. Si quieres conocer el proceso, consulta la <a href="#botones">página de servicios</a>.</p>
+            <p class="text-muted" style="margin-block-start: var(--space-3)">Texto secundario: precios referenciales, notas y horarios.</p>
+            <p class="sg-text-subtle" style="margin-block-start: var(--space-3)">Texto sutil reservado a tamaños grandes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="espaciado">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">05 · Ritmo</p>
+          <h2>Espaciado, radios, sombras y movimiento</h2>
+          <p>La escala parte de 4 px. Los radios redondeados suavizan la marca sin volverla infantil; las sombras elevan solo lo interactivo o lo que flota sobre el contenido.</p>
+        </header>
+
+        <h3>Espaciado</h3>
+        <div class="sg-token-grid" style="margin-block-start: var(--space-3)">
+          <div class="sg-token"><span class="sg-token__name">--space-1</span><span class="sg-token__value">4 px</span><span class="sg-space-demo" style="width: var(--space-1)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-2</span><span class="sg-token__value">8 px</span><span class="sg-space-demo" style="width: var(--space-2)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-3</span><span class="sg-token__value">12 px</span><span class="sg-space-demo" style="width: var(--space-3)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-4</span><span class="sg-token__value">16 px</span><span class="sg-space-demo" style="width: var(--space-4)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-6</span><span class="sg-token__value">24 px</span><span class="sg-space-demo" style="width: var(--space-6)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-8</span><span class="sg-token__value">40 px</span><span class="sg-space-demo" style="width: var(--space-8)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-10</span><span class="sg-token__value">64 px</span><span class="sg-space-demo" style="width: var(--space-10)"></span></div>
+          <div class="sg-token"><span class="sg-token__name">--space-12</span><span class="sg-token__value">96 px</span><span class="sg-space-demo" style="width: var(--space-12)"></span></div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Radios</h3>
+        <div class="cluster" style="margin-block-start: var(--space-3); align-items: flex-end">
+          <div class="stack"><span class="sg-token__name">--radius-sm</span><div class="sg-radius-demo" style="border-radius: var(--radius-sm)"></div></div>
+          <div class="stack"><span class="sg-token__name">--radius-md</span><div class="sg-radius-demo" style="border-radius: var(--radius-md)"></div></div>
+          <div class="stack"><span class="sg-token__name">--radius-lg</span><div class="sg-radius-demo" style="border-radius: var(--radius-lg)"></div></div>
+          <div class="stack"><span class="sg-token__name">--radius-xl</span><div class="sg-radius-demo" style="border-radius: var(--radius-xl)"></div></div>
+          <div class="stack"><span class="sg-token__name">--radius-pill</span><div class="sg-radius-demo" style="border-radius: var(--radius-pill)"></div></div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Sombras</h3>
+        <div class="sg-token-grid" style="margin-block-start: var(--space-3)">
+          <div class="sg-shadow-demo sg-shadow-xs">--shadow-xs</div>
+          <div class="sg-shadow-demo sg-shadow-sm">--shadow-sm</div>
+          <div class="sg-shadow-demo sg-shadow-md">--shadow-md</div>
+          <div class="sg-shadow-demo sg-shadow-lg">--shadow-lg</div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Movimiento</h3>
+        <div class="sg-token-grid" style="margin-block-start: var(--space-3)">
+          <div class="sg-token"><span class="sg-token__name">--duration-fast</span><span class="sg-token__value">120 ms</span><span class="sg-panel__meta">Hover y foco</span></div>
+          <div class="sg-token"><span class="sg-token__name">--duration-base</span><span class="sg-token__value">180 ms</span><span class="sg-panel__meta">Cambio de tema, tarjetas</span></div>
+          <div class="sg-token"><span class="sg-token__name">--duration-slow</span><span class="sg-token__value">260 ms</span><span class="sg-panel__meta">Modal y paneles</span></div>
+          <div class="sg-token"><span class="sg-token__name">--ease-standard</span><span class="sg-token__value">cubic-bezier(.2,.7,.3,1)</span><span class="sg-panel__meta">Curva base</span></div>
+        </div>
+        <div class="sg-note" style="margin-block-start: var(--space-5)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+          <p>Con <span class="sg-code">prefers-reduced-motion: reduce</span> se desactivan las transiciones y las animaciones; el contenido y los estados siguen siendo visibles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="iconos">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">06 · Iconografía</p>
+          <h2>Iconos de trazo consistentes</h2>
+          <p>Set de <strong>Lucide</strong> (ISC) de 24 × 24 px, trazo de 2 px y extremos redondeados. El glifo de WhatsApp es de <strong>Simple Icons</strong> (CC0) y usa relleno. El sprite se genera con <span class="sg-code">tests/build-icons.mjs</span>, se inyecta desde <span class="sg-code">layout.js</span> y se reutiliza con <span class="sg-code">&lt;use&gt;</span>. Todos los iconos decorativos llevan <span class="sg-code">aria-hidden="true"</span>.</p>
+        </header>
+
+        <div class="sg-icon-grid">
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-paw"></use></svg><span class="sg-icon__name">paw-print</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg><span class="sg-icon__name">calendar</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg><span class="sg-icon__name">clock</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg><span class="sg-icon__name">phone</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg><span class="sg-icon__name">whatsapp</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-map-pin"></use></svg><span class="sg-icon__name">map-pin</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-syringe"></use></svg><span class="sg-icon__name">syringe</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-scissors"></use></svg><span class="sg-icon__name">scissors</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stethoscope"></use></svg><span class="sg-icon__name">stethoscope</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart-pulse"></use></svg><span class="sg-icon__name">heart-pulse</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg><span class="sg-icon__name">triangle-alert</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span class="sg-icon__name">check</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg><span class="sg-icon__name">arrow-right</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-menu"></use></svg><span class="sg-icon__name">menu</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg><span class="sg-icon__name">x</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-sun"></use></svg><span class="sg-icon__name">sun</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-moon"></use></svg><span class="sg-icon__name">moon</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-left"></use></svg><span class="sg-icon__name">chevron-left</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-right"></use></svg><span class="sg-icon__name">chevron-right</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-star"></use></svg><span class="sg-icon__name">star</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-heart"></use></svg><span class="sg-icon__name">heart</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow-left"></use></svg><span class="sg-icon__name">arrow-left</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-mail"></use></svg><span class="sg-icon__name">mail</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-download"></use></svg><span class="sg-icon__name">download</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-info"></use></svg><span class="sg-icon__name">info</span></div>
+          <div class="sg-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-user"></use></svg><span class="sg-icon__name">user</span></div>
+        </div>
+        <div class="sg-note" style="margin-block-start: var(--space-4)">
+          <p>Créditos: <strong>Lucide</strong> v1.65.0, licencia ISC (<a href="https://lucide.dev/license">lucide.dev/license</a>) y <strong>Simple Icons</strong> v16.36.0, licencia CC0 (<a href="https://simpleicons.org/">simpleicons.org</a>).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="botones">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">07 · Acciones</p>
+          <h2>Botones y estados</h2>
+          <p>Cuatro variantes con una jerarquía clara: primaria para la acción principal, secundaria para alternativas, fantasma para acciones discretas y emergencia solo para atención urgente. Altura mínima táctil: 48 px.</p>
+        </header>
+
+        <div class="sg-panel">
+          <p class="sg-panel__title">Uso en contexto</p>
+          <p class="sg-panel__meta" style="margin-block: var(--space-1) var(--space-4)">Interactúa con ellos para ver hover, active y focus reales.</p>
+          <div class="sg-inline-group">
+            <button class="btn btn--primary" type="button">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+              Agendar cita
+            </button>
+            <button class="btn btn--secondary" type="button">Ver disponibilidad</button>
+            <button class="btn btn--ghost" type="button">
+              Ver servicios
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+            </button>
+            <a class="btn btn--emergency" href="tel:+584125550198">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+              Emergencia
+            </a>
+            <button class="btn btn--ghost btn--icon" type="button" aria-label="Ver calendario">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="sg-button-matrix" style="margin-block-start: var(--space-6)">
+          <div>
+            <h3>Primario</h3>
+            <div class="sg-state-grid">
+              <div class="sg-state"><span class="sg-state__label">Default</span><button class="btn btn--primary" type="button">Agendar cita</button></div>
+              <div class="sg-state"><span class="sg-state__label">Hover</span><button class="btn btn--primary is-hover" type="button">Agendar cita</button></div>
+              <div class="sg-state"><span class="sg-state__label">Active</span><button class="btn btn--primary is-active" type="button">Agendar cita</button></div>
+              <div class="sg-state"><span class="sg-state__label">Focus</span><button class="btn btn--primary is-focus-visible" type="button">Agendar cita</button></div>
+              <div class="sg-state"><span class="sg-state__label">Disabled</span><button class="btn btn--primary" type="button" disabled>Agendar cita</button></div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Secundario</h3>
+            <div class="sg-state-grid">
+              <div class="sg-state"><span class="sg-state__label">Default</span><button class="btn btn--secondary" type="button">Ver horarios</button></div>
+              <div class="sg-state"><span class="sg-state__label">Hover</span><button class="btn btn--secondary is-hover" type="button">Ver horarios</button></div>
+              <div class="sg-state"><span class="sg-state__label">Active</span><button class="btn btn--secondary is-active" type="button">Ver horarios</button></div>
+              <div class="sg-state"><span class="sg-state__label">Focus</span><button class="btn btn--secondary is-focus-visible" type="button">Ver horarios</button></div>
+              <div class="sg-state"><span class="sg-state__label">Disabled</span><button class="btn btn--secondary" type="button" disabled>Ver horarios</button></div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Fantasma</h3>
+            <div class="sg-state-grid">
+              <div class="sg-state"><span class="sg-state__label">Default</span><button class="btn btn--ghost" type="button">Más información</button></div>
+              <div class="sg-state"><span class="sg-state__label">Hover</span><button class="btn btn--ghost is-hover" type="button">Más información</button></div>
+              <div class="sg-state"><span class="sg-state__label">Active</span><button class="btn btn--ghost is-active" type="button">Más información</button></div>
+              <div class="sg-state"><span class="sg-state__label">Focus</span><button class="btn btn--ghost is-focus-visible" type="button">Más información</button></div>
+              <div class="sg-state"><span class="sg-state__label">Disabled</span><button class="btn btn--ghost" type="button" disabled>Más información</button></div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Emergencia</h3>
+            <div class="sg-state-grid">
+              <div class="sg-state"><span class="sg-state__label">Default</span><button class="btn btn--emergency" type="button">Llamar ahora</button></div>
+              <div class="sg-state"><span class="sg-state__label">Hover</span><button class="btn btn--emergency is-hover" type="button">Llamar ahora</button></div>
+              <div class="sg-state"><span class="sg-state__label">Active</span><button class="btn btn--emergency is-active" type="button">Llamar ahora</button></div>
+              <div class="sg-state"><span class="sg-state__label">Focus</span><button class="btn btn--emergency is-focus-visible" type="button">Llamar ahora</button></div>
+              <div class="sg-state"><span class="sg-state__label">Disabled</span><button class="btn btn--emergency" type="button" disabled>Llamar ahora</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-note" style="margin-block-start: var(--space-6)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+          <p>Los estados <em>hover</em>, <em>active</em> y <em>focus</em> de esta tabla están forzados con las clases <span class="sg-code">is-hover</span>, <span class="sg-code">is-active</span> e <span class="sg-code">is-focus-visible</span> solo para documentación. En producción se usan los pseudoestados reales y <span class="sg-code">:focus-visible</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="formularios">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">08 · Formularios</p>
+          <h2>Campos, errores y selección</h2>
+          <p>Todos los campos tienen etiqueta visible, altura mínima de 48 px y borde de 2 px. El error se comunica con texto, <span class="sg-code">aria-invalid</span> y <span class="sg-code">aria-describedby</span>, nunca solo con color.</p>
+        </header>
+
+        <div class="sg-panel">
+          <form class="grid" style="--grid-gap: var(--space-5)" novalidate>
+            <div class="field">
+              <label class="field__label" for="demo-name">Nombre del dueño</label>
+              <input class="input" id="demo-name" name="demo-name" type="text" autocomplete="name" placeholder="Ej. Ana Pérez">
+              <p class="field__hint">Como aparece en tu documento de identidad.</p>
+            </div>
+
+            <div class="field field--error">
+              <label class="field__label" for="demo-phone">Teléfono <span class="field__required">*</span></label>
+              <input class="input" id="demo-phone" name="demo-phone" type="tel" inputmode="tel" autocomplete="tel" value="412-55" required aria-invalid="true" aria-describedby="demo-phone-error">
+              <p class="field__error" id="demo-phone-error">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                <span>Escribe un teléfono válido de 11 dígitos. Ejemplo: 0412-5550198 o 0212-5551234.</span>
+              </p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-email">Correo electrónico <span class="field__optional">(opcional)</span></label>
+              <input class="input" id="demo-email" name="demo-email" type="email" autocomplete="email" placeholder="nombre@correo.com">
+              <p class="field__hint">Lo usamos solo para enviar el resumen de la cita.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-service">Servicio</label>
+              <div class="select-wrap">
+                <select class="select" id="demo-service" name="demo-service">
+                  <option value="">Selecciona un servicio</option>
+                  <option>Consulta general</option>
+                  <option>Vacunación</option>
+                  <option>Cirugía</option>
+                  <option>Peluquería</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-message">Motivo de la visita <span class="field__optional">(opcional)</span></label>
+              <textarea class="textarea" id="demo-message" name="demo-message" placeholder="Cuéntanos qué observaste en tu mascota."></textarea>
+              <p class="field__hint">Máximo 300 caracteres.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-disabled">Documento de identidad</label>
+              <input class="input" id="demo-disabled" type="text" value="No disponible en la demostración" disabled>
+              <p class="field__hint">Este campo muestra el estado deshabilitado.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="demo-focus">Campo con foco visible</label>
+              <input class="input is-focus" id="demo-focus" type="text" value="Foco de demostración">
+              <p class="field__hint">Vista forzada de <span class="sg-code">:focus</span> para la guía.</p>
+            </div>
+
+            <fieldset class="field">
+              <legend class="field__label">Tipo de mascota</legend>
+              <div class="grid" style="--grid-gap: var(--space-3); grid-template-columns: 1fr">
+                <label class="radio-card">
+                  <input class="radio-card__input" type="radio" name="demo-pet" value="perro" checked>
+                  <span class="radio-card__body">
+                    <span class="radio-card__copy">
+                      <span class="radio-card__title">Perro</span>
+                      <span class="radio-card__meta">Consulta general, vacunas y peluquería.</span>
+                    </span>
+                    <span class="radio-card__indicator" aria-hidden="true"></span>
+                  </span>
+                </label>
+                <label class="radio-card">
+                  <input class="radio-card__input" type="radio" name="demo-pet" value="gato">
+                  <span class="radio-card__body">
+                    <span class="radio-card__copy">
+                      <span class="radio-card__title">Gato</span>
+                      <span class="radio-card__meta">Manejo de bajo estrés y medicina felina.</span>
+                    </span>
+                    <span class="radio-card__indicator" aria-hidden="true"></span>
+                  </span>
+                </label>
+                <label class="radio-card is-focus">
+                  <input class="radio-card__input" type="radio" name="demo-pet" value="exotica">
+                  <span class="radio-card__body">
+                    <span class="radio-card__copy">
+                      <span class="radio-card__title">Mascota exótica</span>
+                      <span class="radio-card__meta">Vista forzada de foco sobre la tarjeta.</span>
+                    </span>
+                    <span class="radio-card__indicator" aria-hidden="true"></span>
+                  </span>
+                </label>
+                <label class="radio-card">
+                  <input class="radio-card__input" type="radio" name="demo-pet" value="cirugia" disabled>
+                  <span class="radio-card__body">
+                    <span class="radio-card__copy">
+                      <span class="radio-card__title">Cirugía programada</span>
+                      <span class="radio-card__meta">Requiere evaluación previa del veterinario.</span>
+                    </span>
+                    <span class="radio-card__indicator" aria-hidden="true"></span>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="demo-reminders" checked>
+                <span class="checkbox__label">Quiero recibir recordatorios de vacunas por WhatsApp.</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn--primary" type="button">Continuar</button>
+              <button class="btn btn--secondary" type="button">Guardar borrador</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="sg-note" style="margin-block-start: var(--space-5)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+          <p><strong>Error accesible:</strong> el campo inválido combina <span class="sg-code">aria-invalid="true"</span>, borde rojo, ícono y un mensaje con <span class="sg-code">aria-describedby</span>. El color nunca es la única señal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="componentes">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">09 · Componentes</p>
+          <h2>Tarjetas, badges, pasos, calendario y avisos</h2>
+          <p>Los mismos componentes se reutilizan en todas las pantallas. Las tarjetas elevan al pasar el cursor solo si son interactivas; el calendario y los horarios usan botones reales con estados seleccionados y no disponibles.</p>
+        </header>
+
+        <h3>Tarjetas de servicio</h3>
+        <div class="sg-card-grid" style="margin-block-start: var(--space-3)">
+          <article class="card card--interactive">
+            <div class="card__body">
+              <span class="badge badge--primary">Más solicitado</span>
+              <h4 class="card__title"><a href="#componentes">Consulta general</a></h4>
+              <p class="card__text">Evaluación completa, signos vitales y plan de cuidado para tu mascota.</p>
+              <p class="card__meta">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                30 min
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-stethoscope"></use></svg>
+                Medicina general
+              </p>
+            </div>
+            <div class="card__footer">
+              <p><strong>Desde $25</strong><br><span class="text-muted">o su equivalente en Bs a tasa BCV del día</span></p>
+              <a class="btn btn--ghost" href="#componentes">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="card card--interactive">
+            <div class="card__body">
+              <span class="badge badge--accent">Prevención</span>
+              <h4 class="card__title"><a href="#componentes">Vacunación</a></h4>
+              <p class="card__text">Esquema completo y refuerzos con registro digital para cada mascota.</p>
+              <p class="card__meta">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                20 min
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-syringe"></use></svg>
+                Inmunización
+              </p>
+            </div>
+            <div class="card__footer">
+              <p><strong>Desde $35</strong><br><span class="text-muted">según la vacuna indicada</span></p>
+              <a class="btn btn--ghost" href="#componentes">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="card card--interactive">
+            <div class="card__body">
+              <span class="badge">Bienestar</span>
+              <h4 class="card__title"><a href="#componentes">Peluquería</a></h4>
+              <p class="card__text">Baño, corte y cuidado de piel con productos hipoalergénicos.</p>
+              <p class="card__meta">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+                60 min
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-scissors"></use></svg>
+                Estética
+              </p>
+            </div>
+            <div class="card__footer">
+              <p><strong>Desde $20</strong><br><span class="text-muted">según tamaño y pelaje</span></p>
+              <a class="btn btn--ghost" href="#componentes">Ver detalle</a>
+            </div>
+          </article>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Badges</h3>
+        <div class="sg-inline-group" style="margin-block-start: var(--space-3)">
+          <span class="badge">General</span>
+          <span class="badge badge--primary">Primario</span>
+          <span class="badge badge--accent">Acento</span>
+          <span class="badge badge--success">Disponible</span>
+          <span class="badge badge--warning">Por confirmar</span>
+          <span class="badge badge--error">Cancelada</span>
+          <span class="badge badge--emergency">Emergencia</span>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Stepper de agendamiento</h3>
+        <div class="sg-panel" style="margin-block-start: var(--space-3)">
+          <div class="stepper">
+            <ol class="stepper__list" aria-label="Pasos del agendamiento">
+              <li class="stepper__item is-complete">
+                <span class="stepper__marker"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg></span>
+                <span class="stepper__label">Servicio y mascota</span>
+                <span class="stepper__hint">Completado</span>
+              </li>
+              <li class="stepper__item" aria-current="step">
+                <span class="stepper__marker">2</span>
+                <span class="stepper__label">Fecha y hora</span>
+                <span class="stepper__hint">Paso actual</span>
+              </li>
+              <li class="stepper__item">
+                <span class="stepper__marker">3</span>
+                <span class="stepper__label">Datos del dueño</span>
+                <span class="stepper__hint">Pendiente</span>
+              </li>
+            </ol>
+            <span class="stepper__line stepper__line--1 is-complete" aria-hidden="true"></span>
+            <span class="stepper__line stepper__line--2" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Calendario con disponibilidad</h3>
+        <div class="sg-calendar-demo" style="margin-block-start: var(--space-3)">
+          <div class="calendar" role="group" aria-label="Calendario de disponibilidad de noviembre de 2026">
+            <div class="calendar__header">
+              <p class="calendar__month">Noviembre 2026</p>
+              <div class="calendar__nav">
+                <button class="btn btn--ghost btn--icon calendar__nav-btn" type="button" aria-label="Mes anterior">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-left"></use></svg>
+                </button>
+                <button class="btn btn--ghost btn--icon calendar__nav-btn" type="button" aria-label="Mes siguiente">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-right"></use></svg>
+                </button>
+              </div>
+            </div>
+            <div class="calendar__body">
+              <div class="calendar__weekdays" aria-hidden="true">
+                <span class="calendar__weekday">L</span>
+                <span class="calendar__weekday">M</span>
+                <span class="calendar__weekday">X</span>
+                <span class="calendar__weekday">J</span>
+                <span class="calendar__weekday">V</span>
+                <span class="calendar__weekday">S</span>
+                <span class="calendar__weekday">D</span>
+              </div>
+              <div class="calendar__grid">
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <button class="calendar-day" type="button" aria-label="1 de noviembre, disponible">1</button>
+                <button class="calendar-day" type="button" aria-label="2 de noviembre, disponible">2</button>
+                <button class="calendar-day" type="button" aria-label="3 de noviembre, disponible">3</button>
+                <button class="calendar-day" type="button" aria-label="4 de noviembre, disponible">4</button>
+                <button class="calendar-day calendar-day--today" type="button" aria-label="5 de noviembre, hoy, disponible">5</button>
+                <button class="calendar-day" type="button" aria-label="6 de noviembre, disponible">6</button>
+                <button class="calendar-day" type="button" disabled aria-label="7 de noviembre, no disponible">7</button>
+                <button class="calendar-day" type="button" disabled aria-label="8 de noviembre, no disponible">8</button>
+                <button class="calendar-day" type="button" aria-label="9 de noviembre, disponible">9</button>
+                <button class="calendar-day" type="button" aria-label="10 de noviembre, disponible">10</button>
+                <button class="calendar-day" type="button" aria-label="11 de noviembre, disponible">11</button>
+                <button class="calendar-day" type="button" aria-pressed="true" aria-label="12 de noviembre, seleccionado">12</button>
+                <button class="calendar-day" type="button" aria-label="13 de noviembre, disponible">13</button>
+                <button class="calendar-day" type="button" disabled aria-label="14 de noviembre, no disponible">14</button>
+                <button class="calendar-day" type="button" disabled aria-label="15 de noviembre, no disponible">15</button>
+                <button class="calendar-day" type="button" aria-label="16 de noviembre, disponible">16</button>
+                <button class="calendar-day" type="button" aria-label="17 de noviembre, disponible">17</button>
+                <button class="calendar-day" type="button" aria-label="18 de noviembre, disponible">18</button>
+                <button class="calendar-day" type="button" aria-label="19 de noviembre, disponible">19</button>
+                <button class="calendar-day" type="button" aria-label="20 de noviembre, disponible">20</button>
+                <button class="calendar-day" type="button" disabled aria-label="21 de noviembre, no disponible">21</button>
+                <button class="calendar-day" type="button" aria-label="22 de noviembre, disponible">22</button>
+                <button class="calendar-day" type="button" aria-label="23 de noviembre, disponible">23</button>
+                <button class="calendar-day" type="button" aria-label="24 de noviembre, disponible">24</button>
+                <button class="calendar-day" type="button" aria-label="25 de noviembre, disponible">25</button>
+                <button class="calendar-day" type="button" aria-label="26 de noviembre, disponible">26</button>
+                <button class="calendar-day" type="button" aria-label="27 de noviembre, disponible">27</button>
+                <button class="calendar-day" type="button" aria-label="28 de noviembre, disponible">28</button>
+                <button class="calendar-day" type="button" aria-label="29 de noviembre, disponible">29</button>
+                <button class="calendar-day" type="button" aria-label="30 de noviembre, disponible">30</button>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+                <span class="calendar-day calendar-day--outside" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="calendar__legend">
+              <span class="calendar__legend-item"><span class="calendar__legend-swatch"></span>Disponible</span>
+              <span class="calendar__legend-item"><span class="calendar__legend-swatch calendar__legend-swatch--selected"></span>Seleccionado</span>
+              <span class="calendar__legend-item"><span class="calendar__legend-swatch calendar__legend-swatch--unavailable"></span>No disponible</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Horarios</h3>
+        <div class="slot-grid" style="margin-block-start: var(--space-3); max-width: 34rem" role="group" aria-label="Horarios de la mañana">
+          <button class="slot" type="button" aria-pressed="true">9:00</button>
+          <button class="slot" type="button">9:30</button>
+          <button class="slot" type="button" disabled>10:00</button>
+          <button class="slot" type="button">10:30</button>
+          <button class="slot" type="button">11:00</button>
+          <button class="slot" type="button" disabled>11:30</button>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Alertas</h3>
+        <div class="grid" style="margin-block-start: var(--space-3); --grid-gap: var(--space-3)">
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Cita confirmada</p>
+              <p class="alert__text">Te enviamos el resumen por WhatsApp. Llega 10 minutos antes con la cartilla de vacunas.</p>
+            </div>
+          </div>
+          <div class="alert alert--warning" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Horario por confirmar</p>
+              <p class="alert__text">El horario elegido ya no está disponible. Selecciona otra hora para continuar.</p>
+            </div>
+          </div>
+          <div class="alert alert--error" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Revisa los datos</p>
+              <p class="alert__text">El teléfono debe tener 11 dígitos. Corrige el campo marcado para continuar.</p>
+            </div>
+          </div>
+          <div class="alert alert--info" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Emergencias 24/7</p>
+              <p class="alert__text">Si tu mascota tiene dificultad para respirar, convulsiones o sangrado, llama de inmediato al <a href="tel:+584125550198">+58 412 555 0198</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Modal</h3>
+        <div class="sg-panel" style="margin-block-start: var(--space-3)">
+          <p class="sg-panel__meta">Diálogo nativo con foco atrapado, cierre con Esc y clic en el fondo.</p>
+          <button class="btn btn--primary" type="button" data-modal-open="sg-modal" style="margin-block-start: var(--space-3)">Abrir modal de ejemplo</button>
+        </div>
+
+        <dialog class="modal" id="sg-modal" aria-labelledby="sg-modal-title">
+          <div class="modal__header">
+            <h3 class="modal__title" id="sg-modal-title">Confirmar cita</h3>
+            <button class="btn btn--ghost btn--icon" type="button" data-modal-close aria-label="Cerrar modal">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg>
+            </button>
+          </div>
+          <div class="modal__body">
+            <p>Revisa el resumen antes de confirmar. Puedes volver al paso anterior sin perder los datos que ya llenaste.</p>
+            <div class="alert alert--info" role="note">
+              <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+              <div class="alert__content">
+                <p class="alert__title">Jueves 12 de noviembre, 9:00</p>
+                <p class="alert__text">Consulta general · 30 minutos · Sede Los Ruices</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer">
+            <button class="btn btn--secondary" type="button" data-modal-close>Volver</button>
+            <button class="btn btn--primary" type="button" data-modal-close>Confirmar cita</button>
+          </div>
+        </dialog>
+
+        <h3 style="margin-block-start: var(--space-8)">Bloque de emergencia</h3>
+        <div class="emergency-card" style="margin-block-start: var(--space-3)" role="region" aria-labelledby="sg-emergency-title">
+          <div class="emergency-card__head">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+            <div>
+              <h4 class="emergency-card__title" id="sg-emergency-title">Si es una urgencia, no esperes una cita</h4>
+              <p>Llama o escribe por WhatsApp. Atendemos emergencias las 24 horas, todos los días.</p>
+              <ul class="emergency-card__list">
+                <li>Dificultad para respirar o encías azuladas.</li>
+                <li>Convulsiones, sangrado abundante o ingestión de tóxicos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="emergency-card__actions">
+            <a class="btn btn--on-emergency" href="tel:+584125550198"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>Llamar ahora</a>
+            <a class="btn btn--inverse" href="https://wa.me/584125550198" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>WhatsApp de emergencia</a>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Carrusel de equipo</h3>
+        <div class="sg-panel" style="margin-block-start: var(--space-3)">
+          <p class="sg-panel__meta">Scroll-snap con flechas, puntos, teclado y gesto táctil. Sin reproducción automática; respeta reduced motion.</p>
+          <div class="team-carousel" data-carousel aria-roledescription="carrusel" aria-label="Ejemplo de carrusel de equipo" style="margin-block-start: var(--space-3)">
+            <div class="team-carousel__controls">
+              <button class="btn btn--secondary btn--icon" type="button" data-carousel-prev aria-label="Ver integrantes anteriores" disabled><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-left"></use></svg></button>
+              <button class="btn btn--secondary btn--icon" type="button" data-carousel-next aria-label="Ver siguientes integrantes"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-chevron-right"></use></svg></button>
+            </div>
+            <ul class="team-carousel__track" id="team-track-style-guide" data-carousel-track tabindex="0" aria-label="Tarjetas de ejemplo; usa las flechas izquierda y derecha">
+              <li class="team-carousel__slide" data-carousel-slide>
+                <article class="card">
+                  <img class="team-card__photo" src="assets/img/photos/team-valeria.webp" alt="Retrato de la Dra. Valeria Montilla junto a un perro" width="640" height="800" loading="lazy" decoding="async">
+                  <div class="card__body team-card__body"><h4 class="card__title">Dra. Valeria Montilla</h4><p class="team-card__role">Medicina interna</p><p class="card__text">Foto de prueba del componente.</p><ul class="chip-list"><li class="badge">12 años</li><li class="badge">Diagnóstico</li></ul></div>
+                </article>
+              </li>
+              <li class="team-carousel__slide" data-carousel-slide>
+                <article class="card">
+                  <img class="team-card__photo" src="assets/img/photos/team-andres.webp" alt="Retrato del Dr. Andrés Liendo revisando a un perro" width="640" height="800" loading="lazy" decoding="async">
+                  <div class="card__body team-card__body"><h4 class="card__title">Dr. Andrés Liendo</h4><p class="team-card__role">Cirugía y traumatología</p><p class="card__text">Foto de prueba del componente.</p><ul class="chip-list"><li class="badge">10 años</li><li class="badge">Cirugía</li></ul></div>
+                </article>
+              </li>
+              <li class="team-carousel__slide" data-carousel-slide>
+                <article class="card">
+                  <img class="team-card__photo" src="assets/img/photos/team-camila.webp" alt="Retrato de la Dra. Camila Rondón durante una consulta" width="640" height="800" loading="lazy" decoding="async">
+                  <div class="card__body team-card__body"><h4 class="card__title">Dra. Camila Rondón</h4><p class="team-card__role">Medicina felina y conducta</p><p class="card__text">Foto de prueba del componente.</p><ul class="chip-list"><li class="badge">8 años</li><li class="badge">Gatos</li></ul></div>
+                </article>
+              </li>
+            </ul>
+            <div class="team-carousel__dots" data-carousel-dots role="group" aria-label="Páginas del carrusel de ejemplo"></div>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Footer</h3>
+        <div class="sg-panel" style="margin-block-start: var(--space-3); background-color: var(--color-footer-bg); color: var(--color-footer-text)" id="sg-footer-demo">
+          <p class="sg-panel__meta" style="color: var(--color-footer-muted)">Marca sin placa pesada y botón de emergencia con icono alineado.</p>
+          <div style="display: grid; gap: var(--space-4); justify-items: start; margin-block-start: var(--space-3)">
+            <a class="site-footer__brand-link" href="index.html" aria-label="Patitas Felices — Inicio"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-paw"></use></svg><span>Patitas Felices</span></a>
+            <a class="site-footer__emergency-btn" href="tel:+584125550198"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg><span class="site-footer__emergency-copy"><span>Emergencias 24/7</span><strong>+58 412 555 0198</strong></span></a>
+          </div>
+        </div>
+
+        <h3 style="margin-block-start: var(--space-8)">Componentes globales</h3>
+        <div class="sg-panel" style="margin-block-start: var(--space-3)">
+          <p class="sg-panel__title">Encabezado, pie y emergencias</p>
+          <p class="sg-panel__meta" style="margin-block-start: var(--space-1)">Esta misma guía ya los está usando. Se inyectan desde <span class="sg-code">layout.js</span> en todas las páginas.</p>
+          <ul class="stack" style="--stack-gap: var(--space-2); margin-block-start: var(--space-3); padding-inline-start: 1.25em">
+            <li><strong>Encabezado fijo:</strong> logo, navegación de seis opciones, botón de tema y menú móvil con <span class="sg-code">aria-expanded</span>.</li>
+            <li><strong>Barra de emergencias:</strong> fija al pie, con enlaces <span class="sg-code">tel:</span> y WhatsApp; el cuerpo reserva su altura para no tapar contenido.</li>
+            <li><strong>Pie de página:</strong> dirección ficticia de Caracas, horarios, teléfono +58, WhatsApp y acceso a emergencias.</li>
+            <li><strong>Preferencia de tema:</strong> claro u oscuro, siguiendo el sistema por defecto y guardando la elección con <span class="sg-code">localStorage</span>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section" id="accesibilidad">
+      <div class="container">
+        <header class="sg-section__header">
+          <p class="eyebrow">10 · Accesibilidad</p>
+          <h2>Reglas que no se negocian</h2>
+          <p>La accesibilidad es parte del sistema visual, no una revisión posterior. Estos criterios aplican a todas las pantallas del prototipo.</p>
+        </header>
+
+        <div class="grid" style="--grid-gap: var(--space-4)">
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Contraste WCAG AA</p>
+              <p class="alert__text">Cuerpo de texto a 4.5:1 o más; texto grande, bordes de control y anillos de foco a 3:1 o más. La auditoría cubre 148 comprobaciones entre ambos temas.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Foco visible</p>
+              <p class="alert__text">Todos los elementos interactivos muestran un anillo de 3 px con desplazamiento. Nunca se elimina el foco del navegador sin reemplazarlo.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Objetivos táctiles de 48 px</p>
+              <p class="alert__text">Botones, enlaces de navegación, días del calendario, horarios y campos cumplen la altura mínima de 48 px.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Movimiento reducido</p>
+              <p class="alert__text">Con <span class="sg-code">prefers-reduced-motion: reduce</span> se anulan las transiciones y animaciones; los estados se mantienen.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Emergencias siempre a mano</p>
+              <p class="alert__text">La barra fija de emergencias aparece en todas las páginas y reserva espacio al pie, así que nunca cubre contenido. Llamar y WhatsApp son enlaces reales.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Tema claro y oscuro</p>
+              <p class="alert__text">El tema sigue la preferencia del sistema por defecto. El botón del encabezado permite cambiarlo y guarda la elección con <span class="sg-code">localStorage</span> protegido con <span class="sg-code">try/catch</span>.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Menú móvil accesible</p>
+              <p class="alert__text">El botón expone <span class="sg-code">aria-expanded</span>, controla el panel con <span class="sg-code">aria-controls</span>, se cierra con Esc y devuelve el foco al botón.</p>
+            </div>
+          </div>
+          <div class="alert alert--success" role="note">
+            <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>
+            <div class="alert__content">
+              <p class="alert__title">Formularios con mensajes claros</p>
+              <p class="alert__text">Cada campo tiene etiqueta asociada, texto de ayuda y un mensaje de error vinculado con <span class="sg-code">aria-describedby</span>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-note" style="margin-block-start: var(--space-6)">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+          <p><strong>Puntos de quiebre de referencia:</strong> 390 px (móvil), 768 px (tableta) y 1440 px (escritorio). El diseño parte de móvil y amplía con <span class="sg-code">min-width</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="sg-footer-note container">Guía de estilos del proyecto Patitas Felices. Archivos: <span class="sg-code">site/assets/css/tokens.css</span>, <span class="sg-code">base.css</span>, <span class="sg-code">components.css</span> y <span class="sg-code">style-guide.css</span>. Auditoría: <span class="sg-code">node tests/contrast.mjs</span>. Documentación relacionada: <a href="wireframes/index.html">índice de wireframes (S6)</a>.</p>
+  </main>
+</body>
+</html>

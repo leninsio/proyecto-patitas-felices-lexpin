@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 05 · Agendar paso 1 — Patitas Felices</title>
+  <meta name="description" content="Wireframe del paso 1 del agendamiento: servicio y datos de la mascota.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html" aria-current="page">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 05 · Agendar · paso 1</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-kicker">Agendar cita</p>
+    <h1>Elige el servicio y cuéntanos de tu mascota</h1>
+    <p class="wf-lead">Una sola pantalla para servicio, tipo de mascota, nombre y edad. El resumen se mantiene visible.</p>
+
+    <div class="wf-stepper">
+      <ol class="wf-stepper__list" aria-label="Pasos del agendamiento">
+      <li aria-current="step"><span class="wf-stepper__dot">1</span><span class="wf-stepper__label">Servicio y mascota</span></li>
+      <li><span class="wf-stepper__dot">2</span><span class="wf-stepper__label">Fecha y hora</span></li>
+      <li><span class="wf-stepper__dot">3</span><span class="wf-stepper__label">Datos del dueño</span></li>
+      </ol>
+      <span class="wf-stepper__line wf-stepper__line--1" aria-hidden="true"></span>
+      <span class="wf-stepper__line wf-stepper__line--2" aria-hidden="true"></span>
+    </div>
+
+    <div class="wf-split">
+      <form class="wf-stack" aria-label="Formulario de servicio y mascota">
+        <fieldset class="wf-card wf-card--strong">
+          <legend class="wf-card__title">1. Servicio</legend>
+          <div class="wf-stack wf-stack--sm" style="margin-block-start: 10px">
+            <span class="wf-choice is-selected"><span class="wf-choice__radio" aria-hidden="true"></span><span><strong>Consulta general</strong><br><span class="wf-note">30 min · Desde $25</span></span></span>
+            <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span><strong>Vacunación</strong><br><span class="wf-note">20 min · Desde $35</span></span></span>
+            <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span><strong>Cirugía</strong><br><span class="wf-note">Requiere evaluación previa</span></span></span>
+            <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span><strong>Peluquería</strong><br><span class="wf-note">60 min · Desde $20</span></span></span>
+            <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span><strong>Emergencias 24/7</strong><br><span class="wf-note">Si hay riesgo de vida, llama primero</span></span></span>
+          </div>
+        </fieldset>
+
+        <fieldset class="wf-card wf-card--strong">
+          <legend class="wf-card__title">2. Tu mascota</legend>
+          <div class="wf-stack wf-stack--sm" style="margin-block-start: 10px">
+            <span class="wf-field__label">Tipo de mascota</span>
+            <div class="wf-grid" style="gap: 8px">
+              <span class="wf-choice is-selected"><span class="wf-choice__radio" aria-hidden="true"></span><span>Perro</span></span>
+              <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span>Gato</span></span>
+              <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span>Mascota exótica</span></span>
+            </div>
+            <div class="wf-field">
+              <span class="wf-field__label">Nombre de la mascota</span>
+              <span class="wf-input">Ej. Miga</span>
+            </div>
+            <div class="wf-field">
+              <span class="wf-field__label">Edad</span>
+              <span class="wf-input">Ej. 8 meses</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="wf-alert">
+          <p class="wf-alert__title">¿Es una emergencia?</p>
+          <p>Si tu mascota tiene dificultad para respirar, convulsiones o sangrado, llama antes de agendar.</p>
+          <div class="wf-btn-row" style="margin-block-start: 8px">
+            <a class="wf-btn" href="tel:+584125550198">Llamar ahora</a>
+            <a class="wf-btn wf-btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="wf-btn-row">
+          <a class="wf-btn wf-btn--ghost" href="01-inicio.html">Volver</a>
+          <a class="wf-btn" href="06-agendar-paso-2.html">Continuar a fecha y hora</a>
+        </div>
+      </form>
+
+      <aside class="wf-stack" aria-label="Resumen de la cita">
+        <div class="wf-card wf-card--strong">
+          <h2 class="wf-card__title">Resumen</h2>
+          <p class="wf-note">Servicio</p>
+          <p><strong>Consulta general</strong></p>
+          <p class="wf-note">Mascota</p>
+          <p><strong>Miga · perra · 8 meses</strong></p>
+          <p class="wf-note">Fecha y hora</p>
+          <p>Se eligen en el paso 2.</p>
+          <hr style="border: 0; border-block-start: 1px solid var(--wf-line); width: 100%">
+          <p class="wf-price">Desde $25</p>
+          <p class="wf-note">o su equivalente en Bs a tasa BCV del día</p>
+          <a class="wf-btn wf-btn--block" href="06-agendar-paso-2.html">Continuar</a>
+        </div>
+        <div class="wf-alert">
+          <p class="wf-alert__title">Borrador automático</p>
+          <p>Si sales, guardamos lo que escribiste por 24 horas y verás “Continuar donde lo dejaste”.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 05 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

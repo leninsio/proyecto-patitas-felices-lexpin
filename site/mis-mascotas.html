@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis mascotas — Patitas Felices</title>
+  <meta name="description" content="Perfiles de mascotas, historial de vacunas y próximos recordatorios en Patitas Felices. Datos de demostración del prototipo.">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script src="assets/js/layout.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <main id="main" tabindex="-1">
+
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="container page-header__inner">
+        <p class="eyebrow">Mis mascotas</p>
+        <h1 id="page-title">El historial de tu mascota, sin papeles perdidos</h1>
+        <p class="lead">Consulta vacunas, controles y próximas fechas desde un solo lugar. En esta demostración verás dos mascotas de ejemplo con sus datos ficticios.</p>
+        <div class="alert alert--info" role="note">
+          <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+          <div class="alert__content">
+            <p class="alert__title">Datos de demostración</p>
+            <p class="alert__text">Miga y Bruno son mascotas ficticias creadas para el prototipo. Los historiales, fechas y recordatorios son ejemplos y no corresponden a pacientes reales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pets-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Perfiles e historial</p>
+          <h2 id="pets-title">Cada mascota, con su historia completa</h2>
+          <p class="lead">Foto, datos básicos, próxima dosis y todas las vacunas en una misma tarjeta. Los historiales son de demostración.</p>
+        </div>
+
+        <div class="pet-grid">
+          <article class="card pet-card" id="miga">
+            <img class="pet-photo" src="assets/img/photos/pet-miga.webp" alt="Miga, perra mestiza de pelaje blanco y marrón, mirando a cámara" width="800" height="800" loading="lazy" decoding="async">
+            <div class="card__body pet-card__body">
+              <div class="pet-card__head">
+                <div>
+                  <h2 class="pet-card__name">Miga</h2>
+                  <p class="pet-card__meta">Perra mestiza · 8 meses · 9 kg</p>
+                </div>
+                <span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span>
+              </div>
+
+              <div class="pet-vaccine-highlight">
+                <span class="pet-vaccine-highlight__icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-syringe"></use></svg></span>
+                <div>
+                  <p class="pet-vaccine-highlight__label">Próxima vacuna</p>
+                  <p class="pet-vaccine-highlight__value"><strong>Rabia</strong> · 17 ago 2027</p>
+                </div>
+                <a class="btn btn--primary" href="agendar.html?servicio=vacunacion">Agendar refuerzo</a>
+              </div>
+
+              <dl class="fact-list"><div><dt>Dueña</dt><dd>Camila T.</dd></div><div><dt>Adoptada</dt><dd>Junio 2026</dd></div><div><dt>Microchip</dt><dd>PF-0412-8821</dd></div><div><dt>Última visita</dt><dd>14 sep 2026</dd></div></dl>
+
+              <div class="pet-history">
+                <h3 class="pet-history__title">Historial de vacunas</h3>
+                <div class="table-wrap" tabindex="0">
+                  <table class="vaccine-table">
+                    <caption>Historial de Miga (demostración)</caption>
+                    <colgroup><col style="width:36%"><col style="width:20%"><col style="width:22%"><col style="width:22%"></colgroup>
+                    <thead><tr><th scope="col">Vacuna</th><th scope="col">Fecha</th><th scope="col">Próxima dosis</th><th scope="col">Estado</th></tr></thead>
+                    <tbody><tr><th scope="row">Polivalente canina (1.ª dosis)</th><td>22 jun 2026</td><td>—</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Aplicada</span></td></tr><tr><th scope="row">Polivalente canina (2.ª dosis)</th><td>20 jul 2026</td><td>—</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Aplicada</span></td></tr><tr><th scope="row">Rabia</th><td>17 ago 2026</td><td>17 ago 2027</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span></td></tr><tr><th scope="row">Polivalente canina (refuerzo)</th><td>14 sep 2026</td><td>14 sep 2027</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span></td></tr></tbody>
+                  </table>
+                </div>
+                <p class="table-hint">Desliza la tabla para ver todas las columnas.</p>
+              </div>
+            </div>
+          </article>
+          <article class="card pet-card" id="bruno">
+            <img class="pet-photo" src="assets/img/photos/pet-bruno.webp" alt="Bruno, labrador chocolate de mirada tranquila" width="800" height="800" loading="lazy" decoding="async">
+            <div class="card__body pet-card__body">
+              <div class="pet-card__head">
+                <div>
+                  <h2 class="pet-card__name">Bruno</h2>
+                  <p class="pet-card__meta">Labrador · 4 años · 28 kg</p>
+                </div>
+                <span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span>
+              </div>
+
+              <div class="pet-vaccine-highlight">
+                <span class="pet-vaccine-highlight__icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#icon-syringe"></use></svg></span>
+                <div>
+                  <p class="pet-vaccine-highlight__label">Próxima dosis</p>
+                  <p class="pet-vaccine-highlight__value"><strong>Desparasitación</strong> · 12 dic 2026</p>
+                </div>
+                <a class="btn btn--primary" href="agendar.html?servicio=vacunacion">Agendar refuerzo</a>
+              </div>
+
+              <dl class="fact-list"><div><dt>Dueña</dt><dd>Andrea R.</dd></div><div><dt>Adoptado</dt><dd>Marzo 2022</dd></div><div><dt>Microchip</dt><dd>PF-0219-4470</dd></div><div><dt>Última visita</dt><dd>12 sep 2026</dd></div></dl>
+
+              <div class="pet-history">
+                <h3 class="pet-history__title">Historial de vacunas</h3>
+                <div class="table-wrap" tabindex="0">
+                  <table class="vaccine-table">
+                    <caption>Historial de Bruno (demostración)</caption>
+                    <colgroup><col style="width:36%"><col style="width:20%"><col style="width:22%"><col style="width:22%"></colgroup>
+                    <thead><tr><th scope="col">Vacuna</th><th scope="col">Fecha</th><th scope="col">Próxima dosis</th><th scope="col">Estado</th></tr></thead>
+                    <tbody><tr><th scope="row">Polivalente canina</th><td>10 mar 2026</td><td>10 mar 2027</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span></td></tr><tr><th scope="row">Rabia</th><td>10 mar 2026</td><td>10 mar 2027</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span></td></tr><tr><th scope="row">Leptospirosis</th><td>10 mar 2026</td><td>10 mar 2027</td><td><span class="badge badge--success"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg>Al día</span></td></tr><tr><th scope="row">Desparasitación</th><td>12 sep 2026</td><td>12 dic 2026</td><td><span class="badge badge--warning"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>Próxima</span></td></tr></tbody>
+                  </table>
+                </div>
+                <p class="table-hint">Desliza la tabla para ver todas las columnas.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reminders-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Recordatorios</p>
+          <h2 id="reminders-title">Lo que viene</h2>
+          <p class="lead">Te avisamos por WhatsApp unos días antes. Puedes adelantar la cita desde cada recordatorio.</p>
+        </div>
+
+        <ul class="reminder-list">
+          <li class="reminder">
+            <span class="reminder__date">05<br>NOV<br>2026</span>
+            <div>
+              <h3 class="reminder__title">Desparasitación de Miga</h3>
+              <p class="reminder__text">Control de peso y desparasitación interna. Duración estimada: 20 minutos.</p>
+            </div>
+            <a class="btn btn--ghost" href="agendar.html?servicio=consulta">Agendar</a>
+          </li>
+          <li class="reminder">
+            <span class="reminder__date">12<br>DIC<br>2026</span>
+            <div>
+              <h3 class="reminder__title">Desparasitación de Bruno</h3>
+              <p class="reminder__text">Refuerzo trimestral. Aprovecha para revisar su peso y condición corporal.</p>
+            </div>
+            <a class="btn btn--ghost" href="agendar.html?servicio=consulta">Agendar</a>
+          </li>
+          <li class="reminder">
+            <span class="reminder__date">20<br>ENE<br>2027</span>
+            <div>
+              <h3 class="reminder__title">Control dental de Bruno</h3>
+              <p class="reminder__text">Revisión de sarro y encías recomendada por su veterinario.</p>
+            </div>
+            <a class="btn btn--ghost" href="agendar.html?servicio=consulta">Agendar</a>
+          </li>
+          <li class="reminder">
+            <span class="reminder__date">17<br>AGO<br>2027</span>
+            <div>
+              <h3 class="reminder__title">Rabia de Miga</h3>
+              <p class="reminder__text">Refuerzo anual. El recordatorio se activa 15 días antes.</p>
+            </div>
+            <a class="btn btn--ghost" href="agendar.html?servicio=vacunacion">Agendar</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-panel">
+          <h2 id="cta-title">Mantén el historial al día</h2>
+          <p>Agenda el próximo control y recibe la confirmación por WhatsApp. Si tienes dudas sobre una vacuna, escríbenos.</p>
+          <div class="btn-row">
+            <a class="btn btn--light" href="agendar.html">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+              Agendar cita
+            </a>
+            <a class="btn btn--inverse" href="contacto.html">Hablar con la clínica</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

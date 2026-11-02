@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 03 · Detalle de servicio — Patitas Felices</title>
+  <meta name="description" content="Wireframe de la pantalla de detalle de un servicio de Patitas Felices.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html" aria-current="page">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 03 · Detalle de servicio</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-note">Inicio / Servicios / Consulta general</p>
+
+    <div class="wf-hero" style="margin-block-start: 12px">
+      <div class="wf-hero__copy">
+        <p class="wf-kicker">Medicina preventiva</p>
+        <h1>Consulta general</h1>
+        <p class="wf-lead">Texto de apoyo: qué es el servicio, a quién está dirigido y qué esperar de la visita.</p>
+        <div class="wf-cluster">
+          <span class="wf-tag wf-tag--dark">Más solicitado</span>
+          <span class="wf-tag">30 min</span>
+          <span class="wf-tag">Medicina general</span>
+        </div>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="05-agendar-paso-1.html">Agendar consulta</a>
+          <a class="wf-btn wf-btn--ghost" href="09-contacto.html">WhatsApp</a>
+        </div>
+      </div>
+      <div class="wf-placeholder wf-placeholder--hero"><span>Icono grande del servicio</span></div>
+    </div>
+
+    <div class="wf-split" style="margin-block-start: 24px">
+      <div class="wf-stack">
+        <section class="wf-card" aria-labelledby="includes-title">
+          <h2 id="includes-title">Qué incluye</h2>
+          <ul class="wf-stack wf-stack--sm" style="padding-inline-start: 1.25em">
+            <li>Revisión de signos vitales y peso.</li>
+            <li>Exploración física completa.</li>
+            <li>Plan de cuidado escrito.</li>
+            <li>Registro en el historial.</li>
+          </ul>
+        </section>
+        <section class="wf-card" aria-labelledby="bring-title">
+          <h2 id="bring-title">Qué traer</h2>
+          <ul class="wf-stack wf-stack--sm" style="padding-inline-start: 1.25em">
+            <li>Cartilla de vacunas, si está disponible.</li>
+            <li>Lista de síntomas o cambios.</li>
+            <li>Medicamentos actuales.</li>
+          </ul>
+        </section>
+        <section class="wf-card" aria-labelledby="faq-title">
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <div class="wf-stack wf-stack--sm">
+            <details><summary>¿Necesito cita?</summary><p class="wf-card__text">Sí, para reservar 30 minutos.</p></details>
+            <details><summary>¿Incluye tratamiento?</summary><p class="wf-card__text">La evaluación y el plan; medicamentos aparte.</p></details>
+            <details><summary>¿Puedo llevar dos mascotas?</summary><p class="wf-card__text">Sí, con una cita por mascota.</p></details>
+          </div>
+        </section>
+      </div>
+
+      <aside class="wf-stack" aria-label="Resumen y ayuda">
+        <div class="wf-card wf-card--strong">
+          <p class="wf-kicker">Precio referencial</p>
+          <p class="wf-price">Desde $25</p>
+          <p class="wf-note">o su equivalente en Bs a tasa BCV del día</p>
+          <span class="wf-line wf-line--80"></span>
+          <p class="wf-note">Duración: 30 min · Los Ruices, Caracas.</p>
+          <a class="wf-btn wf-btn--block" href="05-agendar-paso-1.html">Agendar este servicio</a>
+          <a class="wf-btn wf-btn--ghost wf-btn--block" href="09-contacto.html">Cómo llegar</a>
+        </div>
+        <div class="wf-alert">
+          <p class="wf-alert__title">¿Es una emergencia?</p>
+          <p>Llamar al +58 412 555 0198. Atención 24/7.</p>
+          <div class="wf-btn-row" style="margin-block-start: 8px">
+            <a class="wf-btn" href="tel:+584125550198">Llamar</a>
+            <a class="wf-btn wf-btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="wf-section" aria-labelledby="other-title">
+      <div class="wf-section__head">
+        <h2 id="other-title">Otros servicios</h2>
+      </div>
+      <div class="wf-grid wf-grid--3">
+        <div class="wf-card"><h3 class="wf-card__title">Vacunación</h3><p class="wf-card__text">20 min · Desde $35</p></div>
+        <div class="wf-card"><h3 class="wf-card__title">Cirugía</h3><p class="wf-card__text">60–120 min · Desde $180</p></div>
+        <div class="wf-card"><h3 class="wf-card__title">Peluquería</h3><p class="wf-card__text">60 min · Desde $20</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 03 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

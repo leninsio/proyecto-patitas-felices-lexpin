@@ -1,0 +1,47 @@
+flowchart TD
+  INI["Nivel 0 · Inicio<br/>index.html"]
+
+  subgraph MENU["Nivel 1 · Menú principal (6 opciones; coincide con layout.js)"]
+    direction TB
+    SERV["Servicios<br/>servicios.html"]
+    EQ["Equipo<br/>equipo.html"]
+    PET["Mis mascotas<br/>mis-mascotas.html"]
+    CON["Contacto<br/>contacto.html"]
+    BOOK["Agendar cita<br/>agendar.html · paso 1"]
+  end
+
+  INI --> SERV
+  INI --> EQ
+  INI --> PET
+  INI --> CON
+  INI --> BOOK
+
+  SERV --> DET["Nivel 2 · Detalle de servicio<br/>servicio.html?s=consulta<br/>también vacunación, cirugía, peluquería y emergencias"]
+  PET --> HIST["Nivel 2 · Historial de vacunas<br/>sección de mis-mascotas.html"]
+  CON --> MAP["Nivel 2 · Mapa y horarios<br/>sección de contacto.html"]
+  BOOK --> BOOK2["Nivel 2 · Fecha y hora<br/>agendar-paso-2.html"]
+  BOOK2 --> BOOK3["Nivel 2 · Datos del dueño<br/>agendar-paso-3.html"]
+  BOOK3 --> OK["Cita confirmada<br/>cita-confirmada.html"]
+
+  subgraph GLOBAL["Elementos globales · presentes en todas las páginas"]
+    H["Header<br/>logo · menú de 6 · tema"]
+    F["Footer<br/>dirección · horarios · teléfono · WhatsApp"]
+    EM["Botón de emergencias fijo<br/>tel: · wa.me"]
+    TH["Toggle de tema<br/>claro / oscuro"]
+  end
+
+  subgraph DOC["Documentación y entregables · fuera del menú"]
+    DOCS["Documentación del proyecto<br/>documentacion/index.html"]
+    SG["Guía de estilos<br/>guia-de-estilos.html"]
+    WI["Índice de wireframes<br/>wireframes/index.html"]
+    WF["11 wireframes<br/>wireframes/01-inicio.html … 11-mis-mascotas.html"]
+    PDF["Informe PDF<br/>documentacion/informe.pdf"]
+    E404["Página 404<br/>404.html"]
+  end
+
+  F -.->|documentación| DOCS
+  DOCS --> SG
+  DOCS --> WI
+  DOCS --> PDF
+  WI --> WF
+  INI -.->|error de ruta| E404

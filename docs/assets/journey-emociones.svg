@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" role="img" aria-labelledby="journey-title journey-desc">
+  <title id="journey-title">Curva de emoción del journey de Camila y Miga</title>
+  <desc id="journey-desc">La tensión sube desde la detección hasta el agendamiento, baja al confirmar la cita y se mantiene baja en el seguimiento posterior. Es un mapa cualitativo de la proto-persona, no una medición con usuarios.</desc>
+
+  <rect x="0" y="0" width="1000" height="380" rx="20" fill="#F6FAF8" stroke="#D3E0DC" stroke-width="1.5"/>
+
+  <text x="40" y="44" fill="#0E211E" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="22" font-weight="800">Curva de emoción · Camila y Miga</text>
+  <text x="40" y="68" fill="#4C625C" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="13">“Mi mascota amaneció decaída, no quiere comer y necesito llevarla al veterinario.”</text>
+
+  <!-- Legend -->
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#4C625C">
+    <circle cx="750" cy="50" r="5" fill="#B42318"/>
+    <text x="761" y="54">Tensión alta</text>
+    <circle cx="846" cy="50" r="5" fill="#B45309"/>
+    <text x="857" y="54">Tensión media</text>
+    <circle cx="944" cy="50" r="5" fill="#0E6B5F"/>
+    <text x="955" y="54">Calma</text>
+  </g>
+
+  <!-- Plot guides -->
+  <g stroke="#D3E0DC" stroke-width="1" stroke-dasharray="4 5">
+    <line x1="100" y1="120" x2="930" y2="120"/>
+    <line x1="100" y1="175" x2="930" y2="175"/>
+    <line x1="100" y1="230" x2="930" y2="230"/>
+  </g>
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#4C625C" text-anchor="end">
+    <text x="90" y="124">Alta</text>
+    <text x="90" y="179">Media</text>
+    <text x="90" y="234">Baja</text>
+  </g>
+
+  <!-- Area and curve -->
+  <path d="M130,175 C200,175 210,135 280,135 C350,135 360,160 430,160 C500,160 510,110 580,110 C650,110 660,205 730,205 C800,205 810,235 880,235 L880,270 L130,270 Z"
+        fill="#0E6B5F" opacity="0.10"/>
+  <path d="M130,175 C200,175 210,135 280,135 C350,135 360,160 430,160 C500,160 510,110 580,110 C650,110 660,205 730,205 C800,205 810,235 880,235"
+        fill="none" stroke="#0E6B5F" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Stage verticals and points -->
+  <g stroke="#D3E0DC" stroke-width="1.5">
+    <line x1="130" y1="175" x2="130" y2="270"/>
+    <line x1="280" y1="135" x2="280" y2="270"/>
+    <line x1="430" y1="160" x2="430" y2="270"/>
+    <line x1="580" y1="110" x2="580" y2="270"/>
+    <line x1="730" y1="205" x2="730" y2="270"/>
+    <line x1="880" y1="235" x2="880" y2="270"/>
+  </g>
+
+  <g font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="22" text-anchor="middle">
+    <text x="130" y="160">😟</text>
+    <text x="280" y="120">🤔</text>
+    <text x="430" y="145">😬</text>
+    <text x="580" y="95">😰</text>
+    <text x="730" y="190">😊</text>
+    <text x="880" y="220">😌</text>
+  </g>
+
+  <g stroke="#F6FAF8" stroke-width="4">
+    <circle cx="130" cy="175" r="9" fill="#B45309"/>
+    <circle cx="280" cy="135" r="9" fill="#B45309"/>
+    <circle cx="430" cy="160" r="9" fill="#B45309"/>
+    <circle cx="580" cy="110" r="9" fill="#B42318"/>
+    <circle cx="730" cy="205" r="9" fill="#0E6B5F"/>
+    <circle cx="880" cy="235" r="9" fill="#0E6B5F"/>
+  </g>
+
+  <!-- Stage labels -->
+  <g font-family="Nunito, 'Segoe UI', system-ui, sans-serif" text-anchor="middle">
+    <g fill="#0E211E" font-size="12.5" font-weight="800">
+      <text x="130" y="292">Detección</text>
+      <text x="280" y="292">Búsqueda</text>
+      <text x="430" y="292">Evaluación</text>
+      <text x="580" y="292">Agendamiento</text>
+      <text x="730" y="292">Confirmación</text>
+      <text x="880" y="292">Post-cita</text>
+    </g>
+    <g fill="#4C625C" font-size="11">
+      <text x="130" y="311">Preocupación</text>
+      <text x="280" y="311">Duda y prisa</text>
+      <text x="430" y="311">Tensión</text>
+      <text x="580" y="311">Estrés</text>
+      <text x="730" y="311">Alivio</text>
+      <text x="880" y="311">Tranquilidad</text>
+    </g>
+  </g>
+
+  <line x1="40" y1="340" x2="960" y2="340" stroke="#D3E0DC" stroke-width="1"/>
+  <text x="40" y="362" fill="#4C625C" font-family="Nunito, 'Segoe UI', system-ui, sans-serif" font-size="11">Mapa cualitativo de la proto-persona. No es una medición con usuarios; la validación real se hará en pruebas de usabilidad posteriores.</text>
+</svg>

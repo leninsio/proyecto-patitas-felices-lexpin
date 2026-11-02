@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arquitectura de información — Patitas Felices</title>
+  <meta name="description" content="Card sorting, sitemap y user flow del agendamiento (S4–S5).">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <script src="../assets/js/layout.js"></script>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-doc-page="arquitectura">
+  <main id="main" tabindex="-1">
+    <section class="page-header page-header--compact doc-hero">
+      <div class="container page-header__inner">
+        <nav class="doc-breadcrumb" aria-label="Ruta de documentación"><a href="index.html">Documentación</a> / <span aria-current="page">Arquitectura de información</span></nav>
+        <p class="eyebrow">Documentación del proyecto</p>
+        <h1>Arquitectura de información</h1>
+        <p class="lead">Card sorting, sitemap y user flow del agendamiento (S4–S5).</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Arquitectura de información">
+      <div class="container doc-layout">
+        <aside class="doc-sidebar">
+          <nav class="doc-toc doc-toc--desktop" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-card-sorting-s4">1. Card sorting (S4)</a></li>
+<li><a class="doc-toc__sub" href="#1-1-inventario-de-tarjetas-de-contenido">1.1. Inventario de tarjetas de contenido</a></li>
+<li><a class="doc-toc__sub" href="#1-2-agrupacion-de-camila-reserva-rapida-y-precio-claro">1.2. Agrupación de Camila — reserva rápida y precio claro</a></li>
+<li><a class="doc-toc__sub" href="#1-3-agrupacion-de-rafael-emergencia-telefono-y-registro">1.3. Agrupación de Rafael — emergencia, teléfono y registro</a></li>
+<li><a class="doc-toc__sub" href="#1-4-agrupacion-de-la-familia-rojas-confianza-y-planificacion">1.4. Agrupación de la familia Rojas — confianza y planificación</a></li>
+<li><a class="doc-toc__sub" href="#1-5-comparacion-y-conclusion-del-card-sorting">1.5. Comparación y conclusión del card sorting</a></li>
+<li><a class="" href="#2-sitemap-s4">2. Sitemap (S4)</a></li>
+<li><a class="doc-toc__sub" href="#2-1-contrato-de-navegacion-comprobado">2.1. Contrato de navegación comprobado</a></li>
+<li><a class="doc-toc__sub" href="#2-2-arbol-de-navegacion">2.2. Árbol de navegación</a></li>
+<li><a class="doc-toc__sub" href="#2-3-pantallas-y-niveles">2.3. Pantallas y niveles</a></li>
+<li><a class="doc-toc__sub" href="#2-4-profundidad-de-clics-desde-inicio">2.4. Profundidad de clics desde Inicio</a></li>
+<li><a class="doc-toc__sub" href="#2-5-justificacion-del-sitemap">2.5. Justificación del sitemap</a></li>
+<li><a class="" href="#3-user-flow-agendar-una-cita-s5">3. User flow “Agendar una cita” (S5)</a></li>
+<li><a class="doc-toc__sub" href="#3-1-puntos-de-entrada">3.1. Puntos de entrada</a></li>
+<li><a class="doc-toc__sub" href="#3-2-diagrama-de-flujo">3.2. Diagrama de flujo</a></li>
+<li><a class="doc-toc__sub" href="#3-3-camino-ideal-y-pantallas">3.3. Camino ideal y pantallas</a></li>
+<li><a class="doc-toc__sub" href="#3-4-rutas-alternativas-obligatorias">3.4. Rutas alternativas obligatorias</a></li>
+<li><a class="doc-toc__sub" href="#3-5-conteo-de-clics-pantallas-y-tiempo">3.5. Conteo de clics, pantallas y tiempo</a></li>
+<li><a class="doc-toc__sub" href="#3-6-contrato-de-pantallas-para-t6">3.6. Contrato de pantallas para T6</a></li>
+<li><a class="doc-toc__sub" href="#3-7-trazabilidad-s4-s5">3.7. Trazabilidad S4/S5</a></li></ul></nav>
+        </aside>
+        <div>
+          <details class="doc-toc-mobile">
+            <summary>En esta página</summary>
+            <nav class="doc-toc" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-card-sorting-s4">1. Card sorting (S4)</a></li>
+<li><a class="doc-toc__sub" href="#1-1-inventario-de-tarjetas-de-contenido">1.1. Inventario de tarjetas de contenido</a></li>
+<li><a class="doc-toc__sub" href="#1-2-agrupacion-de-camila-reserva-rapida-y-precio-claro">1.2. Agrupación de Camila — reserva rápida y precio claro</a></li>
+<li><a class="doc-toc__sub" href="#1-3-agrupacion-de-rafael-emergencia-telefono-y-registro">1.3. Agrupación de Rafael — emergencia, teléfono y registro</a></li>
+<li><a class="doc-toc__sub" href="#1-4-agrupacion-de-la-familia-rojas-confianza-y-planificacion">1.4. Agrupación de la familia Rojas — confianza y planificación</a></li>
+<li><a class="doc-toc__sub" href="#1-5-comparacion-y-conclusion-del-card-sorting">1.5. Comparación y conclusión del card sorting</a></li>
+<li><a class="" href="#2-sitemap-s4">2. Sitemap (S4)</a></li>
+<li><a class="doc-toc__sub" href="#2-1-contrato-de-navegacion-comprobado">2.1. Contrato de navegación comprobado</a></li>
+<li><a class="doc-toc__sub" href="#2-2-arbol-de-navegacion">2.2. Árbol de navegación</a></li>
+<li><a class="doc-toc__sub" href="#2-3-pantallas-y-niveles">2.3. Pantallas y niveles</a></li>
+<li><a class="doc-toc__sub" href="#2-4-profundidad-de-clics-desde-inicio">2.4. Profundidad de clics desde Inicio</a></li>
+<li><a class="doc-toc__sub" href="#2-5-justificacion-del-sitemap">2.5. Justificación del sitemap</a></li>
+<li><a class="" href="#3-user-flow-agendar-una-cita-s5">3. User flow “Agendar una cita” (S5)</a></li>
+<li><a class="doc-toc__sub" href="#3-1-puntos-de-entrada">3.1. Puntos de entrada</a></li>
+<li><a class="doc-toc__sub" href="#3-2-diagrama-de-flujo">3.2. Diagrama de flujo</a></li>
+<li><a class="doc-toc__sub" href="#3-3-camino-ideal-y-pantallas">3.3. Camino ideal y pantallas</a></li>
+<li><a class="doc-toc__sub" href="#3-4-rutas-alternativas-obligatorias">3.4. Rutas alternativas obligatorias</a></li>
+<li><a class="doc-toc__sub" href="#3-5-conteo-de-clics-pantallas-y-tiempo">3.5. Conteo de clics, pantallas y tiempo</a></li>
+<li><a class="doc-toc__sub" href="#3-6-contrato-de-pantallas-para-t6">3.6. Contrato de pantallas para T6</a></li>
+<li><a class="doc-toc__sub" href="#3-7-trazabilidad-s4-s5">3.7. Trazabilidad S4/S5</a></li></ul></nav>
+          </details>
+          <article class="doc-content">
+<p><strong>Proyecto:</strong> sitio web de la clínica veterinaria Patitas Felices (Caracas, Venezuela)<br><strong>Autor:</strong> Lenin Alvarado<br><strong>Fecha:</strong> 2026-10-29<br><strong>Alcance:</strong> card sorting y sitemap (S4), user flow de “agendar una cita” (S5).<br><strong>Documento relacionado:</strong> <code>docs/01-investigacion.md</code> (proto-personas, journey y features F01–F08).</p>
+<blockquote>
+<p><strong>Regla de trabajo.</strong> El menú principal debe coincidir con <code>site/assets/js/layout.js</code>. En el commit <code>bf13d95</code> el arreglo <code>NAV_ITEMS</code> tiene seis opciones, en este orden: <strong>Inicio, Servicios, Equipo, Mis mascotas, Contacto, Agendar cita</strong>. Este documento respeta ese contrato; <strong>no se modificó <code>layout.js</code></strong> porque no hay diferencias.</p>
+</blockquote>
+<hr>
+<h2 id="1-card-sorting-s4">1. Card sorting (S4)</h2>
+<h3 id="1-1-inventario-de-tarjetas-de-contenido">1.1. Inventario de tarjetas de contenido</h3>
+<p>Se listan todas las tarjetas de contenido que el sitio necesita, incluyendo las pantallas obligatorias, la sección opcional “Mis mascotas” y los entregables de documentación.</p>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Tarjeta de contenido</th>
+<th>Pantalla o archivo previsto</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C01</td>
+<td>Propuesta de valor, 8 años de trayectoria y sede en Caracas</td>
+<td><code>index.html</code>, <code>equipo.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C02</td>
+<td>Llamado a la acción “Agendar cita”</td>
+<td>Global, <code>index.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C03</td>
+<td>Emergencias 24/7 con llamada y WhatsApp</td>
+<td>Global (header, dock, contacto)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C04</td>
+<td>Servicios con duración y precio referencial (consulta, vacunación, cirugía, peluquería, emergencias)</td>
+<td><code>servicios.html</code>, <code>index.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C05</td>
+<td>Detalle de un servicio: qué incluye, preparación y precio</td>
+<td><code>servicio.html?s=consulta</code> (plantilla para los cinco slugs)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C06</td>
+<td>Equipo veterinario y especialidades</td>
+<td><code>equipo.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C07</td>
+<td>Testimonios y prueba social</td>
+<td><code>index.html</code>, <code>equipo.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C08</td>
+<td>Horarios de atención y urgencias</td>
+<td><code>contacto.html</code>, footer global</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C09</td>
+<td>Dirección, mapa y cómo llegar</td>
+<td><code>contacto.html</code>, footer global</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>Teléfono +58 y WhatsApp</td>
+<td>Global (header, footer y contacto)</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C11</td>
+<td>Agendar paso 1: servicio y datos de la mascota (tipo, nombre, edad)</td>
+<td><code>agendar.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C12</td>
+<td>Agendar paso 2: fecha y hora con disponibilidad</td>
+<td><code>agendar-paso-2.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C13</td>
+<td>Agendar paso 3: datos del dueño y resumen para confirmar</td>
+<td><code>agendar-paso-3.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C14</td>
+<td>Cita confirmada: resumen, sede, fecha y hora</td>
+<td><code>cita-confirmada.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C15</td>
+<td>Compartir por WhatsApp y agregar al calendario</td>
+<td><code>cita-confirmada.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C16</td>
+<td>Mis mascotas: perfiles de las mascotas</td>
+<td><code>mis-mascotas.html</code></td>
+<td>Should</td>
+</tr>
+<tr>
+<td>C17</td>
+<td>Historial de vacunas por mascota</td>
+<td><code>mis-mascotas.html</code></td>
+<td>Should</td>
+</tr>
+<tr>
+<td>C18</td>
+<td>Recordatorios de próximas vacunas y controles</td>
+<td><code>mis-mascotas.html</code>, confirmación</td>
+<td>Should</td>
+</tr>
+<tr>
+<td>C19</td>
+<td>Página 404 con estilo de marca y salida a Inicio</td>
+<td><code>404.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C20</td>
+<td>Guía de estilos y sistema de diseño</td>
+<td><code>guia-de-estilos.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C21</td>
+<td>Índice de wireframes</td>
+<td><code>wireframes/index.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C22</td>
+<td>Diez wireframes de las pantallas requeridas</td>
+<td><code>wireframes/*.html</code></td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C23</td>
+<td>Selector de tema claro/oscuro</td>
+<td>Global (header)</td>
+<td>Should</td>
+</tr>
+<tr>
+<td>C24</td>
+<td>Header con logo, menú, tema y menú móvil</td>
+<td>Global</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C25</td>
+<td>Footer con dirección, horarios, teléfono, WhatsApp y enlaces de documentación</td>
+<td>Global</td>
+<td>Must</td>
+</tr>
+<tr>
+<td>C26</td>
+<td>Nota de moneda: “o su equivalente en Bs a tasa BCV del día”</td>
+<td><code>servicios.html</code>, detalle y reserva</td>
+<td>Must</td>
+</tr>
+</tbody></table></div>
+<h3 id="1-2-agrupacion-de-camila-reserva-rapida-y-precio-claro">1.2. Agrupación de Camila — reserva rápida y precio claro</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Grupo que propone Camila</th>
+<th>Tarjetas</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Urgencia y contacto</strong></td>
+<td>C03, C08, C09, C10, C24</td>
+<td>Lo primero que necesita si Miga está mal: saber si puede ir, dónde y a qué teléfono.</td>
+</tr>
+<tr>
+<td><strong>Elegir y comparar</strong></td>
+<td>C01, C04, C05, C06, C07, C26</td>
+<td>Quiere entender el servicio, ver el precio en USD/BCV y confirmar que la clínica es confiable.</td>
+</tr>
+<tr>
+<td><strong>Reservar</strong></td>
+<td>C02, C11, C12, C13, C14, C15</td>
+<td>El flujo completo, con disponibilidad real y confirmación compartible.</td>
+</tr>
+<tr>
+<td><strong>Después de la cita</strong></td>
+<td>C16, C17, C18</td>
+<td>Historial y recordatorios para no volver a buscar en papeles.</td>
+</tr>
+<tr>
+<td><strong>Sistema y documentación</strong></td>
+<td>C19, C20, C21, C22, C23, C25</td>
+<td>Páginas de soporte y entregables; no son contenido de decisión.</td>
+</tr>
+</tbody></table></div>
+<h3 id="1-3-agrupacion-de-rafael-emergencia-telefono-y-registro">1.3. Agrupación de Rafael — emergencia, teléfono y registro</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Grupo que propone Rafael</th>
+<th>Tarjetas</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Emergencia ya</strong></td>
+<td>C03, C08, C09, C10</td>
+<td>Necesita llamar o ir ahora; no quiere navegar.</td>
+</tr>
+<tr>
+<td><strong>La clínica</strong></td>
+<td>C01, C04, C05, C06, C07, C26</td>
+<td>Quiere saber quiénes son, qué hacen y si son confiables.</td>
+</tr>
+<tr>
+<td><strong>Mis mascotas</strong></td>
+<td>C16, C17, C18</td>
+<td>Rocky, Luna y Canela en un solo lugar; el historial reemplaza la carpeta física.</td>
+</tr>
+<tr>
+<td><strong>Citas</strong></td>
+<td>C02, C11, C12, C13, C14, C15</td>
+<td>Agendar con pocos campos y confirmación clara.</td>
+</tr>
+<tr>
+<td><strong>Sistema y documentación</strong></td>
+<td>C19, C20, C21, C22, C23, C24, C25</td>
+<td>Lo global y lo técnico, separado de las tareas.</td>
+</tr>
+</tbody></table></div>
+<h3 id="1-4-agrupacion-de-la-familia-rojas-confianza-y-planificacion">1.4. Agrupación de la familia Rojas — confianza y planificación</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Grupo que propone la familia</th>
+<th>Tarjetas</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Confianza</strong></td>
+<td>C01, C06, C07</td>
+<td>Antes de pagar quiere saber quién atiende a Bruno y qué dicen otras familias.</td>
+</tr>
+<tr>
+<td><strong>Servicios y precios</strong></td>
+<td>C04, C05, C26</td>
+<td>Compara qué incluye y cuánto cuesta; la nota BCV evita sorpresas.</td>
+</tr>
+<tr>
+<td><strong>Planificar la cita</strong></td>
+<td>C02, C03, C08, C09, C10, C11, C12, C13, C14, C15</td>
+<td>Horario, sede, calendario, datos y confirmación en una sola secuencia.</td>
+</tr>
+<tr>
+<td><strong>Seguimiento</strong></td>
+<td>C16, C17, C18</td>
+<td>Vacunas y recordatorios para la guardería, viajes y controles.</td>
+</tr>
+<tr>
+<td><strong>Sistema y documentación</strong></td>
+<td>C19, C20, C21, C22, C23, C24, C25</td>
+<td>Footer, guía y wireframes; soporte del proyecto.</td>
+</tr>
+</tbody></table></div>
+<h3 id="1-5-comparacion-y-conclusion-del-card-sorting">1.5. Comparación y conclusión del card sorting</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Camila</th>
+<th>Rafael</th>
+<th>Familia Rojas</th>
+<th>Decisión de arquitectura</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Urgencia y contacto</td>
+<td>Primer grupo</td>
+<td>Primer grupo</td>
+<td>Dentro de “Planificar”</td>
+<td><strong>Global</strong>: botón fijo + datos en header/footer; no una página aparte.</td>
+</tr>
+<tr>
+<td>Servicios y precios</td>
+<td>“Elegir y comparar”</td>
+<td>Dentro de “La clínica”</td>
+<td>“Servicios y precios”</td>
+<td>Un solo nivel: <code>servicios.html</code> + detalle.</td>
+</tr>
+<tr>
+<td>Reserva</td>
+<td>“Reservar”</td>
+<td>“Citas”</td>
+<td>“Planificar”</td>
+<td>Flujo lineal de 3 pasos + confirmación; no se fragmenta en el menú.</td>
+</tr>
+<tr>
+<td>Confianza</td>
+<td>Dentro de “Elegir”</td>
+<td>“La clínica”</td>
+<td>Primer grupo</td>
+<td>Inicio y Equipo; no un ítem de menú adicional.</td>
+</tr>
+<tr>
+<td>Mis mascotas</td>
+<td>“Después”</td>
+<td>“Mis mascotas”</td>
+<td>“Seguimiento”</td>
+<td><strong>Ítem de menú propio</strong> por el peso del historial de vacunas.</td>
+</tr>
+<tr>
+<td>Documentación</td>
+<td>“Sistema”</td>
+<td>“Sistema”</td>
+<td>“Sistema”</td>
+<td>Fuera del menú; enlaces de footer y carpeta <code>wireframes/</code>.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Conclusión:</strong> los tres perfiles coinciden en cinco bloques estables —urgencia/contacto, servicios/precios, reserva, confianza y seguimiento— y difieren en el orden y la profundidad. Esa coincidencia sostiene un menú de seis opciones sin submenús: Inicio, Servicios, Equipo, Mis mascotas, Contacto y Agendar cita. La emergencia no compite por un ítem porque es global; la documentación tampoco entra al menú porque no es una tarea del cliente.</p>
+<hr>
+<h2 id="2-sitemap-s4">2. Sitemap (S4)</h2>
+<h3 id="2-1-contrato-de-navegacion-comprobado">2.1. Contrato de navegación comprobado</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Posición</th>
+<th>Etiqueta visible</th>
+<th>Archivo</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Inicio</td>
+<td><code>index.html</code></td>
+<td>Enlace de texto</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Servicios</td>
+<td><code>servicios.html</code></td>
+<td>Enlace de texto</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Equipo</td>
+<td><code>equipo.html</code></td>
+<td>Enlace de texto</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mis mascotas</td>
+<td><code>mis-mascotas.html</code></td>
+<td>Enlace de texto</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Contacto</td>
+<td><code>contacto.html</code></td>
+<td>Enlace de texto</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Agendar cita</td>
+<td><code>agendar.html</code></td>
+<td>CTA primario</td>
+</tr>
+</tbody></table></div>
+<ul>
+<li><strong>Total: 6 opciones</strong>, el máximo del brief.</li>
+<li>Coincide exactamente con <code>NAV_ITEMS</code> de <code>site/assets/js/layout.js</code> (commit <code>bf13d95</code>). No se editó ese archivo.</li>
+<li><code>Inicio</code> es el nivel 0 del árbol y, a la vez, la primera opción del menú; las otras cinco cuelgan de él.</li>
+</ul>
+<h3 id="2-2-arbol-de-navegacion">2.2. Árbol de navegación</h3>
+<pre tabindex="0"><code class="language-mermaid">flowchart TD
+  INI[&quot;Nivel 0 · Inicio&lt;br/&gt;index.html&quot;]
+
+  subgraph MENU[&quot;Nivel 1 · Menú principal (6 opciones; coincide con layout.js)&quot;]
+    direction TB
+    SERV[&quot;Servicios&lt;br/&gt;servicios.html&quot;]
+    EQ[&quot;Equipo&lt;br/&gt;equipo.html&quot;]
+    PET[&quot;Mis mascotas&lt;br/&gt;mis-mascotas.html&quot;]
+    CON[&quot;Contacto&lt;br/&gt;contacto.html&quot;]
+    BOOK[&quot;Agendar cita&lt;br/&gt;agendar.html · paso 1&quot;]
+  end
+
+  INI --&gt; SERV
+  INI --&gt; EQ
+  INI --&gt; PET
+  INI --&gt; CON
+  INI --&gt; BOOK
+
+  SERV --&gt; DET[&quot;Nivel 2 · Detalle de servicio&lt;br/&gt;servicio.html?s=consulta&lt;br/&gt;también vacunación, cirugía, peluquería y emergencias&quot;]
+  PET --&gt; HIST[&quot;Nivel 2 · Historial de vacunas&lt;br/&gt;sección de mis-mascotas.html&quot;]
+  CON --&gt; MAP[&quot;Nivel 2 · Mapa y horarios&lt;br/&gt;sección de contacto.html&quot;]
+  BOOK --&gt; BOOK2[&quot;Nivel 2 · Fecha y hora&lt;br/&gt;agendar-paso-2.html&quot;]
+  BOOK2 --&gt; BOOK3[&quot;Nivel 2 · Datos del dueño&lt;br/&gt;agendar-paso-3.html&quot;]
+  BOOK3 --&gt; OK[&quot;Cita confirmada&lt;br/&gt;cita-confirmada.html&quot;]
+
+  subgraph GLOBAL[&quot;Elementos globales · presentes en todas las páginas&quot;]
+    H[&quot;Header&lt;br/&gt;logo · menú de 6 · tema&quot;]
+    F[&quot;Footer&lt;br/&gt;dirección · horarios · teléfono · WhatsApp&quot;]
+    EM[&quot;Botón de emergencias fijo&lt;br/&gt;tel: · wa.me&quot;]
+    TH[&quot;Toggle de tema&lt;br/&gt;claro / oscuro&quot;]
+  end
+
+  subgraph DOC[&quot;Documentación y entregables · fuera del menú&quot;]
+    DOCS[&quot;Documentación del proyecto&lt;br/&gt;documentacion/index.html&quot;]
+    SG[&quot;Guía de estilos&lt;br/&gt;guia-de-estilos.html&quot;]
+    WI[&quot;Índice de wireframes&lt;br/&gt;wireframes/index.html&quot;]
+    WF[&quot;11 wireframes&lt;br/&gt;wireframes/01-inicio.html … 11-mis-mascotas.html&quot;]
+    PDF[&quot;Informe PDF&lt;br/&gt;documentacion/informe.pdf&quot;]
+    E404[&quot;Página 404&lt;br/&gt;404.html&quot;]
+  end
+
+  F -.-&gt;|documentación| DOCS
+  DOCS --&gt; SG
+  DOCS --&gt; WI
+  DOCS --&gt; PDF
+  WI --&gt; WF
+  INI -.-&gt;|error de ruta| E404
+</code></pre>
+<p><img src="assets/sitemap.svg" alt="Sitemap renderizado: Inicio, menú de seis opciones, subpáginas, elementos globales y documentación" class="doc-image" loading="lazy" decoding="async"></p>
+<p><em>Fuente editable:</em> <a href="assets/sitemap.mmd"><code>assets/sitemap.mmd</code></a>.</p>
+<h3 id="2-3-pantallas-y-niveles">2.3. Pantallas y niveles</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Página / sección</th>
+<th>Archivo</th>
+<th>Cómo se llega</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Inicio</td>
+<td><code>index.html</code></td>
+<td>URL raíz o logo.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Servicios</td>
+<td><code>servicios.html</code></td>
+<td>Menú.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Detalle de servicio</td>
+<td><code>servicio.html?s=consulta</code> (slugs: vacunación, cirugía, peluquería, emergencias)</td>
+<td>Tarjeta de Inicio o lista de Servicios.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Equipo</td>
+<td><code>equipo.html</code></td>
+<td>Menú.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Mis mascotas</td>
+<td><code>mis-mascotas.html</code></td>
+<td>Menú.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Historial de vacunas</td>
+<td>Sección de <code>mis-mascotas.html</code></td>
+<td>Selección de mascota.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Contacto</td>
+<td><code>contacto.html</code></td>
+<td>Menú.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mapa y horarios</td>
+<td>Sección de <code>contacto.html</code></td>
+<td>Ancla o scroll.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Agendar cita — paso 1</td>
+<td><code>agendar.html</code></td>
+<td>Menú/CTA; también entrada directa desde Instagram.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Agendar — paso 2</td>
+<td><code>agendar-paso-2.html</code></td>
+<td>Continuar desde paso 1.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Agendar — paso 3</td>
+<td><code>agendar-paso-3.html</code></td>
+<td>Continuar desde paso 2.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cita confirmada</td>
+<td><code>cita-confirmada.html</code></td>
+<td>Confirmar en paso 3.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Página 404</td>
+<td><code>404.html</code></td>
+<td>Error de ruta; enlace a Inicio.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Documentación del proyecto</td>
+<td><code>documentacion/index.html</code></td>
+<td>Footer → Documentación.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Investigación, Arquitectura, Decisiones</td>
+<td><code>documentacion/investigacion.html</code>, <code>arquitectura.html</code>, <code>decisiones.html</code></td>
+<td>Hub de documentación.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Archivo de diseño</td>
+<td><code>documentacion/pantallas.html</code></td>
+<td>Hub de documentación.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Informe PDF</td>
+<td><code>documentacion/informe.pdf</code></td>
+<td>Hub de documentación (descarga).</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Guía de estilos</td>
+<td><code>guia-de-estilos.html</code></td>
+<td>Archivo de diseño → Guía de estilos; también enlace directo.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Índice de wireframes</td>
+<td><code>wireframes/index.html</code></td>
+<td>Archivo de diseño → Wireframes.</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Wireframes 01–11</td>
+<td><code>wireframes/*.html</code></td>
+<td>Índice de wireframes.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Las diez pantallas obligatorias están cubiertas:</strong> Inicio, Servicios, Detalle de servicio, Equipo, Agendar pasos 1–3, Cita confirmada, Contacto y 404. Además se incluyen “Mis mascotas”, la guía de estilos y los wireframes.</p>
+<h4>Wireframes (T4)</h4>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Archivo</th>
+<th>Pantalla</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td><code>wireframes/01-inicio.html</code></td>
+<td>Inicio</td>
+</tr>
+<tr>
+<td>02</td>
+<td><code>wireframes/02-servicios.html</code></td>
+<td>Servicios</td>
+</tr>
+<tr>
+<td>03</td>
+<td><code>wireframes/03-detalle-servicio.html</code></td>
+<td>Detalle de servicio</td>
+</tr>
+<tr>
+<td>04</td>
+<td><code>wireframes/04-equipo.html</code></td>
+<td>Equipo</td>
+</tr>
+<tr>
+<td>05</td>
+<td><code>wireframes/05-agendar-paso-1.html</code></td>
+<td>Agendar paso 1</td>
+</tr>
+<tr>
+<td>06</td>
+<td><code>wireframes/06-agendar-paso-2.html</code></td>
+<td>Agendar paso 2</td>
+</tr>
+<tr>
+<td>07</td>
+<td><code>wireframes/07-agendar-paso-3.html</code></td>
+<td>Agendar paso 3</td>
+</tr>
+<tr>
+<td>08</td>
+<td><code>wireframes/08-cita-confirmada.html</code></td>
+<td>Cita confirmada</td>
+</tr>
+<tr>
+<td>09</td>
+<td><code>wireframes/09-contacto.html</code></td>
+<td>Contacto y ubicación</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>wireframes/10-404.html</code></td>
+<td>404</td>
+</tr>
+</tbody></table></div>
+<h3 id="2-4-profundidad-de-clics-desde-inicio">2.4. Profundidad de clics desde Inicio</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Destino</th>
+<th align="right">Clics</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Inicio</td>
+<td align="right">0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Servicios</td>
+<td align="right">1</td>
+<td>Inicio → menú Servicios</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td align="right">1</td>
+<td>Inicio → menú Equipo</td>
+</tr>
+<tr>
+<td>Mis mascotas</td>
+<td align="right">1</td>
+<td>Inicio → menú Mis mascotas</td>
+</tr>
+<tr>
+<td>Contacto</td>
+<td align="right">1</td>
+<td>Inicio → menú Contacto</td>
+</tr>
+<tr>
+<td>Agendar — paso 1</td>
+<td align="right">1</td>
+<td>Inicio → CTA/menú Agendar cita</td>
+</tr>
+<tr>
+<td>Detalle de servicio</td>
+<td align="right">1–2</td>
+<td>Tarjeta destacada de Inicio (1) o Servicios → detalle (2)</td>
+</tr>
+<tr>
+<td>Historial de vacunas</td>
+<td align="right">1</td>
+<td>Mis mascotas → seleccionar mascota (sección)</td>
+</tr>
+<tr>
+<td>Agendar — paso 2</td>
+<td align="right">2</td>
+<td>Paso 1 → Continuar</td>
+</tr>
+<tr>
+<td>Agendar — paso 3</td>
+<td align="right">3</td>
+<td>Paso 1 → Paso 2 → Continuar</td>
+</tr>
+<tr>
+<td>Cita confirmada</td>
+<td align="right">n/a</td>
+<td>Estado final del flujo: se llega tras 4 acciones de avance, no por navegación (ver 3.5)</td>
+</tr>
+<tr>
+<td>Documentación del proyecto</td>
+<td align="right">1</td>
+<td>Inicio → footer Documentación</td>
+</tr>
+<tr>
+<td>Investigación / Arquitectura / Decisiones</td>
+<td align="right">2</td>
+<td>Footer → Documentación → documento</td>
+</tr>
+<tr>
+<td>Archivo de diseño</td>
+<td align="right">2</td>
+<td>Footer → Documentación → Archivo de diseño</td>
+</tr>
+<tr>
+<td>Guía de estilos</td>
+<td align="right">3</td>
+<td>Footer → Documentación → Archivo de diseño → Guía</td>
+</tr>
+<tr>
+<td>Índice de wireframes</td>
+<td align="right">3</td>
+<td>Footer → Documentación → Archivo de diseño → Wireframes</td>
+</tr>
+<tr>
+<td>Wireframe individual</td>
+<td align="right">4</td>
+<td>Anexo de documentación: índice → wireframe (no es una página de cliente)</td>
+</tr>
+<tr>
+<td>404</td>
+<td align="right">n/a</td>
+<td>Solo por error de ruta; no es un destino de navegación</td>
+</tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Cómo se lee la tabla.</strong> La profundidad de navegación se mide en enlaces de arquitectura. Las páginas de cliente y la documentación principal están a <strong>≤3 clics</strong>; el wireframe individual es un anexo de documentación a 4 clics. La confirmación es el estado final de un flujo transaccional lineal, no una página que el usuario deba descubrir; sus pasos se cuentan en la sección 3.5 (5 pantallas, 4 clics de avance).</p>
+</blockquote>
+<blockquote>
+<p><strong>Documentación fuera del menú.</strong> El footer enlaza a <code>documentacion/index.html</code>, que reúne investigación, arquitectura, decisiones, archivo de diseño e informe PDF. La guía de estilos y los wireframes cuelgan del archivo de diseño. Las páginas de cliente se mantienen a ≤3 clics; el wireframe individual es un anexo de documentación a 4 clics y no compite con el menú de seis opciones.</p>
+</blockquote>
+<h3 id="2-5-justificacion-del-sitemap">2.5. Justificación del sitemap</h3>
+<p>El menú de seis opciones cubre las cinco tareas principales sin submenús: informarse, conocer al equipo, volver a las mascotas, contactar y agendar.<br>Los detalles de servicio viven bajo Servicios y la reserva se mantiene como un flujo lineal, no como una maraña de páginas en el menú.<br>“Mis mascotas” merece un ítem propio porque el historial de vacunas es una razón de retorno, no un extra escondido.<br>La guía de estilos y los wireframes quedan fuera del menú de clientes, enlazados desde el footer como documentación del proyecto.</p>
+<hr>
+<h2 id="3-user-flow-agendar-una-cita-s5">3. User flow “Agendar una cita” (S5)</h2>
+<h3 id="3-1-puntos-de-entrada">3.1. Puntos de entrada</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Entrada</th>
+<th>Destino</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Google / búsqueda orgánica</td>
+<td><code>index.html</code></td>
+<td>Entrada principal; el usuario ve la propuesta y el CTA.</td>
+</tr>
+<tr>
+<td>Enlace de Instagram</td>
+<td><code>agendar.html</code></td>
+<td>Entrada directa al paso 1, sin pasar por Inicio.</td>
+</tr>
+<tr>
+<td>Detalle de servicio</td>
+<td><code>agendar.html?servicio=consulta</code></td>
+<td>El servicio llega preseleccionado; el paso 1 solo pide la mascota.</td>
+</tr>
+<tr>
+<td>Botón global de emergencias</td>
+<td><code>tel:</code> / <code>wa.me</code></td>
+<td>No es una entrada al agendamiento; interrumpe el flujo para atención urgente.</td>
+</tr>
+</tbody></table></div>
+<h3 id="3-2-diagrama-de-flujo">3.2. Diagrama de flujo</h3>
+<pre tabindex="0"><code class="language-mermaid">flowchart TB
+  %% Columna izquierda: entradas, emergencia y pasos 1–2.
+  G([Google]) --&gt; HOME[&quot;Inicio&lt;br/&gt;index.html&quot;]
+  IG([Instagram]) -.-&gt; P1
+  SD([Detalle de servicio&lt;br/&gt;servicio.html?s=consulta]) -.-&gt;|servicio preseleccionado| P1
+  HOME --&gt; EMG{&quot;¿Es una&lt;br/&gt;emergencia?&quot;}
+  EMG --&gt;|Sí| URG[&quot;Llamar o WhatsApp&lt;br/&gt;acción externa&quot;]
+  URG --&gt; FIN([Fin])
+  EMG --&gt;|No| P1[&quot;Paso 1 · Servicio y mascota&lt;br/&gt;agendar.html&quot;]
+  P1 --&gt; P2[&quot;Paso 2 · Fecha y hora&lt;br/&gt;agendar-paso-2.html&quot;]
+  P2 --&gt; AVAIL{&quot;¿Horario&lt;br/&gt;disponible?&quot;}
+  AVAIL --&gt;|No| P2R[&quot;Elegir otro horario&lt;br/&gt;conserva datos y sugiere cercanos&quot;]
+  P2R --&gt; P2
+  AVAIL --&gt;|Sí| A1((&quot;A&lt;br/&gt;paso 3&quot;))
+
+  %% Columna derecha: paso 3, validación y confirmación.
+  A2((&quot;A&quot;)) --&gt; P3[&quot;Paso 3 · Datos del dueño&lt;br/&gt;agendar-paso-3.html&quot;]
+  P3 --&gt; BACK{&quot;¿Volver?&quot;}
+  BACK --&gt;|Sí| B1((&quot;B&lt;br/&gt;vuelve al paso 2&quot;))
+  BACK --&gt;|No| VALID{&quot;¿Campos&lt;br/&gt;válidos?&quot;}
+  VALID --&gt;|No| ERR[&quot;Errores inline&lt;br/&gt;teléfono 04XX u 02XX · correo&quot;]
+  ERR --&gt; P3
+  VALID --&gt;|Sí| CONF[&quot;Confirmar cita&lt;br/&gt;agendar-paso-3.html&quot;]
+  CONF --&gt;|horario ocupado| C1((&quot;C&lt;br/&gt;vuelve al horario&quot;))
+  CONF --&gt; DONE[&quot;Cita confirmada&lt;br/&gt;cita-confirmada.html&quot;]
+  DONE --&gt; FIN2([Fin])
+
+  %% Nota compacta: el abandono se ofrece en los pasos 1, 2 y 3.
+  ABANDONO[&quot;Abandono · se ofrece al intentar salir&lt;br/&gt;en los pasos 1, 2 y 3&lt;br/&gt;Modal de salida → guardar borrador&lt;br/&gt;→ banner Continuar donde lo dejaste&lt;br/&gt;→ reanudar el paso guardado&quot;]
+</code></pre>
+<p><img src="assets/user-flow.svg" alt="User flow renderizado de arriba hacia abajo: entradas, emergencia, reserva en tres pasos y rutas alternativas" class="doc-image" loading="lazy" decoding="async"></p>
+<p><em>Fuente editable:</em> <a href="assets/user-flow.mmd"><code>assets/user-flow.mmd</code></a>. Los círculos <strong>A</strong>, <strong>B</strong> y <strong>C</strong> son conectores de continuación entre las dos columnas del diagrama: <strong>A</strong> sigue en el paso 3, <strong>B</strong> vuelve al paso 2 conservando los datos y <strong>C</strong> vuelve a elegir horario cuando el turno se ocupó al confirmar. La nota <strong>Abandono</strong> aplica a los pasos 1, 2 y 3.</p>
+<h3 id="3-3-camino-ideal-y-pantallas">3.3. Camino ideal y pantallas</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th align="right">Orden</th>
+<th>Etapa del camino ideal</th>
+<th>Pantalla / archivo</th>
+<th>Acción del usuario</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td>Inicio</td>
+<td><code>index.html</code></td>
+<td>Pulsa “Agendar cita” o “Continuar donde lo dejaste”.</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Elegir servicio</td>
+<td><code>agendar.html</code></td>
+<td>Selecciona uno de los cinco servicios.</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Datos de la mascota</td>
+<td><code>agendar.html</code></td>
+<td>Elige tipo, nombre y edad; el servicio se conserva.</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Fecha y hora</td>
+<td><code>agendar-paso-2.html</code></td>
+<td>Elige un día y un horario disponible de 30 minutos.</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Datos del dueño</td>
+<td><code>agendar-paso-3.html</code></td>
+<td>Completa nombre, teléfono, correo y acepta el resumen.</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Confirmar</td>
+<td><code>agendar-paso-3.html</code></td>
+<td>Revisa y pulsa “Confirmar cita”; aquí se validan los campos.</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Cita confirmada</td>
+<td><code>cita-confirmada.html</code></td>
+<td>Comparte por WhatsApp o agrega al calendario.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Nota de contrato:</strong> el paso 1 agrupa “elegir servicio” y “datos de la mascota” en <strong>una sola pantalla</strong>, tal como exige la pantalla 5 del brief. El paso 3 agrupa “datos del dueño” y “confirmar” en <strong>una sola pantalla</strong>, tal como exige la pantalla 7. Por eso el camino ideal tiene 7 etapas de contenido, pero <strong>5 pantallas</strong>.</p>
+<h3 id="3-4-rutas-alternativas-obligatorias">3.4. Rutas alternativas obligatorias</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Condición</th>
+<th>Comportamiento esperado</th>
+<th>Pantalla / archivo</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>¿Es una emergencia?</strong> Sí</td>
+<td>Llamar o abrir WhatsApp de inmediato; no se pide formulario. El botón de emergencia está en todas las pantallas.</td>
+<td>Acción externa <code>tel:</code> / <code>wa.me</code>; CTA global</td>
+<td>F01</td>
+</tr>
+<tr>
+<td><strong>El horario elegido ya no está disponible</strong></td>
+<td>Volver a la selección de fecha/hora conservando servicio y mascota; mostrar los 3 horarios más cercanos y un mensaje claro.</td>
+<td><code>agendar-paso-2.html</code></td>
+<td>F03, F05</td>
+</tr>
+<tr>
+<td><strong>Campos vacíos o con formato incorrecto</strong></td>
+<td>Errores inline junto al campo, borde de error, <code>aria-invalid</code> y <code>aria-describedby</code>; mantener el foco y no avanzar. Teléfono venezolano de 11 dígitos: móvil <code>04XX-XXXXXXX</code> o fijo <code>02XX-XXXXXXX</code>; correo válido.</td>
+<td><code>agendar-paso-3.html</code></td>
+<td>F05</td>
+</tr>
+<tr>
+<td><strong>El usuario quiere volver al paso anterior</strong></td>
+<td>Botón “Volver” que conserva todos los valores y el horario; no reinicia el flujo.</td>
+<td><code>agendar-paso-2.html</code> / <code>agendar-paso-3.html</code></td>
+<td>F04</td>
+</tr>
+<tr>
+<td><strong>El usuario abandona a la mitad</strong></td>
+<td>Modal de salida (“Seguir agendando” / “Guardar y salir”); guardar borrador en <code>sessionStorage</code>; al volver, banner “Continuar donde lo dejaste” y reanudar el paso guardado.</td>
+<td><code>agendar.html</code> y pasos 2–3; modal de salida</td>
+<td>F04</td>
+</tr>
+<tr>
+<td><strong>El usuario llega desde Instagram</strong></td>
+<td>Entrada directa al paso 1 (<code>agendar.html</code>) sin obligarlo a pasar por Inicio.</td>
+<td><code>agendar.html</code></td>
+<td>F04</td>
+</tr>
+<tr>
+<td><strong>El usuario llega desde un detalle de servicio</strong></td>
+<td>El servicio llega preseleccionado; el paso 1 pide solo la mascota.</td>
+<td><code>agendar.html?servicio=consulta</code></td>
+<td>F02, F04</td>
+</tr>
+</tbody></table></div>
+<h3 id="3-5-conteo-de-clics-pantallas-y-tiempo">3.5. Conteo de clics, pantallas y tiempo</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th align="right">Valor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pantallas del camino ideal (incluyendo Inicio y confirmación)</td>
+<td align="right"><strong>5</strong></td>
+</tr>
+<tr>
+<td>Etapas de contenido del brief</td>
+<td align="right"><strong>7</strong></td>
+</tr>
+<tr>
+<td>Clics de avance desde Inicio hasta “Cita confirmada”</td>
+<td align="right"><strong>4</strong></td>
+</tr>
+<tr>
+<td>Campos de texto obligatorios del flujo</td>
+<td align="right"><strong>5</strong> (nombre y edad de la mascota; nombre, teléfono y correo del dueño)</td>
+</tr>
+<tr>
+<td>Objetivo de tiempo</td>
+<td align="right"><strong>≤ 2 minutos</strong>; diseño objetivo ≈ <strong>100 s</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>Desglose de la estimación (no es una medición con usuarios):</strong> 15 s para elegir servicio, 20 s para los datos de la mascota, 25 s para fecha/hora, 35 s para los datos del dueño y la revisión, 5 s para confirmar. La cifra se validará con el prototipo de T6 y la QA de T7; si el usuario ya tiene un borrador, el tiempo baja.</p>
+<h3 id="3-6-contrato-de-pantallas-para-t6">3.6. Contrato de pantallas para T6</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Propósito</th>
+<th>Datos / estados obligatorios</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>site/agendar.html</code></td>
+<td>Paso 1: servicio + mascota; entrada directa y reanudación</td>
+<td>Servicio preseleccionado opcional; tipo, nombre y edad de la mascota (número + unidad); stepper; validación; botón Continuar; banner de borrador si existe.</td>
+</tr>
+<tr>
+<td><code>site/agendar-paso-2.html</code></td>
+<td>Paso 2: fecha y hora</td>
+<td>Calendario con disponibilidad; slots de 30 min; estados disponible/seleccionado/no disponible; mensaje de “horario ya no disponible” y 3 cercanos; conservar paso 1.</td>
+</tr>
+<tr>
+<td><code>site/agendar-paso-3.html</code></td>
+<td>Paso 3: datos del dueño + resumen + confirmar</td>
+<td>Nombre, teléfono, correo; resumen de servicio/mascota/fecha/hora; errores inline; botón Volver; confirmación.</td>
+</tr>
+<tr>
+<td><code>site/cita-confirmada.html</code></td>
+<td>Cita confirmada</td>
+<td>Resumen, WhatsApp, agregar al calendario, enlace a Mis mascotas/Inicio.</td>
+</tr>
+<tr>
+<td><code>site/mis-mascotas.html</code></td>
+<td>Perfiles e historial de vacunas</td>
+<td>Mascotas de ejemplo, vacunas, próximos recordatorios.</td>
+</tr>
+<tr>
+<td>Modal de salida</td>
+<td>Confirmación de abandono</td>
+<td>“Seguir agendando” / “Guardar y salir”; si guarda, escribe el borrador.</td>
+</tr>
+<tr>
+<td>Banner de reanudación</td>
+<td>“Continuar donde lo dejaste”</td>
+<td>Visible en <code>agendar.html</code> si hay borrador vigente; permite retomar el paso guardado o descartarlo.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Contrato técnico del borrador y validación:</strong></p>
+<ul>
+<li>Clave de <code>sessionStorage</code>: <code>pf-booking-draft</code>; guarda servicio, mascota, fecha, hora y datos del dueño; caducidad lógica de <strong>24 h</strong>; no se envía al servidor.</li>
+<li>Teléfono: <code>^(?:04(?:12|14|16|24|26)|02\d{2})-?\d{7}$</code> (móvil <code>04XX-XXXXXXX</code> o fijo <code>02XX-XXXXXXX</code>, 11 dígitos); mensaje de error en español con ejemplos <code>0412-5550198</code> y <code>0212-5551234</code>.</li>
+<li>Edad: entero positivo + unidad <code>meses</code> o <code>años</code>; el borrador guarda <code>petAgeValue</code>, <code>petAgeUnit</code> y <code>petAge</code> compuesto. Los borradores antiguos con edad en texto libre se migran al cargar.</li>
+<li>Correo: validación estándar <code>^[^\s@]+@[^\s@]+\.[^\s@]+$</code>; mensaje inline.</li>
+<li>Los errores usan <code>aria-invalid=&quot;true&quot;</code>, <code>aria-describedby</code> y un contenedor con <code>role=&quot;alert&quot;</code> o <code>aria-live=&quot;polite&quot;</code>; nunca solo color.</li>
+<li>El modal de salida devuelve el foco al botón que lo abrió; el banner de reanudación es un <code>role=&quot;status&quot;</code> y tiene botones “Continuar” y “Descartar”.</li>
+<li>La reserva conserva los datos al volver al paso anterior; no debe reiniciar el formulario.</li>
+<li>Todos los controles mantienen el objetivo táctil de <strong>48 px</strong> y el foco visible definido en la guía de estilos.</li>
+</ul>
+<h3 id="3-7-trazabilidad-s4-s5">3.7. Trazabilidad S4/S5</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Spec</th>
+<th>Dónde se cubre</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S4 — card sorting, sitemap, menú ≤6, niveles, elementos globales, 10 pantallas, profundidad ≤3, justificación</td>
+<td>Secciones 1 y 2</td>
+</tr>
+<tr>
+<td>S5 — flujo estándar, 2+ entradas, camino ideal, alternativas, conteo y meta &lt;2 min, archivos por pantalla</td>
+<td>Sección 3</td>
+</tr>
+</tbody></table></div>
+
+          </article>
+          <nav class="doc-pager" aria-label="Documentos relacionados"><a class="btn btn--secondary" href="investigacion.html">← Investigación UX</a><a class="btn btn--primary" href="decisiones.html">Decisiones de diseño →</a></nav>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

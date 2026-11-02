@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 09 · Contacto y ubicación — Patitas Felices</title>
+  <meta name="description" content="Wireframe de la pantalla de contacto y ubicación de Patitas Felices.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html" aria-current="page">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 09 · Contacto y ubicación</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-kicker">Contacto y ubicación</p>
+    <h1>Estamos en Los Ruices, a pocos pasos del metro</h1>
+    <p class="wf-lead">Datos de contacto, emergencia destacada, mapa, horarios y cómo llegar.</p>
+
+    <div class="wf-alert" style="margin-block-start: 16px" role="note">
+      <p class="wf-alert__title">Emergencias 24 horas</p>
+      <p>Dificultad para respirar, convulsiones, sangrado o ingestión de tóxicos. Llamar antes de trasladar.</p>
+      <div class="wf-btn-row" style="margin-block-start: 8px">
+        <a class="wf-btn" href="tel:+584125550198">Llamar a emergencias</a>
+        <a class="wf-btn wf-btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="wf-split" style="margin-block-start: 20px">
+      <section class="wf-card wf-card--strong" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contacto</h2>
+        <p class="wf-card__text">Av. Francisco de Miranda, Torre Country, local 3. Los Ruices, Caracas 1071.</p>
+        <p class="wf-note">Teléfono</p>
+        <p>+58 212 555 1234</p>
+        <p class="wf-note">WhatsApp</p>
+        <p>+58 412 555 0198</p>
+        <p class="wf-note">Correo</p>
+        <p>hola@patitasfelices.com.ve</p>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="tel:+582125551234">Llamar</a>
+          <a class="wf-btn wf-btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+        </div>
+      </section>
+
+      <div class="wf-stack">
+        <div class="wf-placeholder wf-placeholder--map"><span>Mapa estático / OpenStreetMap</span></div>
+        <div class="wf-card">
+          <h3 class="wf-card__title">Cómo llegar</h3>
+          <p class="wf-card__text">Metro Los Ruices a 350 m. Estacionamiento en el edificio. Entrada a nivel de calle.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="wf-section" aria-labelledby="hours-title">
+      <div class="wf-section__head">
+        <h2 id="hours-title">Horario de atención</h2>
+      </div>
+      <div class="wf-table-wrap" tabindex="0">
+        <table class="wf-table">
+          <thead><tr><th scope="col">Día</th><th scope="col">Horario</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Lunes a viernes</th><td>8:00 a 19:00</td></tr>
+            <tr><th scope="row">Sábado</th><td>8:00 a 14:00</td></tr>
+            <tr><th scope="row">Domingo</th><td>Solo emergencias</td></tr>
+            <tr><th scope="row">Feriados</th><td>Solo emergencias</td></tr>
+            <tr><th scope="row">Emergencias</th><td>24 horas, todos los días</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wf-section" aria-labelledby="cta-title">
+      <div class="wf-box">
+        <h2 id="cta-title">Agenda una cita</h2>
+        <p class="wf-lead">Si no es una urgencia, reserva en línea y elige el horario que mejor te funcione.</p>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="05-agendar-paso-1.html">Agendar cita</a>
+          <a class="wf-btn wf-btn--ghost" href="02-servicios.html">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 09 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

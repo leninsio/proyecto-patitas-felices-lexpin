@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 07 · Agendar paso 3 — Patitas Felices</title>
+  <meta name="description" content="Wireframe del paso 3 del agendamiento: datos del dueño, resumen y confirmación.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html" aria-current="page">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 07 · Agendar · paso 3</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-kicker">Agendar cita</p>
+    <h1>Tus datos y la confirmación</h1>
+    <p class="wf-lead">Nombre, teléfono y correo del dueño. El resumen de servicio, mascota, fecha y hora queda visible antes de confirmar.</p>
+
+    <div class="wf-stepper">
+      <ol class="wf-stepper__list" aria-label="Pasos del agendamiento">
+      <li class="is-done"><span class="wf-stepper__dot" aria-hidden="true"><svg class="wf-stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><span class="wf-stepper__label">Servicio y mascota</span></li>
+      <li class="is-done"><span class="wf-stepper__dot" aria-hidden="true"><svg class="wf-stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><span class="wf-stepper__label">Fecha y hora</span></li>
+      <li aria-current="step"><span class="wf-stepper__dot">3</span><span class="wf-stepper__label">Datos del dueño</span></li>
+      </ol>
+      <span class="wf-stepper__line wf-stepper__line--1 is-done" aria-hidden="true"></span>
+      <span class="wf-stepper__line wf-stepper__line--2 is-done" aria-hidden="true"></span>
+    </div>
+
+    <div class="wf-split">
+      <form class="wf-stack" aria-label="Formulario de datos del dueño">
+        <fieldset class="wf-card wf-card--strong">
+          <legend class="wf-card__title">Datos del dueño</legend>
+          <div class="wf-stack wf-stack--sm" style="margin-block-start: 10px">
+            <div class="wf-field">
+              <span class="wf-field__label">Nombre y apellido *</span>
+              <span class="wf-input">Ej. Ana Pérez</span>
+            </div>
+            <div class="wf-field">
+              <span class="wf-field__label">Teléfono *</span>
+              <span class="wf-input wf-input--error" aria-describedby="phone-error">412-55</span>
+              <span class="wf-error" id="phone-error">Escribe un teléfono de 11 dígitos. Ejemplo: 0412-5550198 o 0212-5551234.</span>
+            </div>
+            <div class="wf-field">
+              <span class="wf-field__label">Correo electrónico *</span>
+              <span class="wf-input">nombre@correo.com</span>
+            </div>
+            <span class="wf-choice"><span class="wf-choice__radio" aria-hidden="true"></span><span>Quiero recibir el resumen y los recordatorios por WhatsApp.</span></span>
+          </div>
+        </fieldset>
+
+        <div class="wf-alert">
+          <p class="wf-alert__title">Errores inline</p>
+          <p>El campo inválido conserva el foco, muestra borde y mensaje con instrucción concreta. No se avanza hasta corregirlo.</p>
+        </div>
+
+        <div class="wf-btn-row">
+          <a class="wf-btn wf-btn--ghost" href="06-agendar-paso-2.html">Volver</a>
+          <a class="wf-btn" href="08-cita-confirmada.html">Confirmar cita</a>
+        </div>
+      </form>
+
+      <aside class="wf-stack" aria-label="Resumen de la cita">
+        <div class="wf-card wf-card--strong">
+          <h2 class="wf-card__title">Resumen</h2>
+          <p class="wf-note">Servicio</p>
+          <p><strong>Consulta general · 30 min</strong></p>
+          <p class="wf-note">Mascota</p>
+          <p><strong>Miga · perra · 8 meses</strong></p>
+          <p class="wf-note">Fecha y hora</p>
+          <p><strong>Jueves 12 de noviembre, 9:00</strong></p>
+          <p class="wf-note">Sede</p>
+          <p>Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p>
+          <hr style="border: 0; border-block-start: 1px solid var(--wf-line); width: 100%">
+          <p class="wf-price">Desde $25</p>
+          <p class="wf-note">o su equivalente en Bs a tasa BCV del día</p>
+          <a class="wf-btn wf-btn--block" href="08-cita-confirmada.html">Confirmar cita</a>
+        </div>
+        <div class="wf-alert">
+          <p class="wf-alert__title">¿Es una emergencia?</p>
+          <p>No esperes a confirmar. Llama al +58 412 555 0198.</p>
+          <div class="wf-btn-row" style="margin-block-start: 8px">
+            <a class="wf-btn" href="tel:+584125550198">Llamar</a>
+            <a class="wf-btn wf-btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 07 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

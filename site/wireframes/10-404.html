@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 10 · 404 — Patitas Felices</title>
+  <meta name="description" content="Wireframe de la página 404 de Patitas Felices.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 10 · 404</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <div style="text-align: center; padding-block: 24px">
+      <p style="font-size: clamp(4rem, 18vw, 8rem); font-weight: 800; line-height: 0.9; color: var(--wf-muted)" aria-hidden="true">404</p>
+      <p class="wf-kicker">Página no encontrada</p>
+      <h1>Esta página se fue a pasear</h1>
+      <p class="wf-lead" style="margin-inline: auto">La dirección no existe o cambió de lugar. Tres salidas claras: inicio, agendar y emergencias.</p>
+    </div>
+
+    <div class="wf-grid wf-grid--3" style="margin-block-start: 20px">
+      <a class="wf-card wf-card--strong" href="01-inicio.html" style="text-decoration: none">
+        <span class="wf-icon-box" aria-hidden="true">Icono</span>
+        <h2 class="wf-card__title">Volver al inicio</h2>
+        <p class="wf-card__text">Servicios, equipo y contacto en un solo lugar.</p>
+      </a>
+      <a class="wf-card wf-card--strong" href="05-agendar-paso-1.html" style="text-decoration: none">
+        <span class="wf-icon-box" aria-hidden="true">Icono</span>
+        <h2 class="wf-card__title">Agendar cita</h2>
+        <p class="wf-card__text">Reserva en línea en menos de dos minutos.</p>
+      </a>
+      <a class="wf-card wf-card--strong" href="tel:+584125550198" style="text-decoration: none">
+        <span class="wf-icon-box" aria-hidden="true">Icono</span>
+        <h2 class="wf-card__title">Emergencias 24/7</h2>
+        <p class="wf-card__text">Llama al +58 412 555 0198 si hay riesgo de vida.</p>
+      </a>
+    </div>
+
+    <p class="wf-note" style="margin-block-start: 16px; text-align: center">También puedes revisar <a href="02-servicios.html">servicios y precios</a> o escribir por WhatsApp.</p>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 10 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

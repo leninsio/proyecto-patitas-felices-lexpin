@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cita confirmada — Patitas Felices</title>
+  <meta name="description" content="Tu cita en Patitas Felices está confirmada. Revisa el resumen, agrega la cita al calendario o compártela por WhatsApp.">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script src="assets/js/layout.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script src="assets/js/booking.js" defer></script>
+</head>
+<body data-booking-page="confirmation">
+  <main id="main" tabindex="-1">
+
+    <section class="confirmation-hero" aria-labelledby="page-title">
+      <div class="container confirmation-hero__inner">
+        <div class="confirmation-icon" aria-hidden="true">
+          <svg class="icon" focusable="false"><use href="#icon-check"></use></svg>
+        </div>
+        <p class="eyebrow">Cita confirmada</p>
+        <h1 id="page-title">Tu cita está confirmada</h1>
+        <p class="lead">Te esperamos en Los Ruices. Llega 10 minutos antes con la cartilla de vacunas si la tienes a mano.</p>
+        <p class="booking-code">Código de cita <strong data-booking-code>PF-0000-0000</strong></p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Resumen de la cita confirmada">
+      <div class="container confirmation-layout">
+        <div class="card">
+          <div class="card__body">
+            <h2 class="booking-section-title">Resumen de la cita</h2>
+            <dl class="booking-details">
+              <div>
+                <dt>Servicio</dt>
+                <dd data-confirmed-service>Consulta general</dd>
+              </div>
+              <div>
+                <dt>Mascota</dt>
+                <dd data-confirmed-pet>Miga · Perro · 8 meses</dd>
+              </div>
+              <div>
+                <dt>Fecha y hora</dt>
+                <dd data-confirmed-date>Por confirmar</dd>
+              </div>
+              <div>
+                <dt>Dueño</dt>
+                <dd data-confirmed-owner>Por confirmar</dd>
+              </div>
+              <div>
+                <dt>Teléfono</dt>
+                <dd data-confirmed-phone>Por confirmar</dd>
+              </div>
+              <div>
+                <dt>Correo</dt>
+                <dd data-confirmed-email>Por confirmar</dd>
+              </div>
+              <div>
+                <dt>Notas</dt>
+                <dd data-confirmed-notes>Sin notas adicionales.</dd>
+              </div>
+            </dl>
+            <p class="booking-summary__price">
+              <strong data-confirmed-price>Desde $25</strong>
+              <span data-confirmed-price-note>o su equivalente en Bs a tasa BCV del día</span>
+            </p>
+            <p class="booking-summary__note">Sede: Av. Francisco de Miranda, Torre Country, local 3, Los Ruices, Caracas.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__body">
+            <h2 class="booking-section-title">¿Qué sigue?</h2>
+            <ul class="check-list">
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span>Llega 10 minutos antes de tu cita.</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span>Trae la cartilla de vacunas si la tienes.</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg><span>Si necesitas cambiarla, llámanos al +58 212 555 1234.</span></li>
+            </ul>
+
+            <div class="booking-actions booking-actions--stack">
+              <button class="btn btn--secondary" type="button" data-ics>
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-calendar"></use></svg>
+                Agregar al calendario
+              </button>
+              <a class="btn btn--primary" data-whatsapp-share href="#" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>
+                Compartir por WhatsApp
+              </a>
+            </div>
+
+            <div class="booking-actions">
+              <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+              <a class="btn btn--ghost" href="mis-mascotas.html">Ir a Mis mascotas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Información de emergencias">
+      <div class="container">
+        <div class="alert alert--info" role="note">
+          <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+          <div class="alert__content">
+            <p class="alert__title">Si es una emergencia antes de la cita</p>
+            <p class="alert__text">Llama al <a href="tel:+584125550198">+58 412 555 0198</a>. La atención de urgencias es 24/7 y no requiere cita.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

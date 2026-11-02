@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 11 · Mis mascotas — Patitas Felices</title>
+  <meta name="description" content="Wireframe de la sección Mis mascotas con perfiles e historial de vacunas.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html" aria-current="page">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 11 · Mis mascotas</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-kicker">Mis mascotas</p>
+    <h1>El historial de tu mascota, sin papeles perdidos</h1>
+    <p class="wf-lead">Dos perfiles de ejemplo, historial de vacunas en tabla y próximos recordatorios.</p>
+
+    <div class="wf-alert" role="note" style="margin-block-start: 16px">
+      <p class="wf-alert__title">Datos de demostración</p>
+      <p>Miga y Bruno son mascotas ficticias del prototipo. Fechas e historiales son ejemplos.</p>
+    </div>
+
+    <section class="wf-section" aria-labelledby="pets-title">
+      <div class="wf-section__head">
+        <p class="wf-kicker">Perfiles</p>
+        <h2 id="pets-title">Dos mascotas de ejemplo</h2>
+      </div>
+      <div class="wf-grid">
+        <article class="wf-card wf-card--strong">
+          <div class="wf-avatar-row">
+            <div class="wf-placeholder wf-placeholder--avatar"><span>Foto</span></div>
+            <div><h3 class="wf-card__title">Miga</h3><p class="wf-note">Perra mestiza · 8 meses · 9 kg</p></div>
+          </div>
+          <div class="wf-stats">
+            <div><p class="wf-note">Dueña</p><p>Camila T.</p></div>
+            <div><p class="wf-note">Microchip</p><p>PF-0412-8821</p></div>
+            <div><p class="wf-note">Adoptada</p><p>Junio 2026</p></div>
+            <div><p class="wf-note">Última visita</p><p>14 sep 2026</p></div>
+          </div>
+          <a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html">Agendar control</a>
+        </article>
+
+        <article class="wf-card wf-card--strong">
+          <div class="wf-avatar-row">
+            <div class="wf-placeholder wf-placeholder--avatar"><span>Foto</span></div>
+            <div><h3 class="wf-card__title">Bruno</h3><p class="wf-note">Labrador · 4 años · 28 kg</p></div>
+          </div>
+          <div class="wf-stats">
+            <div><p class="wf-note">Dueña</p><p>Andrea R.</p></div>
+            <div><p class="wf-note">Microchip</p><p>PF-0219-4470</p></div>
+            <div><p class="wf-note">Adoptado</p><p>Marzo 2022</p></div>
+            <div><p class="wf-note">Última visita</p><p>12 sep 2026</p></div>
+          </div>
+          <a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html">Agendar control</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="wf-section" aria-labelledby="history-title">
+      <div class="wf-section__head">
+        <p class="wf-kicker">Historial</p>
+        <h2 id="history-title">Vacunas aplicadas</h2>
+      </div>
+      <div class="wf-stack">
+        <div class="wf-card">
+          <h3 class="wf-card__title">Miga</h3>
+          <div class="wf-table-wrap" tabindex="0">
+            <table class="wf-table">
+              <thead><tr><th scope="col">Vacuna</th><th scope="col">Fecha</th><th scope="col">Próxima dosis</th><th scope="col">Estado</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Polivalente (1.ª)</th><td>22 jun 2026</td><td>—</td><td>Aplicada</td></tr>
+                <tr><th scope="row">Polivalente (2.ª)</th><td>20 jul 2026</td><td>—</td><td>Aplicada</td></tr>
+                <tr><th scope="row">Rabia</th><td>17 ago 2026</td><td>17 ago 2027</td><td>Al día</td></tr>
+                <tr><th scope="row">Polivalente (refuerzo)</th><td>14 sep 2026</td><td>14 sep 2027</td><td>Al día</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="wf-note wf-table-hint">Desliza para ver todas las columnas.</p>
+        </div>
+
+        <div class="wf-card">
+          <h3 class="wf-card__title">Bruno</h3>
+          <div class="wf-table-wrap" tabindex="0">
+            <table class="wf-table">
+              <thead><tr><th scope="col">Vacuna</th><th scope="col">Fecha</th><th scope="col">Próxima dosis</th><th scope="col">Estado</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Polivalente</th><td>10 mar 2026</td><td>10 mar 2027</td><td>Al día</td></tr>
+                <tr><th scope="row">Rabia</th><td>10 mar 2026</td><td>10 mar 2027</td><td>Al día</td></tr>
+                <tr><th scope="row">Leptospirosis</th><td>10 mar 2026</td><td>10 mar 2027</td><td>Al día</td></tr>
+                <tr><th scope="row">Desparasitación</th><td>12 sep 2026</td><td>12 dic 2026</td><td>Próxima</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="wf-note wf-table-hint">Desliza para ver todas las columnas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wf-section" aria-labelledby="reminders-title">
+      <div class="wf-section__head">
+        <p class="wf-kicker">Recordatorios</p>
+        <h2 id="reminders-title">Lo que viene</h2>
+      </div>
+      <div class="wf-stack wf-stack--sm">
+        <div class="wf-card"><div class="wf-cluster"><span class="wf-tag wf-tag--dark">05 NOV</span><span><strong>Desparasitación de Miga</strong><br><span class="wf-note">Control de peso y desparasitación interna.</span></span></div><a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html" style="justify-self: start">Agendar</a></div>
+        <div class="wf-card"><div class="wf-cluster"><span class="wf-tag wf-tag--dark">12 DIC</span><span><strong>Desparasitación de Bruno</strong><br><span class="wf-note">Refuerzo trimestral.</span></span></div><a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html" style="justify-self: start">Agendar</a></div>
+        <div class="wf-card"><div class="wf-cluster"><span class="wf-tag wf-tag--dark">20 ENE</span><span><strong>Control dental de Bruno</strong><br><span class="wf-note">Revisión de sarro y encías.</span></span></div><a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html" style="justify-self: start">Agendar</a></div>
+        <div class="wf-card"><div class="wf-cluster"><span class="wf-tag wf-tag--dark">17 AGO</span><span><strong>Rabia de Miga</strong><br><span class="wf-note">Refuerzo anual.</span></span></div><a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html" style="justify-self: start">Agendar</a></div>
+      </div>
+    </section>
+
+    <section class="wf-section" aria-labelledby="cta-title">
+      <div class="wf-box">
+        <h2 id="cta-title">Mantén el historial al día</h2>
+        <p class="wf-lead">Agendar el próximo control o hablar con la clínica.</p>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="05-agendar-paso-1.html">Agendar cita</a>
+          <a class="wf-btn wf-btn--ghost" href="09-contacto.html">Contacto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 11 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

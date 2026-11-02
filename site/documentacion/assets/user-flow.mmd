@@ -1,0 +1,29 @@
+flowchart TB
+  %% Columna izquierda: entradas, emergencia y pasos 1–2.
+  G([Google]) --> HOME["Inicio<br/>index.html"]
+  IG([Instagram]) -.-> P1
+  SD([Detalle de servicio<br/>servicio.html?s=consulta]) -.->|servicio preseleccionado| P1
+  HOME --> EMG{"¿Es una<br/>emergencia?"}
+  EMG -->|Sí| URG["Llamar o WhatsApp<br/>acción externa"]
+  URG --> FIN([Fin])
+  EMG -->|No| P1["Paso 1 · Servicio y mascota<br/>agendar.html"]
+  P1 --> P2["Paso 2 · Fecha y hora<br/>agendar-paso-2.html"]
+  P2 --> AVAIL{"¿Horario<br/>disponible?"}
+  AVAIL -->|No| P2R["Elegir otro horario<br/>conserva datos y sugiere cercanos"]
+  P2R --> P2
+  AVAIL -->|Sí| A1(("A<br/>paso 3"))
+
+  %% Columna derecha: paso 3, validación y confirmación.
+  A2(("A")) --> P3["Paso 3 · Datos del dueño<br/>agendar-paso-3.html"]
+  P3 --> BACK{"¿Volver?"}
+  BACK -->|Sí| B1(("B<br/>vuelve al paso 2"))
+  BACK -->|No| VALID{"¿Campos<br/>válidos?"}
+  VALID -->|No| ERR["Errores inline<br/>teléfono 04XX u 02XX · correo"]
+  ERR --> P3
+  VALID -->|Sí| CONF["Confirmar cita<br/>agendar-paso-3.html"]
+  CONF -->|horario ocupado| C1(("C<br/>vuelve al horario"))
+  CONF --> DONE["Cita confirmada<br/>cita-confirmada.html"]
+  DONE --> FIN2([Fin])
+
+  %% Nota compacta: el abandono se ofrece en los pasos 1, 2 y 3.
+  ABANDONO["Abandono · se ofrece al intentar salir<br/>en los pasos 1, 2 y 3<br/>Modal de salida → guardar borrador<br/>→ banner Continuar donde lo dejaste<br/>→ reanudar el paso guardado"]

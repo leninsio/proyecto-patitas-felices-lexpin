@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tus datos y confirmación — Patitas Felices</title>
+  <meta name="description" content="Completa tus datos y confirma la cita de tu mascota en Patitas Felices. Revisa el resumen de servicio, mascota, fecha y hora.">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script src="assets/js/layout.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script src="assets/js/booking.js" defer></script>
+</head>
+<body data-booking-page="step3">
+  <main id="main" tabindex="-1">
+
+    <section class="page-header page-header--compact" aria-labelledby="page-title">
+      <div class="container page-header__inner">
+        <p class="eyebrow">Agendar cita</p>
+        <h1 id="page-title">Tus datos y confirmación</h1>
+        <p class="lead">Revisa el resumen de los pasos 1 y 2, completa tus datos y confirma. No creamos cuentas ni enviamos datos a un servidor.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Datos del dueño y confirmación">
+      <div class="container">
+
+        <div class="alert alert--warning" data-guard-notice role="alert" hidden>
+          <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+          <div class="alert__content">
+            <p class="alert__title">Completa el paso anterior</p>
+            <p class="alert__text" data-guard-text></p>
+          </div>
+        </div>
+
+        <div class="booking-progress">
+          <p class="booking-step-label">Paso 3 de 3</p>
+          <div class="stepper">
+            <ol class="stepper__list" aria-label="Pasos del agendamiento">
+            <li class="stepper__item is-complete">
+              <span class="stepper__marker"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg></span>
+              <span class="stepper__label">Servicio y mascota</span>
+              <span class="stepper__hint">Completado</span>
+            </li>
+            <li class="stepper__item is-complete">
+              <span class="stepper__marker"><svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-check"></use></svg></span>
+              <span class="stepper__label">Fecha y hora</span>
+              <span class="stepper__hint">Completado</span>
+            </li>
+            <li class="stepper__item" aria-current="step">
+              <span class="stepper__marker">3</span>
+              <span class="stepper__label">Datos del dueño</span>
+              <span class="stepper__hint">Paso actual</span>
+            </li>
+            </ol>
+            <span class="stepper__line stepper__line--1 is-complete" aria-hidden="true"></span>
+            <span class="stepper__line stepper__line--2 is-complete" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="booking-layout">
+          <div class="booking-main">
+            <form class="card booking-form" data-booking-form novalidate>
+              <div class="card__body">
+                <h2 class="booking-section-title">Datos del dueño</h2>
+
+                <div class="form-grid">
+                  <div class="field">
+                    <label class="field__label" for="owner-name">Nombre y apellido <span class="field__required">*</span></label>
+                    <input class="input" id="owner-name" name="ownerName" type="text" autocomplete="name" placeholder="Ej. Ana Pérez" required aria-describedby="owner-name-error">
+                    <p class="field__error" id="owner-name-error" role="alert" hidden>
+                      <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                      <span data-error-text></span>
+                    </p>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="owner-phone">Teléfono <span class="field__required">*</span></label>
+                    <input class="input" id="owner-phone" name="ownerPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0412-5550198" required aria-describedby="owner-phone-error">
+                    <p class="field__hint">Formato venezolano: 0412-5550198 (móvil) o 0212-5551234 (fijo).</p>
+                    <p class="field__error" id="owner-phone-error" role="alert" hidden>
+                      <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                      <span data-error-text></span>
+                    </p>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="owner-email">Correo electrónico <span class="field__required">*</span></label>
+                    <input class="input" id="owner-email" name="ownerEmail" type="email" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="owner-email-error">
+                    <p class="field__hint">Lo usamos solo para enviar el resumen de la cita.</p>
+                    <p class="field__error" id="owner-email-error" role="alert" hidden>
+                      <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                      <span data-error-text></span>
+                    </p>
+                  </div>
+
+                  <div class="field field--full">
+                    <label class="field__label" for="owner-notes">Notas para el equipo <span class="field__optional">(opcional)</span></label>
+                    <textarea class="textarea" id="owner-notes" name="ownerNotes" maxlength="300" placeholder="Cuéntanos algo que debamos saber sobre tu mascota."></textarea>
+                    <p class="field__hint">Máximo 300 caracteres.</p>
+                  </div>
+                </div>
+
+                <div class="booking-actions">
+                  <a class="btn btn--secondary" href="agendar-paso-2.html" data-step3-back>Volver</a>
+                  <button class="btn btn--primary" type="submit" data-step3-confirm>Confirmar cita</button>
+                </div>
+              </div>
+            </form>
+
+            <aside class="booking-demo-note" data-demo-note>
+              <p><strong>Modo demo:</strong> <span data-demo-text>Si confirmas el horario de demo, volverás al paso 2 con el aviso de conflicto.</span></p>
+            </aside>
+          </div>
+
+          <aside class="booking-summary" aria-label="Resumen de la cita">
+            <div class="card">
+              <div class="card__body">
+                <h2 class="booking-section-title">Resumen</h2>
+                <dl class="booking-summary-list">
+                  <div>
+                    <dt>Servicio</dt>
+                    <dd>
+                      <span data-summary-service>Consulta general</span>
+                      <a class="summary-edit" href="agendar.html" data-edit-step="1">Editar</a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Mascota</dt>
+                    <dd>
+                      <span data-summary-pet>Tu mascota · Perro</span>
+                      <a class="summary-edit" href="agendar.html" data-edit-step="1">Editar</a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Fecha y hora</dt>
+                    <dd>
+                      <span data-summary-date>Por elegir</span>
+                      <a class="summary-edit" href="agendar-paso-2.html" data-edit-step="2">Editar</a>
+                    </dd>
+                  </div>
+                </dl>
+                <p class="booking-summary__price">
+                  <strong data-summary-price>Desde $25</strong>
+                  <span data-summary-price-note>o su equivalente en Bs a tasa BCV del día</span>
+                </p>
+                <p class="booking-summary__note">Paso 3 de 3. Al confirmar recibirás un código de cita y podrás compartirla por WhatsApp.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

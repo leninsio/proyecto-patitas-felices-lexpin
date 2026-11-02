@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agendar cita — Patitas Felices</title>
+  <meta name="description" content="Agenda una cita en Patitas Felices en tres pasos: servicio y mascota, fecha y hora, datos del dueño. Emergencias 24/7.">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <script src="assets/js/layout.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <script src="assets/js/booking.js" defer></script>
+</head>
+<body data-booking-page="step1">
+  <main id="main" tabindex="-1">
+
+    <section class="page-header page-header--compact" aria-labelledby="page-title">
+      <div class="container page-header__inner">
+        <p class="eyebrow">Agendar cita</p>
+        <h1 id="page-title">Agendar cita</h1>
+        <p class="lead">Tres pasos, sin crear una cuenta. Primero dinos si es una emergencia; si no, elige el servicio y cuéntanos sobre tu mascota.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Formulario de agendamiento">
+      <div class="container">
+
+        <div class="alert alert--warning" data-guard-notice role="alert" hidden>
+          <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+          <div class="alert__content">
+            <p class="alert__title">Completa el paso anterior</p>
+            <p class="alert__text" data-guard-text></p>
+          </div>
+        </div>
+
+        <div class="booking-progress">
+          <p class="booking-step-label">Paso 1 de 3</p>
+          <div class="stepper">
+            <ol class="stepper__list" aria-label="Pasos del agendamiento">
+            <li class="stepper__item" aria-current="step">
+              <span class="stepper__marker">1</span>
+              <span class="stepper__label">Servicio y mascota</span>
+              <span class="stepper__hint">Paso actual</span>
+            </li>
+            <li class="stepper__item">
+              <span class="stepper__marker">2</span>
+              <span class="stepper__label">Fecha y hora</span>
+              <span class="stepper__hint">Pendiente</span>
+            </li>
+            <li class="stepper__item">
+              <span class="stepper__marker">3</span>
+              <span class="stepper__label">Datos del dueño</span>
+              <span class="stepper__hint">Pendiente</span>
+            </li>
+            </ol>
+            <span class="stepper__line stepper__line--1" aria-hidden="true"></span>
+            <span class="stepper__line stepper__line--2" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="alert alert--info resume-banner" data-resume-banner role="status" hidden>
+          <svg class="icon alert__icon" aria-hidden="true" focusable="false"><use href="#icon-clock"></use></svg>
+          <div class="alert__content">
+            <p class="alert__title">Continuar donde lo dejaste</p>
+            <p class="alert__text" data-resume-text></p>
+          </div>
+          <div class="resume-banner__actions">
+            <button class="btn btn--primary" type="button" data-resume>Continuar</button>
+            <button class="btn btn--secondary" type="button" data-discard>Descartar</button>
+          </div>
+        </div>
+
+        <fieldset class="booking-emergency" data-emergency-question>
+          <legend class="visually-hidden">¿Es una emergencia?</legend>
+          <h2 class="booking-section-title">¿Es una emergencia?</h2>
+          <p class="text-muted">Si tu mascota tiene dificultad para respirar, convulsiones, sangrado que no se detiene o ingirió algo tóxico, no llenes el formulario: llama o escribe ahora.</p>
+          <div class="booking-choice-grid booking-choice-grid--2">
+            <label class="radio-card">
+              <input class="radio-card__input" type="radio" name="emergency" value="no" checked>
+              <span class="radio-card__body">
+                <span class="radio-card__copy">
+                  <span class="radio-card__title">No, quiero agendar una cita</span>
+                  <span class="radio-card__meta">Elige servicio, fecha y hora con calma.</span>
+                </span>
+                <span class="radio-card__indicator" aria-hidden="true"></span>
+              </span>
+            </label>
+            <label class="radio-card">
+              <input class="radio-card__input" type="radio" name="emergency" value="si">
+              <span class="radio-card__body">
+                <span class="radio-card__copy">
+                  <span class="radio-card__title">Sí, es una emergencia</span>
+                  <span class="radio-card__meta">Te mostramos llamada y WhatsApp de inmediato.</span>
+                </span>
+                <span class="radio-card__indicator" aria-hidden="true"></span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div data-booking-content>
+          <div class="booking-layout">
+            <form class="card booking-form" data-booking-form novalidate>
+              <div class="card__body">
+                <h2 class="booking-section-title">Servicio y mascota</h2>
+
+                <fieldset class="booking-choice-group" data-service-group>
+                  <legend class="field__label">Servicio <span class="field__required">*</span></legend>
+                  <p class="field__error" data-error="service" role="alert" hidden>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                    <span data-error-text></span>
+                  </p>
+                  <div class="booking-choice-grid booking-choice-grid--services">
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="service" value="consulta" checked required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Consulta general</span>
+                          <span class="radio-card__meta">30 min · Desde $25</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="service" value="vacunacion" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Vacunación</span>
+                          <span class="radio-card__meta">20 min · Desde $35</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="service" value="cirugia" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Cirugía</span>
+                          <span class="radio-card__meta">Requiere evaluación · Desde $180</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="service" value="peluqueria" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Peluquería</span>
+                          <span class="radio-card__meta">60 min · Desde $20</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="service" value="emergencias" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Emergencias 24/7</span>
+                          <span class="radio-card__meta">Evaluación de urgencia · Desde $45</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="booking-choice-group" data-pet-type-group>
+                  <legend class="field__label">Tu mascota <span class="field__required">*</span></legend>
+                  <p class="field__error" data-error="petType" role="alert" hidden>
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                    <span data-error-text></span>
+                  </p>
+                  <div class="booking-choice-grid booking-choice-grid--pets">
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="petType" value="perro" checked required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Perro</span>
+                          <span class="radio-card__meta">Consulta, vacunas y peluquería.</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="petType" value="gato" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Gato</span>
+                          <span class="radio-card__meta">Manejo de bajo estrés.</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input class="radio-card__input" type="radio" name="petType" value="exotica" required>
+                      <span class="radio-card__body">
+                        <span class="radio-card__copy">
+                          <span class="radio-card__title">Mascota exótica</span>
+                          <span class="radio-card__meta">Aves, reptiles o roedores.</span>
+                        </span>
+                        <span class="radio-card__indicator" aria-hidden="true"></span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="form-grid">
+                  <div class="field">
+                    <label class="field__label" for="pet-name">Nombre de la mascota <span class="field__required">*</span></label>
+                    <input class="input" id="pet-name" name="petName" type="text" autocomplete="off" placeholder="Ej. Miga" required aria-describedby="pet-name-error">
+                    <p class="field__error" id="pet-name-error" role="alert" hidden>
+                      <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                      <span data-error-text></span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="pet-age">Edad de la mascota <span class="field__required">*</span></label>
+                    <div class="field__age-group">
+                      <input class="input" id="pet-age" name="petAge" type="number" inputmode="numeric" min="1" max="360" step="1" placeholder="8" required aria-describedby="pet-age-hint pet-age-error">
+                      <div class="select-wrap">
+                        <select class="select" id="pet-age-unit" name="petAgeUnit" aria-label="Unidad de la edad">
+                          <option value="meses">meses</option>
+                          <option value="años">años</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p class="field__hint" id="pet-age-hint">Aproximada está bien.</p>
+                    <p class="field__error" id="pet-age-error" role="alert" hidden>
+                      <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+                      <span data-error-text></span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="booking-actions">
+                  <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
+                  <button class="btn btn--primary" type="submit" data-step1-continue>Continuar</button>
+                </div>
+              </div>
+            </form>
+
+            <aside class="booking-summary" aria-label="Resumen de la cita">
+              <div class="card">
+                <div class="card__body">
+                  <h2 class="booking-section-title">Resumen</h2>
+                  <dl class="booking-summary-list">
+                    <div>
+                      <dt>Servicio</dt>
+                      <dd data-summary-service>Consulta general</dd>
+                    </div>
+                    <div>
+                      <dt>Mascota</dt>
+                      <dd data-summary-pet>Tu mascota · Perro</dd>
+                    </div>
+                    <div>
+                      <dt>Fecha y hora</dt>
+                      <dd data-summary-date>Por elegir</dd>
+                    </div>
+                  </dl>
+                  <p class="booking-summary__price">
+                    <strong data-summary-price>Desde $25</strong>
+                    <span data-summary-price-note>o su equivalente en Bs a tasa BCV del día</span>
+                  </p>
+                  <p class="booking-summary__note">Paso 1 de 3. El precio final se confirma en la consulta.</p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="emergency-card" data-emergency-panel role="region" aria-labelledby="emergency-panel-title" hidden>
+          <div class="emergency-card__head">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-alert"></use></svg>
+            <div>
+              <h2 class="emergency-card__title" id="emergency-panel-title" data-emergency-title>Llama ahora: es una emergencia</h2>
+              <p>No llenes el formulario. Si tu mascota tiene dificultad para respirar, convulsiones, sangrado que no se detiene o ingirió algo tóxico, llama o escribe por WhatsApp de inmediato.</p>
+              <ul class="emergency-card__list">
+                <li>Dificultad para respirar o encías azuladas.</li>
+                <li>Convulsiones, desmayo o debilidad repentina.</li>
+                <li>Accidente, golpe de calor o ingestión de tóxicos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="emergency-card__actions">
+            <a class="btn btn--on-emergency" href="tel:+584125550198">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-phone"></use></svg>
+              Llamar ahora
+            </a>
+            <a class="btn btn--inverse" href="https://wa.me/584125550198?text=Hola%2C%20necesito%20atenci%C3%B3n%20de%20emergencia%20para%20mi%20mascota." target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-whatsapp"></use></svg>
+              WhatsApp de emergencia
+            </a>
+          </div>
+          <button class="btn btn--ghost" type="button" data-emergency-back>No es una emergencia, volver al formulario</button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

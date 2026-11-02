@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investigación UX — Patitas Felices</title>
+  <meta name="description" content="Proto-personas, journey map y análisis de competencia (S1–S3).">
+  <meta name="theme-color" content="#F6FAF8">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <script src="../assets/js/layout.js"></script>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body data-doc-page="investigacion">
+  <main id="main" tabindex="-1">
+    <section class="page-header page-header--compact doc-hero">
+      <div class="container page-header__inner">
+        <nav class="doc-breadcrumb" aria-label="Ruta de documentación"><a href="index.html">Documentación</a> / <span aria-current="page">Investigación UX</span></nav>
+        <p class="eyebrow">Documentación del proyecto</p>
+        <h1>Investigación UX</h1>
+        <p class="lead">Proto-personas, journey map y análisis de competencia (S1–S3).</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Investigación UX">
+      <div class="container doc-layout">
+        <aside class="doc-sidebar">
+          <nav class="doc-toc doc-toc--desktop" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-tipos-de-cliente-s1">1. Tipos de cliente (S1)</a></li>
+<li><a class="doc-toc__sub" href="#1-1-tres-perfiles-elegidos-y-justificacion">1.1. Tres perfiles elegidos y justificación</a></li>
+<li><a class="" href="#2-proto-personas-s1">2. Proto-personas (S1)</a></li>
+<li><a class="doc-toc__sub" href="#2-1-camila-torres-primera-mascota-agenda-desde-el-celular">2.1. Camila Torres — primera mascota, agenda desde el celular</a></li>
+<li><a class="doc-toc__sub" href="#2-2-rafael-mendez-adulto-mayor-tres-mascotas-baja-alfabetizacion-digital">2.2. Rafael Méndez — adulto mayor, tres mascotas, baja alfabetización digital</a></li>
+<li><a class="doc-toc__sub" href="#2-3-familia-rojas-dos-ninos-un-perro-decision-compartida">2.3. Familia Rojas — dos niños, un perro, decisión compartida</a></li>
+<li><a class="" href="#3-journey-map-s2">3. Journey map (S2)</a></li>
+<li><a class="doc-toc__sub" href="#3-1-mapa-de-experiencia">3.1. Mapa de experiencia</a></li>
+<li><a class="doc-toc__sub" href="#3-2-curva-de-emocion">3.2. Curva de emoción</a></li>
+<li><a class="doc-toc__sub" href="#3-3-lectura-del-mapa">3.3. Lectura del mapa</a></li>
+<li><a class="doc-toc__sub" href="#3-4-leyenda-de-features">3.4. Leyenda de features</a></li>
+<li><a class="" href="#4-analisis-de-competencia-s3">4. Análisis de competencia (S3)</a></li>
+<li><a class="doc-toc__sub" href="#4-1-metodologia-y-evidencia">4.1. Metodología y evidencia</a></li>
+<li><a class="doc-toc__sub" href="#4-2-sitios-evaluados">4.2. Sitios evaluados</a></li>
+<li><a class="doc-toc__sub" href="#4-3-comparacion-por-criterios-del-brief">4.3. Comparación por criterios del brief</a></li>
+<li><a class="doc-toc__sub" href="#4-4-conclusion-6-lineas">4.4. Conclusión (6 líneas)</a></li>
+<li><a class="doc-toc__sub" href="#4-5-sitios-descartados-durante-la-verificacion">4.5. Sitios descartados durante la verificación</a></li>
+<li><a class="" href="#5-trazabilidad-de-los-specs">5. Trazabilidad de los specs</a></li></ul></nav>
+        </aside>
+        <div>
+          <details class="doc-toc-mobile">
+            <summary>En esta página</summary>
+            <nav class="doc-toc" aria-label="En esta página"><p class="doc-toc__title">En esta página</p><ul class="doc-toc__list"><li><a class="" href="#1-tipos-de-cliente-s1">1. Tipos de cliente (S1)</a></li>
+<li><a class="doc-toc__sub" href="#1-1-tres-perfiles-elegidos-y-justificacion">1.1. Tres perfiles elegidos y justificación</a></li>
+<li><a class="" href="#2-proto-personas-s1">2. Proto-personas (S1)</a></li>
+<li><a class="doc-toc__sub" href="#2-1-camila-torres-primera-mascota-agenda-desde-el-celular">2.1. Camila Torres — primera mascota, agenda desde el celular</a></li>
+<li><a class="doc-toc__sub" href="#2-2-rafael-mendez-adulto-mayor-tres-mascotas-baja-alfabetizacion-digital">2.2. Rafael Méndez — adulto mayor, tres mascotas, baja alfabetización digital</a></li>
+<li><a class="doc-toc__sub" href="#2-3-familia-rojas-dos-ninos-un-perro-decision-compartida">2.3. Familia Rojas — dos niños, un perro, decisión compartida</a></li>
+<li><a class="" href="#3-journey-map-s2">3. Journey map (S2)</a></li>
+<li><a class="doc-toc__sub" href="#3-1-mapa-de-experiencia">3.1. Mapa de experiencia</a></li>
+<li><a class="doc-toc__sub" href="#3-2-curva-de-emocion">3.2. Curva de emoción</a></li>
+<li><a class="doc-toc__sub" href="#3-3-lectura-del-mapa">3.3. Lectura del mapa</a></li>
+<li><a class="doc-toc__sub" href="#3-4-leyenda-de-features">3.4. Leyenda de features</a></li>
+<li><a class="" href="#4-analisis-de-competencia-s3">4. Análisis de competencia (S3)</a></li>
+<li><a class="doc-toc__sub" href="#4-1-metodologia-y-evidencia">4.1. Metodología y evidencia</a></li>
+<li><a class="doc-toc__sub" href="#4-2-sitios-evaluados">4.2. Sitios evaluados</a></li>
+<li><a class="doc-toc__sub" href="#4-3-comparacion-por-criterios-del-brief">4.3. Comparación por criterios del brief</a></li>
+<li><a class="doc-toc__sub" href="#4-4-conclusion-6-lineas">4.4. Conclusión (6 líneas)</a></li>
+<li><a class="doc-toc__sub" href="#4-5-sitios-descartados-durante-la-verificacion">4.5. Sitios descartados durante la verificación</a></li>
+<li><a class="" href="#5-trazabilidad-de-los-specs">5. Trazabilidad de los specs</a></li></ul></nav>
+          </details>
+          <article class="doc-content">
+<p><strong>Proyecto:</strong> sitio web de la clínica veterinaria Patitas Felices (Caracas, Venezuela)<br><strong>Autor:</strong> Lenin Alvarado<br><strong>Fecha de la investigación:</strong> 2026-10-29<br><strong>Alcance:</strong> proto-personas (S1), journey map (S2) y análisis de competencia (S3).</p>
+<blockquote>
+<p><strong>Nota metodológica.</strong> Las personas, nombres, mascotas y frases de este documento son ficticios y se construyeron con lógica, no con entrevistas. Los supuestos indican el <em>tipo</em> de fuente que los inspira (reseñas de Google Maps, publicaciones de Instagram, grupos de Facebook u observación de sitios) y son hipótesis de diseño, no hallazgos verificados; no se transcribe ni se atribuye ninguna opinión a una persona o a un negocio real. Los datos de la clínica Patitas Felices también son ficticios.</p>
+</blockquote>
+<hr>
+<h2 id="1-tipos-de-cliente-s1">1. Tipos de cliente (S1)</h2>
+<p>Se identificaron cinco tipos de cliente posibles para una clínica veterinaria de barrio en Caracas. La última columna explica, en una línea, por qué visitaría el sitio.</p>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tipo de cliente</th>
+<th>Por qué visitaría el sitio</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Persona joven con su primera mascota</td>
+<td>Busca información confiable, precios y una forma rápida de agendar desde el celular sin llamar.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adulto mayor con varias mascotas</td>
+<td>Necesita llamar o escribir por WhatsApp, ver horarios, dirección y atención de emergencia sin navegar menús complejos.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Familia con niños y un perro</td>
+<td>Quiere confirmar que la clínica es confiable, comparar precios y agendar alrededor de la rutina escolar.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dueño de una mascota exótica</td>
+<td>Necesita saber si atienden aves, reptiles o roedores y encontrar información específica antes de trasladar al animal.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Dueño de una mascota con enfermedad crónica</td>
+<td>Requiere controles frecuentes, historial de vacunas, recordatorios y acceso rápido a la evolución de su mascota.</td>
+</tr>
+</tbody></table></div>
+<h3 id="1-1-tres-perfiles-elegidos-y-justificacion">1.1. Tres perfiles elegidos y justificación</h3>
+<p>Se eligieron <strong>Camila (24 años, nivel digital alto, primera mascota)</strong>, <strong>Rafael (68 años, nivel digital bajo, tres mascotas)</strong> y <strong>la familia Rojas (38–40 años, nivel digital medio, dos niños y un perro)</strong>.</p>
+<blockquote>
+<p>La selección cubre los extremos de edad y habilidad tecnológica: una nativa digital que agenda sola, un adulto mayor que prefiere el teléfono y una familia que decide en pareja y compara antes de pagar.<br>La necesidad principal también cambia: primera experiencia y urgencia; continuidad y atención humana; confianza, precio y organización familiar.<br>Los tres permiten poner a prueba las decisiones centrales del proyecto: reserva en pocos pasos, emergencia siempre visible, precios claros e historial de vacunas.</p>
+</blockquote>
+<hr>
+<h2 id="2-proto-personas-s1">2. Proto-personas (S1)</h2>
+<h3 id="2-1-camila-torres-primera-mascota-agenda-desde-el-celular">2.1. Camila Torres — primera mascota, agenda desde el celular</h3>
+<h4>Datos básicos</h4>
+<ul>
+<li><strong>Edad:</strong> 24 años.</li>
+<li><strong>Ocupación:</strong> community manager junior en una agencia de contenido.</li>
+<li><strong>Vive en:</strong> Los Ruices, Caracas. Apartamento con su pareja; sin niños.</li>
+<li><strong>Contexto:</strong> ingresos de primer empleo, presupuesto ajustado y poco tiempo entre semana.</li>
+<li><strong>Mascota:</strong> Miga, perra mestiza de 8 meses y 9 kg, adoptada hace cuatro meses.</li>
+</ul>
+<h4>Su mascota</h4>
+<p>Miga es su primera mascota. Está en etapa de vacunas y descubrimiento; Camila sigue cuentas de adopción y cuidado canino en Instagram, pero nunca ha tenido que decidir sola ante un síntoma.</p>
+<h4>Frase representativa</h4>
+<blockquote>
+<p>“Quiero saber hoy mismo si es normal y cuánto cuesta, sin llamar tres veces.”</p>
+</blockquote>
+<h4>Perfil tecnológico</h4>
+<ul>
+<li><strong>Nivel: alto.</strong></li>
+<li>Smartphone Android con datos móviles; usa Instagram, WhatsApp, Google Maps y pagos por Pago Móvil.</li>
+<li>Agenda servicios y compra por apps; espera formularios cortos, confirmación inmediata y modo oscuro.</li>
+<li>Tolerancia baja a webs lentas o a tener que escribir lo mismo dos veces.</li>
+</ul>
+<h4>Deseos y objetivos</h4>
+<ol>
+<li>Confirmar si el síntoma de Miga es urgente y qué hacer mientras tanto.</li>
+<li>Ver un precio referencial antes de decidir, con la equivalencia en bolívares.</li>
+<li>Reservar en menos de dos minutos, desde el celular, y recibir la confirmación por WhatsApp.</li>
+<li>Tener el historial de vacunas de Miga en un solo lugar.</li>
+</ol>
+<h4>Frustraciones</h4>
+<ol>
+<li>Sitios que solo muestran un formulario de contacto y responden “te contactamos”.</li>
+<li>No encontrar precios ni disponibilidad real antes de escribir.</li>
+<li>Formularios largos que piden datos que no parecen necesarios.</li>
+<li>Letras pequeñas, botones diminutos y menús que no se abren en el celular.</li>
+</ol>
+<h4>Miedos o dudas</h4>
+<ul>
+<li>Que la clínica no atienda emergencias fuera de horario.</li>
+<li>Que le cobren un monto distinto al anunciado.</li>
+<li>Que Miga se estrese durante la espera o el traslado.</li>
+<li>No saber distinguir un malestar pasajero de una urgencia.</li>
+</ul>
+<h4>Motivaciones</h4>
+<ul>
+<li>Es su primera mascota y quiere hacerlo bien.</li>
+<li>El vínculo afectivo con Miga es muy fuerte.</li>
+<li>Busca prevención y tranquilidad, no solo una consulta puntual.</li>
+<li>Valora compartir el cuidado con su pareja desde el celular.</li>
+</ul>
+<h4>Escenario de uso</h4>
+<p>Un domingo por la noche Miga está decaída y no quiere comer. Camila busca en Google “veterinaria cerca de mí” y entra desde el celular. Necesita saber si debe ir de inmediato, ver el precio de la consulta y reservar el primer horario disponible del lunes antes de entrar al trabajo.</p>
+<h4>Supuestos justificados</h4>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Supuesto</th>
+<th>Tipo de fuente considerado</th>
+<th>Justificación y efecto</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Camila va a completar la reserva desde el celular, en una pausa corta.</td>
+<td>Observación de sitios móviles de la competencia; publicaciones de Instagram de dueños jóvenes.</td>
+<td>El tráfico principal será móvil. El flujo debe tener botones de 48 px, una sola columna y no obligar a ampliar la pantalla.</td>
+</tr>
+<tr>
+<td>El precio referencial y la disponibilidad pesan más que un relato extenso de la clínica.</td>
+<td>Reseñas de Google Maps (las dudas sobre precios y horarios son recurrentes en ese tipo de reseña); observación de la competencia.</td>
+<td>Los precios y el calendario deben estar a la vista antes del paso 1. La confianza se refuerza con datos concretos, no con párrafos largos.</td>
+</tr>
+</tbody></table></div>
+<h4>Decisiones de diseño medibles</h4>
+<ol>
+<li><strong>Reserva en 3 pasos y 4 clics de avance</strong>, desde “Agendar cita” hasta “Cita confirmada”, con stepper visible y campos mínimos (servicio, mascota, fecha/hora, dueño). Objetivo de tiempo: menos de 2 minutos.</li>
+<li><strong>Precio en cada tarjeta de servicio</strong> con el formato “Desde $25” y la nota “o su equivalente en Bs a tasa BCV del día”; el detalle amplía qué incluye.</li>
+<li><strong>Calendario con disponibilidad real y celdas de 48 × 48 px</strong>; al elegir un día se muestran horarios de 30 minutos, estados disponible/seleccionado/no disponible y un resumen antes de confirmar.</li>
+</ol>
+<hr>
+<h3 id="2-2-rafael-mendez-adulto-mayor-tres-mascotas-baja-alfabetizacion-digital">2.2. Rafael Méndez — adulto mayor, tres mascotas, baja alfabetización digital</h3>
+<h4>Datos básicos</h4>
+<ul>
+<li><strong>Edad:</strong> 68 años.</li>
+<li><strong>Ocupación:</strong> profesor de historia jubilado.</li>
+<li><strong>Vive en:</strong> La Candelaria, Caracas. Casa con su esposa; sus hijos viven fuera.</li>
+<li><strong>Contexto:</strong> usa lentes para leer y prefiere resolver por teléfono; su hija le ayuda con algunas apps.</li>
+<li><strong>Mascotas:</strong> Rocky (perro mestizo, 9 años), Luna (gata, 6 años) y Canela (gata, 3 años).</li>
+</ul>
+<h4>Su mascota</h4>
+<p>Rocky es un perro mayor con artrosis y controles periódicos. Luna y Canela son gatas de interior. Rafael lleva las tres cartillas en una carpeta y recuerda los turnos por el calendario de la nevera.</p>
+<h4>Frase representativa</h4>
+<blockquote>
+<p>“Yo prefiero hablar con una persona. Si la página no me dice la dirección y el teléfono, no sé qué hacer.”</p>
+</blockquote>
+<h4>Perfil tecnológico</h4>
+<ul>
+<li><strong>Nivel: bajo.</strong></li>
+<li>Smartphone básico con WhatsApp y llamadas; a veces usa el teléfono fijo.</li>
+<li>Aumenta el tamaño de letra del sistema; no usa apps de reserva ni compra en línea.</li>
+<li>Su hija le ayuda a escribir mensajes largos; prefiere que la web no lo obligue a crear una cuenta.</li>
+</ul>
+<h4>Deseos y objetivos</h4>
+<ol>
+<li>Ver de inmediato el teléfono y el WhatsApp de emergencias.</li>
+<li>Entender la dirección, el horario y si atienden a domicilio o solo en la clínica.</li>
+<li>Agendar con la mínima escritura posible y recibir una confirmación clara.</li>
+<li>Llevar el control de vacunas de sus tres mascotas sin depender de papeles.</li>
+</ol>
+<h4>Frustraciones</h4>
+<ol>
+<li>Letras pequeñas y menús que solo aparecen al pasar el cursor.</li>
+<li>Formularios con muchos campos o mensajes de error que no explican qué corregir.</li>
+<li>No encontrar un número de teléfono visible.</li>
+<li>Webs que solo responden por chat y no confirman el turno.</li>
+</ol>
+<h4>Miedos o dudas</h4>
+<ul>
+<li>Que Rocky no reciba atención urgente un domingo o de noche.</li>
+<li>Que la clínica esté lejos o que no haya estacionamiento.</li>
+<li>Que le cobren de más por no entender el precio.</li>
+<li>Que un formulario pierda lo que ya escribió.</li>
+</ul>
+<h4>Motivaciones</h4>
+<ul>
+<li>Cuidar a Rocky en su vejez y mantener al día las vacunas de las tres mascotas.</li>
+<li>Evitar traslados innecesarios.</li>
+<li>Sentir que lo atiende una persona, no solo una máquina.</li>
+<li>Dejar un registro para que su hija pueda ayudar si hace falta.</li>
+</ul>
+<h4>Escenario de uso</h4>
+<p>Un sábado por la mañana Rocky cojea y no quiere apoyar la pata. Rafael busca la clínica en Google, entra al sitio desde el teléfono y necesita el teléfono de emergencias, la dirección y el horario antes de salir. Si no hay urgencia, quiere pedir una cita para el lunes sin llenar un formulario largo.</p>
+<h4>Supuestos justificados</h4>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Supuesto</th>
+<th>Tipo de fuente considerado</th>
+<th>Justificación y efecto</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rafael va a llamar o escribir por WhatsApp antes de completar un formulario.</td>
+<td>Reseñas de Google Maps sobre atención y llamadas; observación de cómo se comunica la competencia local.</td>
+<td>El teléfono y el WhatsApp deben estar siempre visibles. La reserva no puede depender de una cuenta ni de un formulario extenso.</td>
+</tr>
+<tr>
+<td>El tamaño de letra y la claridad del horario son barreras reales, no preferencias estéticas.</td>
+<td>Grupos de Facebook de vecinos de Caracas; observación de usuarios que amplían la letra en el celular.</td>
+<td>Texto base de 16 px, botones de 48 px, horarios en formato 12 h y dirección escrita completa, no solo un mapa.</td>
+</tr>
+</tbody></table></div>
+<h4>Decisiones de diseño medibles</h4>
+<ol>
+<li><strong>Barra de emergencias global fija</strong> con llamada y WhatsApp (<code>tel:</code> y <code>wa.me</code>), visible en todas las páginas y en todos los tamaños; sus botones miden al menos 48 px y reservan espacio para no tapar contenido.</li>
+<li><strong>Teléfono, WhatsApp, dirección y horario en el encabezado o pie de todas las páginas</strong>, con tipografía de 16 px o más; la página de contacto muestra el mapa y los horarios en formato legible (12 h).</li>
+<li><strong>Reserva sin cuenta y con confirmación por WhatsApp</strong>: máximo 6 campos visibles en el flujo, mensajes de error con instrucción concreta y opción de volver atrás conservando los datos.</li>
+</ol>
+<hr>
+<h3 id="2-3-familia-rojas-dos-ninos-un-perro-decision-compartida">2.3. Familia Rojas — dos niños, un perro, decisión compartida</h3>
+<h4>Datos básicos</h4>
+<ul>
+<li><strong>Edad:</strong> Andrea (38) y Tomás (40).</li>
+<li><strong>Ocupación:</strong> Andrea es administradora; Tomás trabaja en logística.</li>
+<li><strong>Viven en:</strong> El Hatillo, Caracas. Casa con dos hijos de 6 y 9 años.</li>
+<li><strong>Contexto:</strong> agenda familiar compleja entre colegio, trabajo y actividades; comparten las decisiones por WhatsApp.</li>
+<li><strong>Mascota:</strong> Bruno, labrador de 4 años y 28 kg.</li>
+</ul>
+<h4>Su mascota</h4>
+<p>Bruno es un perro activo que pasea con los niños. Está vacunado, pero Andrea quiere tener el historial a mano y recordatorios antes de cada refuerzo.</p>
+<h4>Frase representativa</h4>
+<blockquote>
+<p>“Necesito saber que Bruno va a estar bien, cuánto cuesta y si puedo llevarlo después del colegio.”</p>
+</blockquote>
+<h4>Perfil tecnológico</h4>
+<ul>
+<li><strong>Nivel: medio.</strong></li>
+<li>iPhone y WhatsApp; usa Instagram, Google Maps y el calendario compartido.</li>
+<li>Compra y agenda desde el trabajo; valora confirmaciones y recordatorios automáticos.</li>
+<li>Compara reseñas y pregunta en grupos de padres antes de elegir un servicio.</li>
+</ul>
+<h4>Deseos y objetivos</h4>
+<ol>
+<li>Confirmar que la clínica es confiable y que atiende urgencias.</li>
+<li>Ver precios referenciales y qué incluye cada servicio.</li>
+<li>Agendar en un horario compatible con el colegio y recibir recordatorio.</li>
+<li>Tener el historial de vacunas de Bruno para la guardería y los viajes.</li>
+</ol>
+<h4>Frustraciones</h4>
+<ol>
+<li>Tener que escribir por WhatsApp y esperar horas para saber si hay cupo.</li>
+<li>Webs que no muestran precios ni duración de la consulta.</li>
+<li>No poder compartir la cita con su pareja desde el mismo resumen.</li>
+<li>Perder la cartilla de vacunas o no recordar la fecha del refuerzo.</li>
+</ol>
+<h4>Miedos o dudas</h4>
+<ul>
+<li>Que Bruno empeore mientras esperan una respuesta.</li>
+<li>Que el tratamiento sea más caro de lo previsto.</li>
+<li>Que la clínica no tenga experiencia con niños o con perros grandes.</li>
+<li>Que la cita quede en un horario imposible para la familia.</li>
+</ul>
+<h4>Motivaciones</h4>
+<ul>
+<li>Proteger a Bruno y enseñar a los niños a cuidarlo.</li>
+<li>Mantener la prevención al día.</li>
+<li>Resolver la logística familiar sin estrés.</li>
+<li>Contar con una clínica de confianza en la zona.</li>
+</ul>
+<h4>Escenario de uso</h4>
+<p>Un martes Bruno vomita dos veces después del paseo. Andrea busca “veterinaria El Hatillo” desde el trabajo, compara servicios y precios, y comparte el enlace con Tomás por WhatsApp. Si no es urgente, agenda para las 5:00 p. m., después de buscar a los niños, y comparte la confirmación con su pareja.</p>
+<h4>Supuestos justificados</h4>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Supuesto</th>
+<th>Tipo de fuente considerado</th>
+<th>Justificación y efecto</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>La familia compara reseñas, equipo y precios antes de reservar.</td>
+<td>Reseñas de Google Maps; publicaciones y comentarios en Instagram de clínicas de la zona.</td>
+<td>La página de inicio debe mostrar equipo, testimonios, años de experiencia y precios referenciales sin obligar a buscar en varias secciones.</td>
+</tr>
+<tr>
+<td>El recordatorio y el historial de vacunas son parte de la decisión, no un extra.</td>
+<td>Grupos de Facebook de padres y dueños de mascotas; observación de la competencia.</td>
+<td>“Mis mascotas” debe incluir perfiles e historial de vacunas, y la confirmación debe permitir compartir por WhatsApp y agregar al calendario.</td>
+</tr>
+</tbody></table></div>
+<h4>Decisiones de diseño medibles</h4>
+<ol>
+<li><strong>Bloque de confianza en Inicio</strong> con equipo, especialidades, años de trayectoria y al menos 3 testimonios; visible antes del segundo scroll.</li>
+<li><strong>Precio referencial y duración en cada tarjeta de servicio</strong> (por ejemplo, “Consulta general · 30 min · desde $25”), con la nota de equivalencia en Bs a tasa BCV del día.</li>
+<li><strong>Reserva de 3 pasos con calendario de 30 minutos</strong>, confirmación compartible por WhatsApp y recordatorio; el sistema conserva un borrador en <code>sessionStorage</code> durante 24 horas para retomar la cita.</li>
+</ol>
+<hr>
+<h2 id="3-journey-map-s2">3. Journey map (S2)</h2>
+<p><strong>Persona:</strong> Camila Torres.<br><strong>Escenario (textual del brief):</strong></p>
+<blockquote>
+<p>“Mi mascota amaneció decaída, no quiere comer y necesito llevarla al veterinario.”</p>
+</blockquote>
+<h3 id="3-1-mapa-de-experiencia">3.1. Mapa de experiencia</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Detección</strong></th>
+<th><strong>Búsqueda</strong></th>
+<th><strong>Evaluación</strong></th>
+<th><strong>Agendamiento</strong></th>
+<th><strong>Confirmación</strong></th>
+<th><strong>Post-cita</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Acciones</strong></td>
+<td>Observa que Miga no come y está decaída; revisa si tiene fiebre o vómito.</td>
+<td>Busca “veterinaria cerca de mí” en Google; abre Instagram y dos sitios; compara horarios, emergencias y precios.</td>
+<td>Lee servicios, equipo, reseñas y el teléfono; decide si es urgencia o si puede esperar.</td>
+<td>Entra a agendar; elige servicio y datos de Miga; busca un horario; llena sus datos; confirma.</td>
+<td>Recibe el resumen; lo comparte con su pareja; agrega la cita al calendario.</td>
+<td>Sigue las indicaciones; recibe recordatorio de vacunas; consulta el historial de Miga.</td>
+</tr>
+<tr>
+<td><strong>Pensamientos</strong></td>
+<td>“¿Esto es grave o exagero?” “¿Le doy agua?”</td>
+<td>“¿Cuál atiende hoy?” “¿Por qué ninguna dice el precio?”</td>
+<td>“¿Son confiables?” “¿Puedo llegar antes del trabajo?”</td>
+<td>“¿Este horario es real?” “No quiero repetir todos los datos.”</td>
+<td>“¿Quedó confirmada?” “¿Se lo mando a mi pareja?”</td>
+<td>“¿Qué debo vigilar?” “¿Cuándo es el próximo refuerzo?”</td>
+</tr>
+<tr>
+<td><strong>Emociones</strong></td>
+<td>😟 Preocupación</td>
+<td>🤔 Duda y prisa</td>
+<td>😬 Tensión / esperanza</td>
+<td>😰 Estrés por el formulario</td>
+<td>😊 Alivio</td>
+<td>😌 Tranquilidad</td>
+</tr>
+<tr>
+<td><strong>Puntos de contacto</strong></td>
+<td>Casa; teléfono; termómetro.</td>
+<td>Google; Instagram; sitios de clínicas; Google Maps.</td>
+<td>Home, servicios, equipo, reseñas, WhatsApp.</td>
+<td>Formulario de reserva; calendario; WhatsApp; correo.</td>
+<td>WhatsApp; pantalla de confirmación; calendario del teléfono.</td>
+<td>WhatsApp; correo; sección “Mis mascotas”; recordatorios.</td>
+</tr>
+<tr>
+<td><strong>Puntos de dolor</strong></td>
+<td>No sabe si debe ir a urgencias; no tiene un canal de orientación.</td>
+<td>Resultados genéricos; webs sin precios; horarios contradictorios.</td>
+<td>No puede ver disponibilidad; no sabe si atienden su tipo de mascota.</td>
+<td>Formulario largo; errores poco claros; miedo a perder lo escrito.</td>
+<td>No llega confirmación; no hay opción de compartir.</td>
+<td>No recuerda la próxima vacuna; no tiene historial unificado.</td>
+</tr>
+<tr>
+<td><strong>Oportunidades</strong></td>
+<td><strong>F01</strong> · Botón de emergencia global con llamada y WhatsApp; texto breve de señales de urgencia.</td>
+<td><strong>F02</strong> · Servicios con precio referencial, duración y nota BCV; <strong>F08</strong> · equipo, testimonios y ubicación visibles.</td>
+<td><strong>F03</strong> · Calendario con disponibilidad; <strong>F08</strong> · horarios, mapa y especialidades.</td>
+<td><strong>F04</strong> · Reserva en 3 pasos con borrador; <strong>F05</strong> · validación inline de teléfono y correo; <strong>F03</strong> · horarios reales.</td>
+<td><strong>F06</strong> · Confirmación con resumen, WhatsApp y agregar al calendario.</td>
+<td><strong>F07</strong> · Recordatorios e historial de vacunas en “Mis mascotas”.</td>
+</tr>
+</tbody></table></div>
+<h3 id="3-2-curva-de-emocion">3.2. Curva de emoción</h3>
+<p>La curva muestra la tensión creciente desde la detección hasta el agendamiento, y la caída del estrés cuando la cita queda confirmada y la familia sabe qué hacer después.</p>
+<p><img src="assets/journey-emociones.svg" alt="Curva de emoción de Camila durante el recorrido: preocupación, duda, tensión, estrés, alivio y tranquilidad" class="doc-image" loading="lazy" decoding="async"></p>
+<h3 id="3-3-lectura-del-mapa">3.3. Lectura del mapa</h3>
+<ul>
+<li>El momento de mayor tensión es el <strong>agendamiento</strong>, no la detección: la persona ya decidió buscar ayuda y la fricción del formulario puede hacerle abandonar.</li>
+<li>La <strong>confirmación</strong> es el punto donde se recupera la confianza; debe incluir resumen, WhatsApp y calendario, no solo un mensaje genérico.</li>
+<li>La <strong>post-cita</strong> es la oportunidad de convertir una visita en relación: recordatorios e historial de vacunas reducen la incertidumbre y traen a la persona de vuelta.</li>
+</ul>
+<h3 id="3-4-leyenda-de-features">3.4. Leyenda de features</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Feature que se construirá</th>
+<th>Momento del journey</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>F01</strong></td>
+<td>Botón global de emergencias con llamada y WhatsApp</td>
+<td>Detección y todas las pantallas</td>
+</tr>
+<tr>
+<td><strong>F02</strong></td>
+<td>Catálogo de servicios con precios referenciales y nota BCV</td>
+<td>Búsqueda / evaluación</td>
+</tr>
+<tr>
+<td><strong>F03</strong></td>
+<td>Calendario con disponibilidad y horarios de 30 minutos</td>
+<td>Evaluación / agendamiento</td>
+</tr>
+<tr>
+<td><strong>F04</strong></td>
+<td>Reserva en 3 pasos con borrador en <code>sessionStorage</code>, reanudación y confirmación de salida</td>
+<td>Agendamiento</td>
+</tr>
+<tr>
+<td><strong>F05</strong></td>
+<td>Validación inline accesible: teléfono <code>04XX-XXXXXXX</code> (móvil) o <code>02XX-XXXXXXX</code> (fijo), correo y campos obligatorios</td>
+<td>Agendamiento</td>
+</tr>
+<tr>
+<td><strong>F06</strong></td>
+<td>Confirmación con resumen, compartir por WhatsApp y agregar al calendario</td>
+<td>Confirmación</td>
+</tr>
+<tr>
+<td><strong>F07</strong></td>
+<td>Recordatorios e historial de vacunas en “Mis mascotas”</td>
+<td>Post-cita</td>
+</tr>
+<tr>
+<td><strong>F08</strong></td>
+<td>Equipo, testimonios, confianza y datos de ubicación/horario</td>
+<td>Evaluación / contacto</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="4-analisis-de-competencia-s3">4. Análisis de competencia (S3)</h2>
+<h3 id="4-1-metodologia-y-evidencia">4.1. Metodología y evidencia</h3>
+<p>Se evaluaron tres sitios reales de clínicas veterinarias. Al menos uno es venezolano; de hecho, dos son de Caracas. La fecha de visita fue <strong>2026-10-29</strong>. Las capturas se tomaron con Playwright 1.64.1 sobre Chrome (canal <code>chrome</code>), en dos viewports:</p>
+<ul>
+<li><strong>Escritorio:</strong> 1440 × 900 px.</li>
+<li><strong>Móvil:</strong> 390 × 844 px.</li>
+<li>Las capturas son de la primera pantalla (<em>viewport</em>), no de la página completa.</li>
+<li>En Vets4Pets se aceptó el aviso de cookies antes de la captura para poder ver el inicio.</li>
+<li>No se enviaron formularios ni se reservaron citas reales; los pasos se observaron en la interfaz.</li>
+</ul>
+<blockquote>
+<p>Los códigos corresponden a la sesión de Playwright/Chrome. Algunos sitios bloquean clientes automatizados sin navegador: una petición <code>curl</code> puede devolver 403 aunque la página cargue correctamente en el navegador.</p>
+</blockquote>
+<h3 id="4-2-sitios-evaluados">4.2. Sitios evaluados</h3>
+<h4>A. Veterinaria Los Chorros — Caracas, Venezuela</h4>
+<ul>
+<li><strong>URL:</strong> <a href="https://www.veterinarialoschorros.com/" target="_blank" rel="noopener">https://www.veterinarialoschorros.com/</a></li>
+<li><strong>Estado observado en Playwright/Chrome:</strong> carga correcta (HTTP 200 en esa sesión).</li>
+<li><strong>Fecha:</strong> 2026-10-29.</li>
+</ul>
+<p><strong>Escritorio 1440 × 900</strong></p>
+<p><img src="assets/competencia/veterinaria-los-chorros-1440.png" alt="Inicio de Veterinaria Los Chorros en escritorio" class="doc-image" loading="lazy" decoding="async"></p>
+<p><strong>Móvil 390 × 844</strong></p>
+<p><img src="assets/competencia/veterinaria-los-chorros-390.png" alt="Inicio de Veterinaria Los Chorros en móvil" class="doc-image doc-image--mobile" loading="lazy" decoding="async"></p>
+<p><strong>Observación directa:</strong> la home comunica de inmediato “clínica veterinaria con 40 años de experiencia” y muestra la dirección y el teléfono de emergencias en la barra superior. El botón “Solicitar cita” lleva a WhatsApp; más abajo hay un formulario de solicitud con nombre, teléfono, mascota y tipo de consulta. No se ven precios ni un calendario de disponibilidad. En móvil, los enlaces “Nosotros”, “Servicios” y “Galería” quedan ocultos y no hay un botón de menú visible; además, una zona clara del carrusel de fondo reduce el contraste del párrafo y de los botones del hero.</p>
+<h4>B. DogtorVet — Caracas, Venezuela</h4>
+<ul>
+<li><strong>URL:</strong> <a href="https://dogtorvetccs.com/" target="_blank" rel="noopener">https://dogtorvetccs.com/</a></li>
+<li><strong>Estado observado en Playwright/Chrome:</strong> carga correcta (HTTP 200 en esa sesión).</li>
+<li><strong>Fecha:</strong> 2026-10-29.</li>
+</ul>
+<p><strong>Escritorio 1440 × 900</strong></p>
+<p><img src="assets/competencia/dogtorvet-1440.png" alt="Inicio de DogtorVet en escritorio" class="doc-image" loading="lazy" decoding="async"></p>
+<p><strong>Móvil 390 × 844</strong></p>
+<p><img src="assets/competencia/dogtorvet-390.png" alt="Inicio de DogtorVet en móvil" class="doc-image doc-image--mobile" loading="lazy" decoding="async"></p>
+<p><strong>Observación directa:</strong> el hero presenta una foto y una frase de marca; la navegación incluye “Calendario de citas” y “Emergencias” (WhatsApp). Al pulsar “Calendario de citas” se baja a un módulo de reserva con servicios y duraciones; al elegir “Consulta General” aparece un calendario de octubre de 2026 con horarios de 30–60 minutos. El módulo continúa con datos del dueño y una pantalla de confirmación. No se muestran precios en la home. La dirección y el horario aparecen más abajo; “Ubicación” abre un popup con JavaScript en lugar de ser un enlace normal. En móvil la navegación y los botones de emergencia/teléfono se mantienen visibles; no se detectó desbordamiento horizontal.</p>
+<h4>C. Vets4Pets — referencia internacional (Reino Unido)</h4>
+<ul>
+<li><strong>URL:</strong> <a href="https://www.vets4pets.com/" target="_blank" rel="noopener">https://www.vets4pets.com/</a></li>
+<li><strong>Estado observado en Playwright/Chrome:</strong> carga correcta (HTTP 200 en esa sesión), tras aceptar el aviso de cookies.</li>
+<li><strong>Fecha:</strong> 2026-10-29.</li>
+</ul>
+<p><strong>Escritorio 1440 × 900</strong></p>
+<p><img src="assets/competencia/vets4pets-1440.png" alt="Inicio de Vets4Pets en escritorio" class="doc-image" loading="lazy" decoding="async"></p>
+<p><strong>Móvil 390 × 844</strong></p>
+<p><img src="assets/competencia/vets4pets-390.png" alt="Inicio de Vets4Pets en móvil" class="doc-image doc-image--mobile" loading="lazy" decoding="async"></p>
+<p><strong>Observación directa:</strong> la home es una marca de red con jerarquía muy clara (“We’re welcoming new pets”), dos entradas principales —“Find Practice” y “Request Appointment”— y una barra móvil de acciones visible con esas mismas rutas. “Request Appointment” abre una página de solicitud con selección de práctica y un formulario; el texto indica que el equipo local responderá y que, si la mascota necesita atención en 24 horas, se llame a la práctica. No hay calendario de disponibilidad ni confirmación inmediata. No se muestran precios de consulta: solo una promoción de revisión por £10 y £30 de descuento en un plan. En la home no aparecen teléfono de emergencia, horario ni dirección local; hay que buscar una práctica.</p>
+<h3 id="4-3-comparacion-por-criterios-del-brief">4.3. Comparación por criterios del brief</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Veterinaria Los Chorros (VE)</th>
+<th>DogtorVet (VE)</th>
+<th>Vets4Pets (UK)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Captura del inicio</strong></td>
+<td><a href="assets/competencia/veterinaria-los-chorros-1440.png">Escritorio</a> · <a href="assets/competencia/veterinaria-los-chorros-390.png">Móvil</a></td>
+<td><a href="assets/competencia/dogtorvet-1440.png">Escritorio</a> · <a href="assets/competencia/dogtorvet-390.png">Móvil</a></td>
+<td><a href="assets/competencia/vets4pets-1440.png">Escritorio</a> · <a href="assets/competencia/vets4pets-390.png">Móvil</a></td>
+</tr>
+<tr>
+<td><strong>¿Se entiende en 5 segundos qué ofrece?</strong></td>
+<td>Sí. “Clínica veterinaria con 40 años de experiencia”, urgencias 24 h y CTA de cita. La zona clara del hero resta legibilidad en móvil.</td>
+<td>Sí. Clínica veterinaria con servicios, equipo y calendario; el CTA principal no está en el hero, sino en el menú.</td>
+<td>Sí, pero es una red: “vets” y “welcoming new pets”; no queda claro cuál es la sede ni la zona.</td>
+</tr>
+<tr>
+<td><strong>¿Cómo se agenda? ¿Cuántos pasos?</strong></td>
+<td>WhatsApp desde “Solicitar cita” (1 clic y conversación) o formulario de solicitud de 4 campos; sin fecha/hora ni disponibilidad. La confirmación es manual.</td>
+<td>“Calendario de citas” (1 clic) → servicio → fecha/hora → datos → confirmación. Se observaron 4 pasos del módulo; el calendario muestra fechas y horas.</td>
+<td>“Request Appointment” (1 clic) → formulario de solicitud con práctica y datos → envío. No hay calendario; el equipo contacta después.</td>
+</tr>
+<tr>
+<td><strong>¿Muestra precios?</strong></td>
+<td>No se observaron precios en la home.</td>
+<td>No se observaron precios en la home.</td>
+<td>No muestra precios de consulta; solo una revisión promocional por £10 y £30 de descuento en un plan.</td>
+</tr>
+<tr>
+<td><strong>¿Es fácil encontrar emergencias, horario y ubicación?</strong></td>
+<td>Emergencias y dirección en la barra superior; el horario aparece en la sección de contacto, más abajo. En móvil los enlaces de navegación no están visibles.</td>
+<td>“Emergencias” en el menú y teléfono de la clínica; dirección y horario más abajo. “Ubicación” abre un popup con JavaScript, no un enlace directo.</td>
+<td>No en la home: hay que buscar una práctica para ver teléfono, horario y dirección. No hay acceso a emergencias desde el inicio.</td>
+</tr>
+<tr>
+<td><strong>¿Funciona bien en el celular?</strong></td>
+<td>Parcial. El layout se adapta y no desborda, pero la navegación principal desaparece sin menú y el hero pierde contraste.</td>
+<td>Sí. Menú y botones visibles; sin desbordamiento horizontal. El módulo de reserva queda más abajo y requiere scroll.</td>
+<td>Sí. Menú hamburguesa y barra de acciones visible; el aviso de cookies tapa el inicio hasta aceptarlo.</td>
+</tr>
+<tr>
+<td><strong>Diseño visual</strong></td>
+<td>Profesional y familiar: azul profundo, tipografía con serifa, fotografía y carrusel; los datos de confianza (40+, 9 médicos, 5 consultorios) están bien jerarquizados. El contraste del hero es irregular.</td>
+<td>Teal, foto grande y tarjetas suaves; se siente cercano. La home no tiene un CTA de reserva destacado antes del menú.</td>
+<td>Corporativo y pulido: fotografía grande, tipografía clara y mucho aire; la experiencia es coherente pero genérica de cadena.</td>
+</tr>
+<tr>
+<td><strong>Lo que hace bien</strong></td>
+<td>Hace visible la emergencia y la ubicación desde el primer píxel; usa prueba social concreta; CTA por WhatsApp directo.</td>
+<td>Ofrece un calendario de reserva dentro de la web, con servicios y duraciones; mantiene emergencia y teléfono a mano; muestra equipo y especialidades.</td>
+<td>Jerarquía excelente, acciones de práctica y cita siempre visibles en móvil; el flujo de solicitud es claro y el plan de salud se explica con precios promocionales.</td>
+</tr>
+<tr>
+<td><strong>Lo que hace mal</strong></td>
+<td>No muestra precios ni disponibilidad; en móvil oculta la navegación sin ofrecer menú; el hero tiene una zona clara que reduce el contraste de texto y CTA.</td>
+<td>No muestra precios; el CTA de reserva no aparece en el hero; “Ubicación” depende de un popup JavaScript y el módulo de reserva exige bajar mucho.</td>
+<td>No resuelve la urgencia, el horario ni la ubicación en la home; no confirma una cita, solo recibe una solicitud; los precios de consulta no son transparentes.</td>
+</tr>
+</tbody></table></div>
+<h3 id="4-4-conclusion-6-lineas">4.4. Conclusión (6 líneas)</h3>
+<ol>
+<li><strong>Adoptar</strong> de Los Chorros la jerarquía de emergencia y ubicación en la parte superior, la prueba social concreta (años, médicos, consultorios) y el acceso directo a WhatsApp.</li>
+<li><strong>Adoptar</strong> de DogtorVet la reserva dentro del sitio con servicio, fecha y hora visibles, y la combinación de urgencia + teléfono en la navegación.</li>
+<li><strong>Adoptar</strong> de Vets4Pets la claridad de las acciones principales y la barra móvil de acciones, pero adaptada a una sola sede y sin el laberinto de “buscar práctica”.</li>
+<li><strong>Evitar</strong> ocultar la navegación en móvil, depender solo de WhatsApp o de un formulario de “te contactamos”, y publicar héroes con contraste irregular.</li>
+<li><strong>Evitar</strong> precios ausentes y urgencias escondidas: los tres sitios obligan a buscar demasiado para responder las dos preguntas que más pesan (“¿cuánto cuesta?” y “¿puedo ir ahora?”).</li>
+<li><strong>Nuestra diferencia:</strong> precio referencial en USD con nota BCV, disponibilidad real, reserva en 3 pasos con borrador y reanudación, confirmación compartible por WhatsApp y “Mis mascotas” con historial de vacunas; objetivo: completar la cita en menos de 2 minutos.</li>
+</ol>
+<h3 id="4-5-sitios-descartados-durante-la-verificacion">4.5. Sitios descartados durante la verificación</h3>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Sitio</th>
+<th>Intento</th>
+<th>Resultado</th>
+<th>Decisión</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CaracasVet</td>
+<td><a href="https://caracasvet.com/" target="_blank" rel="noopener">https://caracasvet.com/</a></td>
+<td><code>ERR_CONNECTION_RESET</code> el 2026-10-29 desde esta red.</td>
+<td>No se evaluó; se reemplazó por DogtorVet.</td>
+</tr>
+<tr>
+<td>UVET</td>
+<td><a href="https://www.somosuvet.com/" target="_blank" rel="noopener">https://www.somosuvet.com/</a></td>
+<td><code>ERR_CONNECTION_RESET</code> el 2026-10-29 desde esta red.</td>
+<td>No se evaluó; se reemplazó por DogtorVet.</td>
+</tr>
+<tr>
+<td>Emergencias Veterinarias</td>
+<td><a href="https://emergenciasveterinarias.pet/" target="_blank" rel="noopener">https://emergenciasveterinarias.pet/</a></td>
+<td><code>ERR_TIMED_OUT</code> el 2026-10-29.</td>
+<td>No se evaluó; se reemplazó por Vets4Pets.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h2 id="5-trazabilidad-de-los-specs">5. Trazabilidad de los specs</h2>
+<div class="doc-table-wrap" tabindex="0" role="region" aria-label="Tabla de datos con desplazamiento horizontal"><table>
+<thead>
+<tr>
+<th>Spec</th>
+<th>Dónde se cubre</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S1 — 4+ tipos, 3 perfiles, justificación, campos completos, 2 supuestos y 2–3 decisiones por persona</td>
+<td>Secciones 1 y 2</td>
+</tr>
+<tr>
+<td>S2 — Journey con el escenario textual, seis columnas, seis filas, emoción y SVG, oportunidades con feature ID</td>
+<td>Sección 3</td>
+</tr>
+<tr>
+<td>S3 — 3 sitios reales, uno venezolano, URL/fecha, capturas 1440/390, tabla completa y conclusión de 5–8 líneas</td>
+<td>Sección 4</td>
+</tr>
+</tbody></table></div>
+
+          </article>
+          <nav class="doc-pager" aria-label="Documentos relacionados"><a class="btn btn--secondary" href="index.html">← Documentación</a><a class="btn btn--primary" href="arquitectura.html">Arquitectura de información →</a></nav>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

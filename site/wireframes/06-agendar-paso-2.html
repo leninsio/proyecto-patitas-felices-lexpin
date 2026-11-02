@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 06 · Agendar paso 2 — Patitas Felices</title>
+  <meta name="description" content="Wireframe del paso 2 del agendamiento: fecha y hora con disponibilidad.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html" aria-current="page">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 06 · Agendar · paso 2</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <p class="wf-kicker">Agendar cita</p>
+    <h1>Elige fecha y hora</h1>
+    <p class="wf-lead">Calendario con disponibilidad real y horarios de 30 minutos. Los datos de la mascota se conservan.</p>
+
+    <div class="wf-stepper">
+      <ol class="wf-stepper__list" aria-label="Pasos del agendamiento">
+      <li class="is-done"><span class="wf-stepper__dot" aria-hidden="true"><svg class="wf-stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></span><span class="wf-stepper__label">Servicio y mascota</span></li>
+      <li aria-current="step"><span class="wf-stepper__dot">2</span><span class="wf-stepper__label">Fecha y hora</span></li>
+      <li><span class="wf-stepper__dot">3</span><span class="wf-stepper__label">Datos del dueño</span></li>
+      </ol>
+      <span class="wf-stepper__line wf-stepper__line--1 is-done" aria-hidden="true"></span>
+      <span class="wf-stepper__line wf-stepper__line--2" aria-hidden="true"></span>
+    </div>
+
+    <div class="wf-split">
+      <div class="wf-stack">
+        <div class="wf-calendar" role="group" aria-label="Calendario de noviembre de 2026">
+          <div class="wf-calendar__head">
+            <span>Noviembre 2026</span>
+            <span class="wf-calendar__nav" aria-hidden="true"><span>‹</span><span>›</span></span>
+          </div>
+          <div class="wf-weekdays" aria-hidden="true">
+            <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+          </div>
+          <div class="wf-days">
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day is-off" aria-hidden="true"></span>
+            <span class="wf-day">1</span>
+            <span class="wf-day">2</span>
+            <span class="wf-day">3</span>
+            <span class="wf-day">4</span>
+            <span class="wf-day">5</span>
+            <span class="wf-day">6</span>
+            <span class="wf-day is-off">7</span>
+            <span class="wf-day is-off">8</span>
+            <span class="wf-day">9</span>
+            <span class="wf-day">10</span>
+            <span class="wf-day">11</span>
+            <span class="wf-day is-selected">12</span>
+            <span class="wf-day">13</span>
+            <span class="wf-day is-off">14</span>
+            <span class="wf-day is-off">15</span>
+            <span class="wf-day">16</span>
+            <span class="wf-day">17</span>
+            <span class="wf-day">18</span>
+            <span class="wf-day">19</span>
+            <span class="wf-day">20</span>
+            <span class="wf-day is-off">21</span>
+            <span class="wf-day">22</span>
+            <span class="wf-day">23</span>
+            <span class="wf-day">24</span>
+            <span class="wf-day">25</span>
+            <span class="wf-day">26</span>
+            <span class="wf-day">27</span>
+            <span class="wf-day">28</span>
+            <span class="wf-day">29</span>
+            <span class="wf-day">30</span>
+          </div>
+          <div class="wf-cluster" style="margin-block-start: 8px">
+            <span class="wf-note">Disponible</span>
+            <span class="wf-note">Seleccionado</span>
+            <span class="wf-note">No disponible</span>
+          </div>
+        </div>
+
+        <div class="wf-card wf-card--strong">
+          <h2 class="wf-card__title">Horarios del jueves 12 de noviembre</h2>
+          <p class="wf-note">Mañana</p>
+          <div class="wf-slots" role="group" aria-label="Horarios de la mañana">
+            <span class="wf-slot is-off">9:00</span>
+            <span class="wf-slot is-selected">9:30</span>
+            <span class="wf-slot is-off">10:00</span>
+            <span class="wf-slot">10:30</span>
+            <span class="wf-slot">11:00</span>
+            <span class="wf-slot is-off">11:30</span>
+          </div>
+          <p class="wf-note" style="margin-block-start: 10px">Tarde</p>
+          <div class="wf-slots" role="group" aria-label="Horarios de la tarde">
+            <span class="wf-slot">2:00</span>
+            <span class="wf-slot">2:30</span>
+            <span class="wf-slot">3:00</span>
+            <span class="wf-slot is-off">3:30</span>
+            <span class="wf-slot">4:00</span>
+            <span class="wf-slot">4:30</span>
+          </div>
+        </div>
+
+        <div class="wf-alert">
+          <p class="wf-alert__title">El horario de las 9:00 ya no está disponible</p>
+          <p>Alguien tomó ese cupo mientras elegías. Estos son los tres horarios más cercanos: 9:30, 10:30 y 11:00.</p>
+        </div>
+
+        <div class="wf-btn-row">
+          <a class="wf-btn wf-btn--ghost" href="05-agendar-paso-1.html">Volver</a>
+          <a class="wf-btn" href="07-agendar-paso-3.html">Continuar a datos del dueño</a>
+        </div>
+      </div>
+
+      <aside class="wf-stack" aria-label="Resumen de la cita">
+        <div class="wf-card wf-card--strong">
+          <h2 class="wf-card__title">Resumen</h2>
+          <p class="wf-note">Servicio</p>
+          <p><strong>Consulta general</strong></p>
+          <p class="wf-note">Mascota</p>
+          <p><strong>Miga · perra · 8 meses</strong></p>
+          <p class="wf-note">Fecha y hora</p>
+          <p><strong>Jueves 12 de noviembre, 9:30</strong></p>
+          <hr style="border: 0; border-block-start: 1px solid var(--wf-line); width: 100%">
+          <p class="wf-price">Desde $25</p>
+          <p class="wf-note">o su equivalente en Bs a tasa BCV del día</p>
+          <a class="wf-btn wf-btn--block" href="07-agendar-paso-3.html">Continuar</a>
+        </div>
+        <div class="wf-alert">
+          <p class="wf-alert__title">Sin perder datos</p>
+          <p>Puedes volver al paso anterior; el servicio y la mascota se conservan.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 06 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

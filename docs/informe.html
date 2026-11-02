@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <title>Patitas Felices — Informe de proyecto UI/UX</title>
+  <style>
+    @font-face {
+      font-family: "Nunito";
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url("../site/assets/fonts/nunito-latin.woff2") format("woff2");
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    :root {
+      --teal: #0e6b5f;
+      --teal-dark: #08463e;
+      --teal-soft: #d9f2ec;
+      --amber: #b45309;
+      --amber-soft: #fdf0dc;
+      --red: #b42318;
+      --red-soft: #fde8e6;
+      --ink: #0e211e;
+      --muted: #4c625c;
+      --line: #cfdcd7;
+      --paper: #ffffff;
+      --bg: #f6faf8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #dfe7e4;
+      color: var(--ink);
+      font-family: "Nunito", "Segoe UI", system-ui, sans-serif;
+      font-size: 10pt;
+      line-height: 1.35;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      padding: 15mm 16mm 13mm;
+      margin: 0 auto 8mm;
+      overflow: hidden;
+      background: var(--paper);
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      margin-bottom: 0;
+      break-after: auto;
+      page-break-after: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 21pt;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 11pt;
+      line-height: 1.2;
+    }
+
+    .eyebrow {
+      margin-bottom: 2mm;
+      color: var(--teal);
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 165mm;
+      margin-top: 3mm;
+      color: var(--muted);
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    .page-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8mm;
+      margin-bottom: 6mm;
+      padding-bottom: 3mm;
+      border-bottom: 1.2pt solid var(--teal);
+    }
+
+    .page-head__meta {
+      color: var(--muted);
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: right;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .footer {
+      position: absolute;
+      right: 16mm;
+      bottom: 7mm;
+      left: 16mm;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2mm;
+      border-top: 0.6pt solid var(--line);
+      color: var(--muted);
+      font-size: 7pt;
+    }
+
+    /* Cover ---------------------------------------------------------------- */
+    .cover {
+      padding: 0;
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .cover::before,
+    .cover::after {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      content: "";
+    }
+
+    .cover::before {
+      top: -60mm;
+      right: -45mm;
+      width: 150mm;
+      height: 150mm;
+    }
+
+    .cover::after {
+      bottom: -50mm;
+      left: -40mm;
+      width: 120mm;
+      height: 120mm;
+    }
+
+    .cover__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20mm 18mm 15mm;
+    }
+
+    .cover__top {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .cover__mark {
+      display: grid;
+      width: 13mm;
+      height: 13mm;
+      place-items: center;
+      border: 1.5pt solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+    }
+
+    .cover__mark svg {
+      width: 7mm;
+      height: 7mm;
+    }
+
+    .cover__body {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .cover h1 {
+      max-width: 150mm;
+      font-size: 58pt;
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+    }
+
+    .cover__kicker {
+      margin-bottom: 6mm;
+      color: #b7f0e4;
+      font-size: 10pt;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .cover__subtitle {
+      max-width: 125mm;
+      margin-top: 8mm;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14pt;
+      line-height: 1.35;
+    }
+
+    .cover__author {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 8mm;
+      padding-top: 6mm;
+      border-top: 1pt solid rgba(255, 255, 255, 0.35);
+    }
+
+    .cover__author strong {
+      display: block;
+      font-size: 13pt;
+    }
+
+    .cover__author span {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 9pt;
+    }
+
+    .cover__year {
+      font-size: 24pt;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* Personas ------------------------------------------------------------- */
+    .persona-list {
+      display: grid;
+      gap: 4mm;
+    }
+
+    .persona {
+      display: grid;
+      grid-template-columns: 52mm 1fr;
+      gap: 6mm;
+      padding: 4.9mm 5.3mm;
+      border: 0.8pt solid var(--line);
+      border-left: 3.5pt solid var(--teal);
+      border-radius: 2mm;
+      background: var(--bg);
+    }
+
+    .persona__name {
+      color: var(--teal-dark);
+      font-size: 12.8pt;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .persona__facts {
+      margin-top: 2mm;
+      color: var(--muted);
+      font-size: 8.2pt;
+      line-height: 1.38;
+    }
+
+    .persona__facts b {
+      color: var(--ink);
+    }
+
+    .persona__quote {
+      margin-bottom: 2.8mm;
+      padding-left: 3mm;
+      border-left: 1.5pt solid var(--amber);
+      color: var(--teal-dark);
+      font-size: 10.6pt;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.33;
+    }
+
+    .persona__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.2mm 5mm;
+      font-size: 8.45pt;
+      line-height: 1.38;
+    }
+
+    .persona__grid h4 {
+      margin: 0 0 1mm;
+      color: var(--muted);
+      font-size: 7.3pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .persona__grid ul {
+      margin: 0;
+      padding-left: 3.5mm;
+    }
+
+    .persona__grid li + li {
+      margin-top: 0.6mm;
+    }
+
+    .note {
+      margin-top: 4mm;
+      padding: 3mm 4mm;
+      border-radius: 1.5mm;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 8pt;
+      line-height: 1.4;
+    }
+
+    /* Journey -------------------------------------------------------------- */
+    .journey {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.1pt;
+      line-height: 1.36;
+      table-layout: fixed;
+    }
+
+    .journey th,
+    .journey td {
+      padding: 2.1mm 1.8mm;
+      border: 0.5pt solid var(--line);
+      vertical-align: top;
+    }
+
+    .journey thead th {
+      background: var(--teal);
+      color: #ffffff;
+      font-size: 8.3pt;
+      text-align: left;
+    }
+
+    .journey tbody th {
+      width: 23mm;
+      background: var(--bg);
+      color: var(--teal-dark);
+      font-size: 7.5pt;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .journey .emotion {
+      color: var(--teal-dark);
+      font-weight: 800;
+    }
+
+    .journey-figure {
+      display: grid;
+      grid-template-columns: 1fr 58mm;
+      gap: 5mm;
+      align-items: center;
+      margin-top: 4mm;
+      padding: 3.5mm 4.5mm;
+      border: 0.8pt solid var(--line);
+      border-radius: 2mm;
+      background: var(--bg);
+    }
+
+    .journey-figure img {
+      width: 100%;
+      max-height: 43mm;
+    }
+
+    .journey-figure p {
+      color: var(--muted);
+      font-size: 8.2pt;
+      line-height: 1.42;
+    }
+
+    .takeaways {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      margin-top: 4mm;
+      padding-top: 3mm;
+      border-top: 0.8pt solid var(--line);
+      font-size: 8pt;
+      line-height: 1.4;
+    }
+
+    .takeaways b {
+      display: block;
+      margin-bottom: 0.8mm;
+      color: var(--teal-dark);
+      font-size: 8.4pt;
+    }
+
+    /* Competition ---------------------------------------------------------- */
+    .comp {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.9pt;
+      line-height: 1.34;
+      table-layout: fixed;
+    }
+
+    .comp th,
+    .comp td {
+      padding: 1.9mm 1.7mm;
+      border: 0.5pt solid var(--line);
+      vertical-align: top;
+    }
+
+    .comp thead th {
+      background: var(--teal);
+      color: #ffffff;
+      font-size: 8.1pt;
+      text-align: left;
+    }
+
+    .comp tbody th {
+      width: 27mm;
+      background: var(--bg);
+      color: var(--teal-dark);
+      font-size: 7.4pt;
+      text-align: left;
+    }
+
+    .comp .site {
+      width: 45mm;
+    }
+
+    .comp .flag {
+      display: block;
+      margin-top: 0.8mm;
+      color: #e6f7f2;
+      font-size: 6.5pt;
+      font-weight: 600;
+    }
+
+    .conclusion {
+      margin-top: 4mm;
+      padding: 3.8mm 4.8mm;
+      border: 0.8pt solid #e6c9a5;
+      border-radius: 2mm;
+      background: var(--amber-soft);
+    }
+
+    .conclusion h3 {
+      margin-bottom: 1.8mm;
+      color: #6b3a05;
+      font-size: 9.8pt;
+    }
+
+    .conclusion ol {
+      margin: 0;
+      padding-left: 4.5mm;
+      font-size: 8.2pt;
+      line-height: 1.42;
+    }
+
+    .competition-shots {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      margin-top: 4mm;
+      padding-top: 3mm;
+      border-top: 0.8pt solid var(--line);
+    }
+
+    .competition-shots figure {
+      display: grid;
+      gap: 1.2mm;
+      margin: 0;
+    }
+
+    .competition-shots img {
+      width: 100%;
+      height: 35mm;
+      object-fit: cover;
+      object-position: top center;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.5mm;
+    }
+
+    .competition-shots figcaption {
+      color: var(--muted);
+      font-size: 6.6pt;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .conclusion li + li {
+      margin-top: 0.8mm;
+    }
+
+    /* Sitemap -------------------------------------------------------------- */
+    .sitemap {
+      display: grid;
+      gap: 3mm;
+      justify-items: center;
+      margin-top: 5mm;
+      padding: 6mm 4.5mm;
+      border: 0.8pt solid var(--line);
+      border-radius: 2mm;
+      background: var(--bg);
+    }
+
+    .sm-node {
+      padding: 2.2mm 3mm;
+      border: 0.8pt solid var(--teal);
+      border-radius: 1.5mm;
+      background: #ffffff;
+      color: var(--teal-dark);
+      font-size: 9pt;
+      font-weight: 800;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .sm-node small {
+      display: block;
+      color: var(--muted);
+      font-size: 7pt;
+      font-weight: 600;
+    }
+
+    .sm-node--root {
+      padding: 2.4mm 8mm;
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .sm-node--root small {
+      color: #c8f2e8;
+    }
+
+    .sm-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 3mm;
+      width: 100%;
+      align-items: start;
+    }
+
+    .sm-col {
+      display: grid;
+      gap: 2mm;
+      justify-items: stretch;
+    }
+
+    .sm-col > .sm-node {
+      min-height: 14mm;
+      display: grid;
+      align-content: center;
+    }
+
+    .sm-child {
+      position: relative;
+      padding: 1.8mm 2mm;
+      border: 0.6pt dashed #9dbab3;
+      border-radius: 1.2mm;
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 7.6pt;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .sm-child small {
+      display: block;
+      color: var(--muted);
+      font-size: 6.4pt;
+    }
+
+    .sm-arrow {
+      color: var(--teal);
+      font-size: 11pt;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .sm-band {
+      width: 100%;
+      margin-top: 2mm;
+      padding: 3.2mm 4.2mm;
+      border-radius: 1.5mm;
+      background: #ffffff;
+      border: 0.8pt solid var(--line);
+    }
+
+    .sm-band h3 {
+      margin-bottom: 2mm;
+      color: var(--muted);
+      font-size: 7.2pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sm-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+    }
+
+    .sm-chip {
+      padding: 1.3mm 2.6mm;
+      border-radius: 10mm;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 7.5pt;
+      font-weight: 700;
+    }
+
+    .sm-chip--doc {
+      background: #eef1f0;
+      color: #46534f;
+    }
+
+    .sitemap-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      margin-top: 4.5mm;
+      font-size: 8.2pt;
+      line-height: 1.42;
+    }
+
+    .sitemap-notes b {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 8.6pt;
+    }
+
+    .depth {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2mm;
+      margin-top: 4mm;
+      padding-top: 3mm;
+      border-top: 0.8pt solid var(--line);
+    }
+
+    .depth h3 {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 7.2pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .depth span {
+      padding: 1.8mm 2mm;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.2mm;
+      background: #ffffff;
+      font-size: 7.4pt;
+      line-height: 1.3;
+    }
+
+    .depth b {
+      color: var(--teal-dark);
+    }
+
+    /* Flow ----------------------------------------------------------------- */
+    .flow-wrap {
+      display: grid;
+      justify-items: center;
+      margin-top: 3mm;
+      padding: 2mm;
+      border: 0.8pt solid var(--line);
+      border-radius: 2mm;
+      background: #ffffff;
+    }
+
+    .flow-wrap img {
+      width: 100%;
+      max-height: 213mm;
+      object-fit: contain;
+    }
+
+    .flow-caption {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 3mm;
+      margin-top: 3mm;
+      font-size: 7.3pt;
+      line-height: 1.35;
+    }
+
+    .flow-caption b {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 7.8pt;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4mm;
+      margin-top: 2.5mm;
+      color: var(--muted);
+      font-size: 6.8pt;
+    }
+
+    /* Decisions ------------------------------------------------------------ */
+    .decisions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+    }
+
+    .decision-block h3 {
+      margin-bottom: 2mm;
+      color: var(--teal-dark);
+      font-size: 10.2pt;
+    }
+
+    .decision-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 8.7pt;
+      line-height: 1.45;
+    }
+
+    .decision-list li {
+      position: relative;
+      padding-left: 4mm;
+      margin-bottom: 1.8mm;
+    }
+
+    .decision-list li::before {
+      position: absolute;
+      top: 1.4mm;
+      left: 0;
+      width: 1.8mm;
+      height: 1.8mm;
+      border-radius: 50%;
+      background: var(--teal);
+      content: "";
+    }
+
+    .decision-list b {
+      color: var(--teal-dark);
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2mm;
+      margin-bottom: 3mm;
+    }
+
+    .swatch {
+      padding: 2.4mm;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.5mm;
+      font-size: 6.9pt;
+      line-height: 1.25;
+    }
+
+    .swatch i {
+      display: block;
+      width: 100%;
+      height: 9mm;
+      margin-bottom: 1.4mm;
+      border-radius: 1mm;
+      border: 0.4pt solid rgba(0, 0, 0, 0.08);
+    }
+
+    .swatch b {
+      display: block;
+      font-size: 7.3pt;
+    }
+
+    .type-sample {
+      margin-bottom: 2.8mm;
+      padding: 2.8mm 3.2mm;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.5mm;
+      background: var(--bg);
+    }
+
+    .type-sample .big {
+      font-size: 19pt;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .type-sample .small {
+      margin-top: 1.2mm;
+      color: var(--muted);
+      font-size: 7.6pt;
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2mm;
+      margin-top: 3.5mm;
+    }
+
+    .evidence div {
+      padding: 2.2mm 2.5mm;
+      border-radius: 1.5mm;
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+      font-size: 7.2pt;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .states {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.5mm;
+      margin-top: 4mm;
+      padding-top: 3mm;
+      border-top: 0.8pt solid var(--line);
+    }
+
+    .states > div {
+      padding: 2mm 1.5mm;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.5mm;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .states small {
+      display: block;
+      margin-top: 1.2mm;
+      color: var(--muted);
+      font-size: 6.5pt;
+      font-weight: 700;
+    }
+
+    .mock-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 6mm;
+      border-radius: 10mm;
+      background: var(--teal);
+      color: #ffffff;
+      font-size: 6.8pt;
+      font-weight: 800;
+    }
+
+    .mock-btn--hover {
+      background: #0a544a;
+    }
+
+    .mock-btn--active {
+      background: #08463e;
+    }
+
+    .mock-btn--disabled {
+      background: #e3e9e7;
+      color: #7c8b86;
+    }
+
+    .mock-input {
+      display: flex;
+      align-items: center;
+      min-height: 6mm;
+      padding: 1mm 1.5mm;
+      border: 0.9pt solid var(--red);
+      border-radius: 1mm;
+      background: #ffffff;
+      color: var(--red);
+      font-size: 6.6pt;
+      font-weight: 700;
+    }
+
+    /* Screens -------------------------------------------------------------- */
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      margin-top: 2mm;
+    }
+
+    .screen {
+      display: grid;
+      gap: 1.5mm;
+    }
+
+    .screen__img {
+      height: 69mm;
+      overflow: hidden;
+      border: 0.8pt solid var(--line);
+      border-radius: 2.2mm;
+      background: var(--bg);
+    }
+
+    .screen__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .screen__label {
+      color: var(--muted);
+      font-size: 7.4pt;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .links {
+      margin-top: 4.5mm;
+      padding: 4.5mm 5.5mm;
+      border-radius: 2mm;
+      background: var(--teal);
+      color: #ffffff;
+    }
+
+    .links h3 {
+      margin-bottom: 2.2mm;
+      color: #b7f0e4;
+      font-size: 8pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .links dl {
+      display: grid;
+      grid-template-columns: 40mm 1fr;
+      gap: 1.6mm 3mm;
+      margin: 0;
+      font-size: 8.8pt;
+    }
+
+    .links dt {
+      color: #b7f0e4;
+      font-weight: 700;
+    }
+
+    .links dd {
+      margin: 0;
+      font-family: "SFMono-Regular", Menlo, monospace;
+      font-size: 8pt;
+      overflow-wrap: normal;
+      white-space: nowrap;
+      word-break: normal;
+    }
+
+    .credits {
+      margin-top: 3.5mm;
+      color: var(--muted);
+      font-size: 7.4pt;
+      line-height: 1.42;
+    }
+
+    .guide-shot {
+      display: grid;
+      gap: 1.2mm;
+      margin-top: 4mm;
+    }
+
+    .guide-shot img {
+      width: 100%;
+      height: 46mm;
+      object-fit: cover;
+      object-position: top center;
+      border: 0.6pt solid var(--line);
+      border-radius: 1.5mm;
+    }
+
+    .guide-shot figcaption {
+      color: var(--muted);
+      font-size: 6.6pt;
+      text-align: center;
+    }
+
+    .no-break {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1 · Portada ------------------------------------------------------- -->
+  <section class="page cover">
+    <div class="cover__inner">
+      <div class="cover__top">
+        <span class="cover__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="4" r="2"/>
+            <circle cx="18" cy="8" r="2"/>
+            <circle cx="20" cy="16" r="2"/>
+            <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>
+          </svg>
+        </span>
+        <span>Proyecto UI/UX · 2026</span>
+      </div>
+
+      <div class="cover__body">
+        <p class="cover__kicker">Diseño de producto digital</p>
+        <h1>Patitas Felices</h1>
+        <p class="cover__subtitle">Sitio web, sistema de diseño y prototipo navegable para agendar una cita veterinaria en menos de dos minutos.</p>
+      </div>
+
+      <div class="cover__author">
+        <div>
+          <strong>Lenin Alvarado</strong>
+          <span>Lexpin · Caracas, Venezuela</span>
+        </div>
+        <div class="cover__year">2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Proto-personas ------------------------------------------------ -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">01 · Investigación</p>
+        <h2>Proto-personas</h2>
+      </div>
+      <div class="page-head__meta">S1 · Síntesis</div>
+    </header>
+
+    <p class="lead">Se identificaron cinco tipos de cliente. Se eligieron tres perfiles opuestos en edad, habilidad digital y contexto familiar para poner a prueba las decisiones centrales: reserva corta, emergencia visible, precios claros e historial de vacunas.</p>
+    <p style="margin-top: 3mm; color: var(--muted); font-size: 8.6pt; line-height: 1.4"><b style="color: var(--ink)">Cinco tipos identificados:</b> joven con su primera mascota · adulto mayor con varias mascotas · familia con niños · dueño de una mascota exótica · dueño de una mascota con enfermedad crónica.</p>
+
+    <div class="persona-list" style="margin-top: 4mm">
+      <article class="persona no-break">
+        <div>
+          <p class="persona__name">Camila Torres</p>
+          <p class="persona__facts"><b>24 años</b> · community manager<br>Los Ruices · primera mascota<br><b>Miga</b>, perra mestiza de 8 meses</p>
+        </div>
+        <div>
+          <p class="persona__quote">“Quiero saber hoy mismo si es normal y cuánto cuesta, sin llamar tres veces.”</p>
+          <div class="persona__grid">
+            <div>
+              <h4>Deseos</h4>
+              <ul>
+                <li>Saber si es urgencia.</li>
+                <li>Precio y disponibilidad reales.</li>
+                <li>Reservar en &lt; 2 minutos.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Frustraciones</h4>
+              <ul>
+                <li>Formularios de “te contactamos”.</li>
+                <li>Sin precios ni cupos.</li>
+                <li>Letras y botones diminutos.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Decisiones de diseño</h4>
+              <ul>
+                <li>Reserva en 3 pasos y 4 clics.</li>
+                <li>Precio “Desde $” + nota BCV.</li>
+                <li>Calendario con horarios de 30 min.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Supuesto</h4>
+              <ul>
+                <li>Reservará desde el celular en una pausa corta.</li>
+                <li>El precio pesa más que un relato largo.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="persona no-break">
+        <div>
+          <p class="persona__name">Rafael Méndez</p>
+          <p class="persona__facts"><b>68 años</b> · profesor jubilado<br>La Candelaria · baja alfabetización digital<br><b>Rocky, Luna y Canela</b>; usa teléfono fijo</p>
+        </div>
+        <div>
+          <p class="persona__quote">“Yo prefiero hablar con una persona. Si la página no me dice la dirección y el teléfono, no sé qué hacer.”</p>
+          <div class="persona__grid">
+            <div>
+              <h4>Deseos</h4>
+              <ul>
+                <li>Llamar o escribir por WhatsApp.</li>
+                <li>Ver dirección y horario.</li>
+                <li>No crear cuentas.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Frustraciones</h4>
+              <ul>
+                <li>Menús profundos.</li>
+                <li>Texto pequeño.</li>
+                <li>Formularios largos.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Decisiones de diseño</h4>
+              <ul>
+                <li>Dock de emergencia global.</li>
+                <li>Menú de 6 opciones sin submenús.</li>
+                <li>Teléfono acepta fijo 02XX.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Supuesto</h4>
+              <ul>
+                <li>Prefiere resolver por teléfono.</li>
+                <li>Su hija le ayuda con formularios.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="persona no-break">
+        <div>
+          <p class="persona__name">Familia Rojas</p>
+          <p class="persona__facts"><b>Andrea 38 · Tomás 40</b><br>El Hatillo · dos niños (6 y 9)<br><b>Bruno</b>, labrador de 4 años</p>
+        </div>
+        <div>
+          <p class="persona__quote">“Necesito saber que Bruno va a estar bien, cuánto cuesta y si puedo llevarlo después del colegio.”</p>
+          <div class="persona__grid">
+            <div>
+              <h4>Deseos</h4>
+              <ul>
+                <li>Confianza y prueba social.</li>
+                <li>Precios y duración.</li>
+                <li>Horario compatible con el colegio.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Frustraciones</h4>
+              <ul>
+                <li>Esperar horas por WhatsApp.</li>
+                <li>No poder compartir la cita.</li>
+                <li>Perder la cartilla de vacunas.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Decisiones de diseño</h4>
+              <ul>
+                <li>Inicio con equipo y testimonios.</li>
+                <li>Confirmación compartible.</li>
+                <li>“Mis mascotas” con historial.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Supuesto</h4>
+              <ul>
+                <li>Compara reseñas antes de pagar.</li>
+                <li>El recordatorio es parte de la decisión.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="note"><b>Método:</b> proto-personas construidas con lógica y supuestos justificados, no con entrevistas. El detalle completo —frases, miedos, motivaciones, escenarios y trazabilidad— está en <b>docs/01-investigacion.md</b>.</p>
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 2 de 8</span></div>
+  </section>
+
+  <!-- 3 · Journey ------------------------------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">02 · Experiencia</p>
+        <h2>Journey map</h2>
+      </div>
+      <div class="page-head__meta">S2 · Camila + Miga</div>
+    </header>
+
+    <p class="lead" style="margin-bottom: 3mm">Escenario del brief: <b>“Mi mascota amaneció decaída, no quiere comer y necesito llevarla al veterinario.”</b></p>
+
+    <table class="journey">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Detección</th>
+          <th scope="col">Búsqueda</th>
+          <th scope="col">Evaluación</th>
+          <th scope="col">Agendamiento</th>
+          <th scope="col">Confirmación</th>
+          <th scope="col">Post-cita</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Acciones</th>
+          <td>Observa que Miga no come y está decaída; revisa fiebre o vómito.</td>
+          <td>Busca “veterinaria cerca de mí”; compara horarios, emergencias y precios.</td>
+          <td>Lee servicios, equipo, reseñas y teléfono; decide si es urgencia.</td>
+          <td>Elige servicio, mascota, horario y datos; confirma.</td>
+          <td>Recibe el resumen, lo comparte y agrega la cita al calendario.</td>
+          <td>Sigue indicaciones; consulta historial y próximo refuerzo.</td>
+        </tr>
+        <tr>
+          <th scope="row">Pensamientos</th>
+          <td>“¿Esto es grave o exagero?”</td>
+          <td>“¿Cuál atiende hoy? ¿Por qué ninguna dice el precio?”</td>
+          <td>“¿Son confiables? ¿Puedo llegar antes del trabajo?”</td>
+          <td>“¿Este horario es real? No quiero repetir datos.”</td>
+          <td>“¿Quedó confirmada? ¿Se lo mando a mi pareja?”</td>
+          <td>“¿Qué debo vigilar? ¿Cuándo es el próximo refuerzo?”</td>
+        </tr>
+        <tr>
+          <th scope="row">Emociones</th>
+          <td class="emotion">Preocupación</td>
+          <td class="emotion">Duda y prisa</td>
+          <td class="emotion">Tensión / esperanza</td>
+          <td class="emotion">Estrés por el formulario</td>
+          <td class="emotion">Alivio</td>
+          <td class="emotion">Tranquilidad</td>
+        </tr>
+        <tr>
+          <th scope="row">Contactos</th>
+          <td>Casa, teléfono, termómetro.</td>
+          <td>Google, Instagram, sitios, Maps.</td>
+          <td>Home, servicios, equipo, reseñas, WhatsApp.</td>
+          <td>Formulario, calendario, WhatsApp.</td>
+          <td>WhatsApp, confirmación, calendario.</td>
+          <td>WhatsApp, correo, “Mis mascotas”.</td>
+        </tr>
+        <tr>
+          <th scope="row">Dolores</th>
+          <td>No sabe si debe ir a urgencias.</td>
+          <td>Webs sin precios; horarios contradictorios.</td>
+          <td>No ve disponibilidad ni especialidades.</td>
+          <td>Formulario largo; errores poco claros; miedo a perder lo escrito.</td>
+          <td>No llega confirmación; no puede compartir.</td>
+          <td>No recuerda la vacuna; no tiene historial.</td>
+        </tr>
+        <tr>
+          <th scope="row">Oportunidades</th>
+          <td><b>F01</b> Emergencia global con llamada y WhatsApp.</td>
+          <td><b>F02</b> Precio, duración y nota BCV; <b>F08</b> equipo y ubicación.</td>
+          <td><b>F03</b> Calendario real; <b>F08</b> horarios y especialidades.</td>
+          <td><b>F04</b> 3 pasos con borrador; <b>F05</b> validación inline.</td>
+          <td><b>F06</b> Resumen, WhatsApp y calendario.</td>
+          <td><b>F07</b> Recordatorios e historial.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="journey-figure no-break">
+      <img src="assets/journey-emociones.svg" alt="Curva de emoción: preocupación, duda, tensión, estrés, alivio y tranquilidad">
+      <p><b>Lectura:</b> el pico de tensión está en el agendamiento, no en la detección. La confirmación devuelve la calma y la post-cita convierte la visita en relación. Por eso el flujo cuida el abandono, el conflicto de horario y la confirmación compartible.</p>
+    </div>
+
+    <div class="takeaways">
+      <p><b>Reserva sin fricción</b>Tres pasos, borrador de 24 h, validación inline y salida con reanudación. El objetivo es que el estrés del formulario no rompa la decisión.</p>
+      <p><b>Confianza antes de pagar</b>Equipo, testimonios, precios referenciales y nota BCV en la misma ruta. La urgencia no se esconde: está en todas las pantallas.</p>
+      <p><b>Continuidad</b>Confirmación con código, WhatsApp y calendario; después, historial de vacunas y recordatorios en “Mis mascotas”.</p>
+    </div>
+
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 3 de 8</span></div>
+  </section>
+
+  <!-- 4 · Competencia --------------------------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">03 · Mercado</p>
+        <h2>Análisis de competencia</h2>
+      </div>
+      <div class="page-head__meta">S3 · Visitado 2026-10-29</div>
+    </header>
+
+    <p class="lead" style="margin-bottom: 3mm">Tres sitios reales, dos de Caracas. Se observó la primera pantalla y el inicio del flujo de cita en escritorio (1440 px) y móvil (390 px). Las capturas están en <b>docs/assets/competencia/</b>.</p>
+
+    <table class="comp">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th class="site" scope="col">Veterinaria Los Chorros<span class="flag">Caracas, Venezuela</span></th>
+          <th class="site" scope="col">DogtorVet<span class="flag">Caracas, Venezuela</span></th>
+          <th class="site" scope="col">Vets4Pets<span class="flag">Reino Unido · referencia</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">¿Se entiende en 5 s?</th>
+          <td>Sí: 40 años, urgencias 24 h y CTA. Hero con contraste irregular en móvil.</td>
+          <td>Sí: clínica, servicios y calendario. El CTA de reserva no está en el hero.</td>
+          <td>Sí, pero es una red: no se entiende cuál es la sede ni la zona.</td>
+        </tr>
+        <tr>
+          <th scope="row">¿Cómo agenda?</th>
+          <td>WhatsApp (1 clic + conversación) o formulario de 4 campos. Sin fecha ni cupo; confirmación manual.</td>
+          <td>“Calendario de citas” → servicio → fecha/hora → datos → confirmación. 4 pasos observados.</td>
+          <td>“Request Appointment” → formulario de solicitud. Sin calendario; el equipo contacta después.</td>
+        </tr>
+        <tr>
+          <th scope="row">¿Muestra precios?</th>
+          <td>No en la home.</td>
+          <td>No en la home.</td>
+          <td>No de consulta; solo una revisión promocional por £10.</td>
+        </tr>
+        <tr>
+          <th scope="row">Emergencia, horario y ubicación</th>
+          <td>Emergencia y dirección arriba; horario más abajo. En móvil la navegación desaparece.</td>
+          <td>Emergencia en el menú; dirección y horario abajo. “Ubicación” abre un popup JS.</td>
+          <td>No en la home: hay que buscar una práctica. Sin acceso a emergencias.</td>
+        </tr>
+        <tr>
+          <th scope="row">¿Funciona en celular?</th>
+          <td>Parcial: se adapta, pero sin menú visible y con hero de bajo contraste.</td>
+          <td>Sí: menú y botones visibles; sin desbordamiento. Reserva requiere scroll.</td>
+          <td>Sí: menú y barra de acciones visible; el aviso de cookies tapa el inicio.</td>
+        </tr>
+        <tr>
+          <th scope="row">Diseño visual</th>
+          <td>Profesional y familiar; azul profundo, serif y carrusel. Contraste irregular.</td>
+          <td>Teal, foto grande y tarjetas suaves; cercano, sin CTA destacado en el hero.</td>
+          <td>Corporativo y pulido; coherente pero genérico de cadena.</td>
+        </tr>
+        <tr>
+          <th scope="row">Lo que hace bien</th>
+          <td>Emergencia y ubicación desde el primer píxel; prueba social concreta; WhatsApp directo.</td>
+          <td>Calendario dentro del sitio con servicios y duraciones; emergencia y teléfono a mano.</td>
+          <td>Jerarquía y acciones siempre visibles en móvil; solicitud clara.</td>
+        </tr>
+        <tr>
+          <th scope="row">Lo que hace mal</th>
+          <td>Sin precios ni disponibilidad; oculta la navegación móvil; hero con contraste bajo.</td>
+          <td>Sin precios; CTA de reserva fuera del hero; ubicación dependiente de JS.</td>
+          <td>No resuelve urgencia, horario ni sede en la home; solo recibe solicitudes.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="conclusion no-break">
+      <h3>Qué adoptar, qué evitar y qué haremos diferente</h3>
+      <ol>
+        <li><b>Adoptar</b> de Los Chorros la jerarquía de emergencia y ubicación, la prueba social concreta y el WhatsApp directo.</li>
+        <li><b>Adoptar</b> de DogtorVet la reserva dentro del sitio con servicio, fecha y hora visibles.</li>
+        <li><b>Adoptar</b> de Vets4Pets la claridad de las acciones principales, adaptada a una sola sede.</li>
+        <li><b>Evitar</b> ocultar la navegación en móvil, depender solo de WhatsApp y publicar héroes con contraste irregular.</li>
+        <li><b>Evitar</b> precios ausentes y urgencias escondidas: las dos preguntas que más pesan son “¿cuánto cuesta?” y “¿puedo ir ahora?”.</li>
+        <li><b>Nuestra diferencia:</b> precio en USD con nota BCV, disponibilidad real, 3 pasos con borrador, confirmación compartible e historial de vacunas; meta: cita en menos de 2 minutos.</li>
+      </ol>
+    </div>
+
+    <div class="competition-shots">
+      <figure>
+        <img src="assets/competencia/veterinaria-los-chorros-390.png" alt="Inicio móvil de Veterinaria Los Chorros">
+        <figcaption>Los Chorros · móvil 390 px</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/competencia/dogtorvet-390.png" alt="Inicio móvil de DogtorVet">
+        <figcaption>DogtorVet · móvil 390 px</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/competencia/vets4pets-390.png" alt="Inicio móvil de Vets4Pets">
+        <figcaption>Vets4Pets · móvil 390 px</figcaption>
+      </figure>
+    </div>
+
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 4 de 8</span></div>
+  </section>
+
+  <!-- 5 · Sitemap ------------------------------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">04 · Arquitectura</p>
+        <h2>Sitemap</h2>
+      </div>
+      <div class="page-head__meta">S4 · Card sorting</div>
+    </header>
+
+    <p class="lead">El card sorting de Camila, Rafael y la familia Rojas coincidió en cinco bloques: urgencia, servicios, reserva, confianza y seguimiento. De ahí sale un menú de seis opciones sin submenús y una emergencia global que no compite por un ítem.</p>
+
+    <div class="sitemap">
+      <div class="sm-node sm-node--root">Nivel 0 · Inicio<small>index.html</small></div>
+      <div class="sm-arrow">↓</div>
+      <div class="sm-row">
+        <div class="sm-col">
+          <div class="sm-node">Servicios<small>servicios.html</small></div>
+          <div class="sm-child">Nivel 2 · Detalle<small>servicio.html?s=…</small></div>
+        </div>
+        <div class="sm-col">
+          <div class="sm-node">Equipo<small>equipo.html</small></div>
+        </div>
+        <div class="sm-col">
+          <div class="sm-node">Mis mascotas<small>mis-mascotas.html</small></div>
+          <div class="sm-child">Nivel 2 · Historial<small>sección de vacunas</small></div>
+        </div>
+        <div class="sm-col">
+          <div class="sm-node">Contacto<small>contacto.html</small></div>
+          <div class="sm-child">Nivel 2 · Mapa y horarios<small>sección de contacto</small></div>
+        </div>
+        <div class="sm-col">
+          <div class="sm-node">Agendar cita<small>agendar.html</small></div>
+          <div class="sm-child">Paso 2 · Fecha y hora<small>agendar-paso-2.html</small></div>
+          <div class="sm-child">Paso 3 · Datos<small>agendar-paso-3.html</small></div>
+          <div class="sm-child">Cita confirmada<small>cita-confirmada.html</small></div>
+        </div>
+      </div>
+
+      <div class="sm-band">
+        <h3>Elementos globales · presentes en todas las páginas</h3>
+        <div class="sm-chips">
+          <span class="sm-chip">Header con logo y menú de 6</span>
+          <span class="sm-chip">Footer con dirección, horario y WhatsApp</span>
+          <span class="sm-chip">Botón de emergencias fijo</span>
+          <span class="sm-chip">Toggle claro / oscuro</span>
+        </div>
+      </div>
+
+      <div class="sm-band">
+        <h3>Documentación y entregables · fuera del menú</h3>
+        <div class="sm-chips">
+          <span class="sm-chip sm-chip--doc">Documentación del proyecto (hub)</span>
+          <span class="sm-chip sm-chip--doc">Guía de estilos</span>
+          <span class="sm-chip sm-chip--doc">Índice de wireframes + 11 wireframes</span>
+          <span class="sm-chip sm-chip--doc">Página 404</span>
+          <span class="sm-chip sm-chip--doc">Informe PDF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sitemap-notes">
+      <p><b>Menú ≤ 6</b>Inicio, Servicios, Equipo, Mis mascotas, Contacto y Agendar cita. Sin submenús.</p>
+      <p><b>≤ 3 clics</b>Las páginas de cliente y la documentación principal están a 1–3 clics. La confirmación es el estado final del flujo, no una página que haya que descubrir.</p>
+      <p><b>10 pantallas</b>Las diez obligatorias están cubiertas, más “Mis mascotas”, guía de estilos y wireframes.</p>
+    </div>
+
+    <div class="depth">
+      <h3>Profundidad desde Inicio</h3>
+      <span><b>1 clic</b> · Servicios, Equipo, Mis mascotas, Contacto, Agendar</span>
+      <span><b>1–2 clics</b> · Detalle de servicio</span>
+      <span><b>2 clics</b> · Historial de vacunas, mapa y horarios, paso 2</span>
+      <span><b>3 clics</b> · Paso 3; la confirmación es el estado final del flujo</span>
+    </div>
+
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 5 de 8</span></div>
+  </section>
+
+  <!-- 6 · User flow ----------------------------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">05 · Flujo</p>
+        <h2>Agendar una cita</h2>
+      </div>
+      <div class="page-head__meta">S5 · Camino ideal + alternativas</div>
+    </header>
+
+    <div class="flow-wrap">
+      <img src="assets/user-flow.svg" alt="Diagrama de flujo de arriba hacia abajo: entradas, emergencia, pasos 1 a 3, confirmación, conflicto de horario, validación, volver y abandono">
+    </div>
+
+    <div class="flow-caption">
+      <p><b>5 pantallas · 4 clics</b>Inicio → Paso 1 → Paso 2 → Paso 3 → Cita confirmada. El paso 1 une servicio y mascota; el paso 3 une datos y confirmación.</p>
+      <p><b>Entradas</b>Google, Instagram y el detalle de servicio. La última llega con el servicio preseleccionado.</p>
+      <p><b>Alternativas</b>Emergencia, horario ocupado, campos inválidos, volver sin perder datos y abandono con borrador.</p>
+      <p><b>Objetivo</b>≤ 2 minutos. Estimación de diseño ≈ 100 s, sin medición con usuarios.</p>
+    </div>
+
+    <div class="legend">
+      <span>◯ Óvalo: inicio / fin</span>
+      <span>▭ Rectángulo: pantalla o acción</span>
+      <span>◇ Rombo: decisión</span>
+      <span>→ Flecha: avance</span>
+      <span>Ⓐ Ⓑ Ⓒ Conectores entre columnas</span>
+    </div>
+
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 6 de 8</span></div>
+  </section>
+
+  <!-- 7 · Decisiones y guía de estilos ---------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">06 · Decisiones</p>
+        <h2>Diseño y sistema visual</h2>
+      </div>
+      <div class="page-head__meta">S7 · S10 · S11</div>
+    </header>
+
+    <div class="decisions">
+      <div class="decision-block">
+        <h3>Decisiones que sostienen el producto</h3>
+        <ul class="decision-list">
+          <li><b>Mobile-first:</b> una columna, 48 px de objetivo táctil, tipografía fluida y dock que reserva espacio. Probado a 390 y 1440 px en 33 páginas.</li>
+          <li><b>Emergencias siempre a mano:</b> dock fijo con llamada y WhatsApp en todas las pantallas; la pregunta de emergencia interrumpe el formulario.</li>
+          <li><b>WCAG AA:</b> 74 pares de tokens × 2 temas = 148/148; axe-core en 33 páginas × 2 temas = 66/66 sin violaciones serias o críticas.</li>
+          <li><b>Estados completos:</b> hover, activo, deshabilitado, error y seleccionado con borde, icono, texto o <i>aria</i>, nunca solo color.</li>
+          <li><b>Microinteracciones:</b> press, transición de paso, selección de horario, check de éxito y pulso único del dock; todo se desactiva con <i>prefers-reduced-motion</i>.</li>
+          <li><b>Extras:</b> modo oscuro, fotos reales, carrusel de equipo, “Mis mascotas” con foto y refuerzo, y microinteracciones; sin prueba de usabilidad.</li>
+        </ul>
+
+        <h3 style="margin-top: 4mm">De la persona a la interfaz</h3>
+        <ul class="decision-list">
+          <li><b>Camila:</b> 3 pasos, precio BCV, calendario real y borrador.</li>
+          <li><b>Rafael:</b> menú de 6, teléfono fijo aceptado y dock global.</li>
+          <li><b>Rojas:</b> confianza, confirmación compartible e historial.</li>
+        </ul>
+      </div>
+
+      <div class="decision-block">
+        <h3>Guía de estilos · resumen</h3>
+        <div class="swatches">
+          <div class="swatch"><i style="background:#0E6B5F"></i><b>Primario</b>#0E6B5F</div>
+          <div class="swatch"><i style="background:#B45309"></i><b>Acento</b>#B45309</div>
+          <div class="swatch"><i style="background:#B42318"></i><b>Emergencia</b>#B42318</div>
+          <div class="swatch"><i style="background:#F6FAF8"></i><b>Fondo</b>#F6FAF8</div>
+          <div class="swatch"><i style="background:#0E211E"></i><b>Texto</b>#0E211E</div>
+          <div class="swatch"><i style="background:#D9F2EC"></i><b>Suave</b>#D9F2EC</div>
+        </div>
+
+        <div class="type-sample">
+          <p class="big">Nunito 800</p>
+          <p class="small">Títulos con personalidad redondeada; cuerpo de 16 px y medida de 68 caracteres. Pesos 400, 600, 700 y 800.</p>
+        </div>
+
+        <ul class="decision-list">
+          <li><b>Logo:</b> huella en placa verde azulado; funciona en claro y oscuro.</li>
+          <li><b>Iconografía:</b> Lucide 24 px (ISC) + WhatsApp de Simple Icons (CC0); sprite generado y decorativos ocultos.</li>
+          <li><b>Formularios:</b> etiqueta, ayuda y error inline con <i>aria-invalid</i> y <i>aria-describedby</i>.</li>
+          <li><b>Modo oscuro:</b> tokens semánticos; la preferencia se guarda y respeta el sistema.</li>
+        </ul>
+
+        <div class="evidence">
+          <div>148/148<br>contraste AA</div>
+          <div>66/66<br>axe sin bloqueos</div>
+          <div>197/197<br>pruebas Playwright</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="states">
+      <div><span class="mock-btn">Agendar cita</span><small>Reposo</small></div>
+      <div><span class="mock-btn mock-btn--hover">Agendar cita</span><small>Hover</small></div>
+      <div><span class="mock-btn mock-btn--active">Agendar cita</span><small>Activo</small></div>
+      <div><span class="mock-btn mock-btn--disabled">Agendar cita</span><small>Deshabilitado</small></div>
+      <div><span class="mock-input">correo@</span><small>Error inline</small></div>
+    </div>
+
+    <p class="note" style="margin-top: 4mm"><b>Guía viva:</b> la paleta completa, los ratios, la tipografía, los iconos y todos los estados están en <b>guia-de-estilos.html</b>. Los valores viven en <b>tokens.css</b> y las pruebas los verifican.</p>
+
+    <figure class="guide-shot">
+      <img src="assets/pantallas/guia-de-estilos-1440.png" alt="Portada de la guía de estilos en escritorio con la paleta y la tipografía">
+      <figcaption>Guía de estilos publicada · 1440 px</figcaption>
+    </figure>
+
+    <div class="footer"><span>Patitas Felices · Proyecto UI/UX</span><span>Página 7 de 8</span></div>
+  </section>
+
+  <!-- 8 · Pantallas y enlaces ------------------------------------------- -->
+  <section class="page">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">07 · Entrega</p>
+        <h2>Pantallas clave y enlaces</h2>
+      </div>
+      <div class="page-head__meta">S9 · S12</div>
+    </header>
+
+    <div class="screens">
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/inicio-390.png" alt="Inicio en móvil: hero, CTA, servicios y confianza"></div>
+        <figcaption class="screen__label">Inicio · 390 px</figcaption>
+      </figure>
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/servicios-390.png" alt="Servicios con precios referenciales y nota BCV"></div>
+        <figcaption class="screen__label">Servicios · 390 px</figcaption>
+      </figure>
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/agendar-paso-1-390.png" alt="Agendar paso 1: emergencia, servicio y mascota"></div>
+        <figcaption class="screen__label">Agendar · paso 1</figcaption>
+      </figure>
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/agendar-paso-2-390.png" alt="Agendar paso 2: calendario y horarios disponibles"></div>
+        <figcaption class="screen__label">Agendar · paso 2</figcaption>
+      </figure>
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/agendar-paso-3-390.png" alt="Agendar paso 3: datos del dueño y resumen"></div>
+        <figcaption class="screen__label">Agendar · paso 3</figcaption>
+      </figure>
+      <figure class="screen">
+        <div class="screen__img"><img src="assets/pantallas/cita-confirmada-390.png" alt="Cita confirmada: resumen, WhatsApp y calendario"></div>
+        <figcaption class="screen__label">Cita confirmada · 390 px</figcaption>
+      </figure>
+    </div>
+
+    <div class="links">
+      <h3>Enlaces del proyecto</h3>
+      <dl>
+        <dt>Prototipo</dt>
+        <dd>&lt;URL_VERCEL&gt;</dd>
+        <dt>Archivo de diseño</dt>
+        <dd>&lt;URL_VERCEL&gt;/documentacion/pantallas.html</dd>
+        <dt>Guía de estilos</dt>
+        <dd>&lt;URL_VERCEL&gt;/guia-de-estilos.html</dd>
+        <dt>Wireframes</dt>
+        <dd>&lt;URL_VERCEL&gt;/wireframes/index.html</dd>
+        <dt>Documentación</dt>
+        <dd>&lt;URL_VERCEL&gt;/documentacion/investigacion.html<br>&lt;URL_VERCEL&gt;/documentacion/arquitectura.html<br>&lt;URL_VERCEL&gt;/documentacion/decisiones.html</dd>
+      </dl>
+    </div>
+
+    <p class="credits"><b>Créditos:</b> iconografía Lucide (ISC) y WhatsApp de Simple Icons (CC0); fotos de Pexels; tipografía Nunito bajo SIL OFL 1.1; clínica, dirección, precios, equipo y testimonios ficticios con fines académicos. Capturas generadas con Playwright a 390 y 1440 px.</p>
+
+    <div class="footer"><span>Patitas Felices · Lenin Alvarado · Lexpin 2026</span><span>Página 8 de 8</span></div>
+  </section>
+
+</body>
+</html>

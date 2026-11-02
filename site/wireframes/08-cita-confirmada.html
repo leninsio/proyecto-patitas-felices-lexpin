@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <title>Wireframe 08 · Cita confirmada — Patitas Felices</title>
+  <meta name="description" content="Wireframe de la pantalla de cita confirmada de Patitas Felices.">
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+  <header class="wf-header">
+    <div class="wf-container wf-header__inner">
+      <a class="wf-logo" href="../index.html">Logo</a>
+      <nav aria-label="Principal">
+        <ul class="wf-nav">
+          <li><a href="01-inicio.html">Inicio</a></li>
+          <li><a href="02-servicios.html">Servicios</a></li>
+          <li><a href="04-equipo.html">Equipo</a></li>
+          <li><a href="11-mis-mascotas.html">Mis mascotas</a></li>
+          <li><a href="09-contacto.html">Contacto</a></li>
+          <li><a class="wf-nav__cta" href="05-agendar-paso-1.html" aria-current="page">Agendar cita</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wf-container wf-main" id="main">
+    <div class="wf-meta">
+      <span>Wireframe 08 · Cita confirmada</span>
+      <a href="index.html">← Volver al índice</a>
+    </div>
+
+    <div class="wf-hero">
+      <div class="wf-hero__copy">
+        <p class="wf-kicker">Paso completado</p>
+        <h1>Tu cita está confirmada</h1>
+        <p class="wf-lead">Miga tiene una consulta general el jueves 12 de noviembre a las 9:00. Te enviamos el resumen por WhatsApp.</p>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="https://wa.me/584125550198">Compartir por WhatsApp</a>
+          <a class="wf-btn wf-btn--ghost" href="#calendario">Agregar al calendario</a>
+        </div>
+        <div class="wf-cluster">
+          <span class="wf-tag wf-tag--dark">Confirmada</span>
+          <span class="wf-tag">Jueves 12 nov · 9:00</span>
+        </div>
+      </div>
+      <div class="wf-placeholder wf-placeholder--hero"><span>Ilustración de confirmación</span></div>
+    </div>
+
+    <div class="wf-split" style="margin-block-start: 24px">
+      <section class="wf-card wf-card--strong" aria-labelledby="summary-title">
+        <h2 id="summary-title">Resumen de la cita</h2>
+        <p class="wf-note">Servicio</p>
+        <p><strong>Consulta general · 30 min</strong></p>
+        <p class="wf-note">Mascota</p>
+        <p><strong>Miga · perra · 8 meses</strong></p>
+        <p class="wf-note">Fecha y hora</p>
+        <p><strong>Jueves 12 de noviembre de 2026, 9:00</strong></p>
+        <p class="wf-note">Sede</p>
+        <p>Av. Francisco de Miranda, Torre Country, local 3, Los Ruices, Caracas.</p>
+        <p class="wf-note">Precio referencial</p>
+        <p class="wf-price">Desde $25</p>
+        <p class="wf-note">o su equivalente en Bs a tasa BCV del día</p>
+      </section>
+
+      <section class="wf-card" aria-labelledby="next-title">
+        <h2 id="next-title">Próximos pasos</h2>
+        <ol class="wf-stack wf-stack--sm">
+          <li>Llega 10 minutos antes con la cartilla de vacunas.</li>
+          <li>Si tu mascota necesita ayuno, el equipo te lo indicará.</li>
+          <li>Guarda el resumen en Mis mascotas para tenerlo a mano.</li>
+        </ol>
+        <div class="wf-btn-row">
+          <a class="wf-btn" href="11-mis-mascotas.html">Ir a Mis mascotas</a>
+          <a class="wf-btn wf-btn--ghost" href="01-inicio.html">Volver al inicio</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="wf-alert" style="margin-block-start: 20px" id="calendario">
+      <p class="wf-alert__title">Agregar al calendario</p>
+      <p>El prototipo mostrará un enlace .ics o un botón de calendario del sistema. En este wireframe solo se reserva el espacio.</p>
+    </div>
+
+    <div class="wf-alert" style="margin-block-start: 16px">
+      <p class="wf-alert__title">Si es una emergencia antes de la cita</p>
+      <p>Llama al +58 412 555 0198. La atención de urgencias es 24/7 y no requiere cita.</p>
+    </div>
+  </main>
+
+  <footer class="wf-footer">
+    <div class="wf-container">
+      <div class="wf-footer__grid">
+        <div><p class="wf-footer__title">Patitas Felices</p><p class="wf-footer__text">Clínica veterinaria de barrio en Caracas. Datos ficticios.</p></div>
+        <div><p class="wf-footer__title">Contacto</p><p class="wf-footer__text">Av. Francisco de Miranda, Torre Country, local 3, Los Ruices.</p></div>
+        <div><p class="wf-footer__title">Horario</p><p class="wf-footer__text">Lun a vie 8:00–19:00 · Sáb 8:00–14:00 · Emergencias 24/7.</p></div>
+      </div>
+      <p class="wf-footer__bottom">© 2026 Patitas Felices · Wireframe 08 · S6</p>
+    </div>
+  </footer>
+
+  <div class="wf-dock" role="region" aria-label="Emergencias 24 horas" data-emergency-dock>
+    <div class="wf-container wf-dock__inner">
+      <p class="wf-dock__label"><span aria-hidden="true">!</span><span>Emergencias 24/7</span></p>
+      <div class="wf-dock__actions">
+        <a class="wf-dock__btn" href="tel:+584125550198">Llamar</a>
+        <a class="wf-dock__btn wf-dock__btn--ghost" href="https://wa.me/584125550198">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
